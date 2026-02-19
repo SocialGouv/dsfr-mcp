@@ -3,3 +3,4 @@ build/
 docs/
 .dsfr-repo/
 .claude/
+.mcp.json

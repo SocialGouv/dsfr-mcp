@@ -1,0 +1,23 @@
+[
+  {
+    "name": "button",
+    "title": "Bouton",
+    "description": "Déclenchement d'une action dans l'interface",
+    "category": "component",
+    "sections": ["overview", "code", "accessibility"]
+  },
+  {
+    "name": "card",
+    "title": "Carte",
+    "description": "Composant carte pour afficher du contenu structuré",
+    "category": "component",
+    "sections": ["overview", "code"]
+  },
+  {
+    "name": "color",
+    "title": "Couleurs",
+    "description": "Palette de couleurs du DSFR",
+    "category": "core",
+    "sections": ["overview"]
+  }
+]
