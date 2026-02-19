@@ -46,7 +46,13 @@ pnpm run setup    # Fetches DSFR docs and builds the server
 
 ### Claude Code
 
-Add to your project's `.mcp.json`:
+Available across all your projects (recommended):
+
+```bash
+claude mcp add dsfr --scope user -- npx dsfr-mcp
+```
+
+Or for a single project, add to your `.mcp.json`:
 
 ```json
 {
