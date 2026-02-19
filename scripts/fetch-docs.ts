@@ -159,6 +159,251 @@ writeFileSync(join(DOCS_DIR, "index.json"), JSON.stringify(index, null, 2));
 // Write meta
 writeFileSync(join(DOCS_DIR, "meta.json"), JSON.stringify({ dsfrVersion: DSFR_TAG }, null, 2));
 
+// Extract icons index
+interface IconEntry {
+  name: string;
+  category: string;
+  variants: string[];
+  classes: string[];
+}
+
+function extractIcons(repoDir: string, docsDir: string) {
+  const iconBaseDir = join(repoDir, "src/dsfr/core/icon");
+  if (!existsSync(iconBaseDir)) {
+    console.error("Warning: icon directory not found, skipping icon extraction");
+    return;
+  }
+
+  const groups = new Map<string, { category: string; variants: Set<string>; classes: Set<string> }>();
+
+  for (const category of readdirSync(iconBaseDir)) {
+    const catDir = join(iconBaseDir, category);
+    if (!statSync(catDir).isDirectory()) continue;
+
+    for (const file of readdirSync(catDir)) {
+      if (!file.endsWith(".svg")) continue;
+      const raw = file.replace(/\.svg$/, "");
+      const cssClass = `fr-icon-${raw}`;
+
+      let baseName: string;
+      let variant: string | null = null;
+
+      const match = raw.match(/^(.*)-(?:fill|line)$/);
+      if (match) {
+        baseName = match[1];
+        variant = raw.endsWith("-fill") ? "fill" : "line";
+      } else {
+        baseName = raw;
+      }
+
+      const key = `${category}/${baseName}`;
+      let group = groups.get(key);
+      if (!group) {
+        group = { category, variants: new Set(), classes: new Set() };
+        groups.set(key, group);
+      }
+      if (variant) group.variants.add(variant);
+      group.classes.add(cssClass);
+    }
+  }
+
+  const icons: IconEntry[] = [];
+  for (const [key, group] of groups) {
+    const name = key.split("/").slice(1).join("/");
+    icons.push({
+      name,
+      category: group.category,
+      variants: [...group.variants].sort(),
+      classes: [...group.classes].sort(),
+    });
+  }
+
+  icons.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
+
+  writeFileSync(join(docsDir, "icons.json"), JSON.stringify(icons, null, 2));
+  console.error(`Extracted ${icons.length} icons across ${new Set(icons.map((i) => i.category)).size} categories`);
+}
+
+// Extract colors index
+interface ColorDecisionToken {
+  token: string;
+  context: "background" | "text" | "artwork";
+  description: string;
+  light: string;
+  dark: string;
+}
+
+interface ColorFamily {
+  name: string;
+  category: "primaire" | "neutre" | "systeme" | "illustrative";
+  correspondences: Record<string, { light: string; dark: string }>;
+}
+
+interface ColorsIndex {
+  decisionTokens: ColorDecisionToken[];
+  families: ColorFamily[];
+  illustrativeNames: string[];
+}
+
+function extractColors(docsDir: string) {
+  const colors: ColorsIndex = { decisionTokens: [], families: [], illustrativeNames: [] };
+
+  // Parse decision tokens from color/overview.md
+  const colorDoc = join(docsDir, "core/color/overview.md");
+  if (existsSync(colorDoc)) {
+    const content = readFileSync(colorDoc, "utf-8");
+    let currentContext: "background" | "text" | "artwork" = "background";
+
+    for (const line of content.split("\n")) {
+      if (line.includes("couleurs de fond") || line.includes("couleurs de texte") || line.includes("couleurs d'illustrations")) {
+        if (line.toLowerCase().includes("fond")) currentContext = "background";
+        else if (line.toLowerCase().includes("texte")) currentContext = "text";
+        else if (line.toLowerCase().includes("illustration")) currentContext = "artwork";
+      }
+
+      // Match table rows: | description | `$token` | `$light` | `$dark` |
+      const rowMatch = line.match(
+        /^\|\s*(.+?)\s*\|\s*`(\$[\w-]+)`\s*\|\s*`(\$[\w-]+)`\s*\|\s*`(\$[\w-]+)`\s*\|$/
+      );
+      if (rowMatch) {
+        const description = rowMatch[1].replace(/<br>\s*/g, " ").replace(/<[^>]*>/g, "").trim();
+        // Skip header rows
+        if (description.startsWith("Description") || description.startsWith(":")) continue;
+        colors.decisionTokens.push({
+          token: rowMatch[2],
+          context: currentContext,
+          description,
+          light: rowMatch[3],
+          dark: rowMatch[4],
+        });
+      }
+    }
+  }
+
+  // Parse families from palette/overview.md
+  const paletteDoc = join(docsDir, "core/palette/overview.md");
+  if (existsSync(paletteDoc)) {
+    const content = readFileSync(paletteDoc, "utf-8");
+    const lines = content.split("\n");
+
+    let currentCategory: ColorFamily["category"] = "primaire";
+    let currentFamilyName: string | null = null;
+    let currentCorrespondences: Record<string, { light: string; dark: string }> = {};
+
+    const familyNameMap: Record<string, string> = {
+      "Bleu France": "blue-france",
+      "Rouge Marianne": "red-marianne",
+      "Gris": "grey",
+    };
+
+    function flushFamily() {
+      if (currentFamilyName && Object.keys(currentCorrespondences).length > 0) {
+        colors.families.push({
+          name: currentFamilyName,
+          category: currentCategory,
+          correspondences: { ...currentCorrespondences },
+        });
+      }
+      currentCorrespondences = {};
+    }
+
+    for (const line of lines) {
+      // Detect category sections
+      if (line.startsWith("### Couleurs primaires")) currentCategory = "primaire";
+      else if (line.startsWith("### Couleur neutre")) currentCategory = "neutre";
+      else if (line.startsWith("### Couleurs système")) currentCategory = "systeme";
+      else if (line.startsWith("### Couleurs illustratives")) currentCategory = "illustrative";
+
+      // Detect family table headers: ::::fr-table[Name]{...}
+      const tableMatch = line.match(/^::::fr-table\[(.+?)\]/);
+      if (tableMatch) {
+        flushFamily();
+        const rawName = tableMatch[1];
+        currentFamilyName = familyNameMap[rawName] ?? null;
+        // Handle system color example
+        if (rawName.includes("Info")) currentFamilyName = "info";
+        // Skip template tables for illustratives
+        if (rawName.includes("Déclinaisons")) currentFamilyName = null;
+        continue;
+      }
+
+      // Parse correspondence rows: | **key** | `$light` | `$dark` |
+      if (currentFamilyName) {
+        const corrMatch = line.match(
+          /^\|\s*\*\*(.+?)\*\*\s*\|\s*`(\$[\w-]+)`\s*\|\s*`(\$[\w-]+)`\s*\|$/
+        );
+        if (corrMatch) {
+          currentCorrespondences[corrMatch[1].trim()] = {
+            light: corrMatch[2],
+            dark: corrMatch[3],
+          };
+        }
+      }
+    }
+    flushFamily();
+
+    // Extract illustrative color names
+    const illustrativeLine = lines.find((l) => l.startsWith("Les couleurs illustratives sont :"));
+    if (illustrativeLine) {
+      const names = illustrativeLine
+        .replace("Les couleurs illustratives sont : ", "")
+        .replace(".", "")
+        .split(",")
+        .map((s) => s.trim())
+        .filter(Boolean);
+      colors.illustrativeNames = names;
+
+      // Generate system color families (warning, error, success) based on info pattern
+      const infoFamily = colors.families.find((f) => f.name === "info");
+      if (infoFamily) {
+        for (const sysColor of ["warning", "error", "success"]) {
+          const correspondences: Record<string, { light: string; dark: string }> = {};
+          for (const [key, val] of Object.entries(infoFamily.correspondences)) {
+            correspondences[key] = {
+              light: val.light.replace(/info/g, sysColor),
+              dark: val.dark.replace(/info/g, sysColor),
+            };
+          }
+          colors.families.push({
+            name: sysColor,
+            category: "systeme",
+            correspondences,
+          });
+        }
+      }
+
+      // Generate illustrative color families based on template
+      const illustrativeCorrespondences: Record<string, { lightSuffix: string; darkSuffix: string }> = {
+        softest: { lightSuffix: "850", darkSuffix: "200" },
+        light: { lightSuffix: "925", darkSuffix: "125" },
+        lighter: { lightSuffix: "950", darkSuffix: "100" },
+        lightest: { lightSuffix: "975", darkSuffix: "75" },
+      };
+
+      for (const colorName of names) {
+        const correspondences: Record<string, { light: string; dark: string }> = {};
+        for (const [key, suffixes] of Object.entries(illustrativeCorrespondences)) {
+          correspondences[key] = {
+            light: `$${colorName}-${suffixes.lightSuffix}`,
+            dark: `$${colorName}-${suffixes.darkSuffix}`,
+          };
+        }
+        colors.families.push({
+          name: colorName,
+          category: "illustrative",
+          correspondences,
+        });
+      }
+    }
+  }
+
+  writeFileSync(join(docsDir, "colors.json"), JSON.stringify(colors, null, 2));
+  console.error(`Extracted ${colors.decisionTokens.length} decision tokens, ${colors.families.length} color families`);
+}
+
+extractIcons(REPO_DIR, DOCS_DIR);
+extractColors(DOCS_DIR);
+
 console.error(`\nDone! Extracted ${index.length} entries:`);
 for (const entry of index) {
   console.error(`  [${entry.category}] ${entry.name} — ${entry.title} (${entry.sections.join(", ")})`);

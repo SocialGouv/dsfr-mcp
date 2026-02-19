@@ -1,0 +1,80 @@
+{
+  "decisionTokens": [
+    {
+      "token": "$background-action-high-blue-france",
+      "context": "background",
+      "description": "Fond de composant cliquable important et portant l'identité de l'État",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    },
+    {
+      "token": "$background-flat-error",
+      "context": "background",
+      "description": "Fond de composant en état d'erreur",
+      "light": "$error-425",
+      "dark": "$error-625"
+    },
+    {
+      "token": "$background-disabled-grey",
+      "context": "background",
+      "description": "Fond de composant désactivé",
+      "light": "$grey-925",
+      "dark": "$grey-125"
+    },
+    {
+      "token": "$text-action-high-blue-france",
+      "context": "text",
+      "description": "Texte cliquable important et portant l'identité de l'État",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    },
+    {
+      "token": "$text-default-error",
+      "context": "text",
+      "description": "Texte ou icône en état d'erreur",
+      "light": "$error-425",
+      "dark": "$error-625"
+    },
+    {
+      "token": "$artwork-major-blue-france",
+      "context": "artwork",
+      "description": "Couleur dominante d'illustration (60%)",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    }
+  ],
+  "families": [
+    {
+      "name": "blue-france",
+      "category": "primaire",
+      "correspondences": {
+        "strong": { "light": "$blue-france-sun-113", "dark": "$blue-france-625" },
+        "softest": { "light": "$blue-france-850", "dark": "$blue-france-200" },
+        "light": { "light": "$blue-france-925", "dark": "$blue-france-125" },
+        "main": { "light": "$blue-france-main-525", "dark": "$blue-france-main-525" }
+      }
+    },
+    {
+      "name": "grey",
+      "category": "neutre",
+      "correspondences": {
+        "black": { "light": "$grey-50", "dark": "$grey-1000" },
+        "white": { "light": "$grey-1000", "dark": "$grey-50" },
+        "strong": { "light": "$grey-425", "dark": "$grey-625" }
+      }
+    },
+    {
+      "name": "error",
+      "category": "systeme",
+      "correspondences": {
+        "strong": { "light": "$error-425", "dark": "$error-625" },
+        "main": { "light": "$error-main-525", "dark": "$error-main-525" }
+      }
+    }
+  ],
+  "illustrativeNames": [
+    "green-tilleul-verveine",
+    "green-bourgeon",
+    "green-emeraude"
+  ]
+}

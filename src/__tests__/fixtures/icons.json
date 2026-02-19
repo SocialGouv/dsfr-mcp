@@ -1,0 +1,50 @@
+[
+  {
+    "name": "download",
+    "category": "system",
+    "variants": ["fill", "line"],
+    "classes": ["fr-icon-download-fill", "fr-icon-download-line"]
+  },
+  {
+    "name": "add-circle",
+    "category": "system",
+    "variants": ["fill", "line"],
+    "classes": ["fr-icon-add-circle-fill", "fr-icon-add-circle-line"]
+  },
+  {
+    "name": "arrow-left",
+    "category": "arrows",
+    "variants": ["fill", "line"],
+    "classes": ["fr-icon-arrow-left-fill", "fr-icon-arrow-left-line"]
+  },
+  {
+    "name": "arrow-right",
+    "category": "arrows",
+    "variants": ["fill", "line"],
+    "classes": ["fr-icon-arrow-right-fill", "fr-icon-arrow-right-line"]
+  },
+  {
+    "name": "italic",
+    "category": "editor",
+    "variants": [],
+    "classes": ["fr-icon-italic"]
+  },
+  {
+    "name": "home",
+    "category": "buildings",
+    "variants": ["fill", "line"],
+    "classes": ["fr-icon-home-fill", "fr-icon-home-line"]
+  },
+  {
+    "name": "fr--bold",
+    "category": "editor",
+    "variants": [],
+    "classes": ["fr-icon-fr--bold"]
+  },
+  {
+    "name": "file-download",
+    "category": "document",
+    "variants": ["fill", "line"],
+    "classes": ["fr-icon-file-download-fill", "fr-icon-file-download-line"]
+  }
+]
