@@ -6,21 +6,23 @@ const ROOT = new URL("..", import.meta.url).pathname;
 const REPO_DIR = join(ROOT, ".dsfr-repo");
 const DOCS_DIR = join(ROOT, "docs");
 const REPO_URL = "https://github.com/GouvernementFR/dsfr.git";
+const DSFR_TAG = process.env.DSFR_TAG ?? "v1.14.3";
 
 function run(cmd: string, cwd?: string) {
   console.error(`> ${cmd}`);
   execSync(cmd, { cwd, stdio: "inherit" });
 }
 
-// Step 1: Clone or update the DSFR repo (sparse checkout)
+// Step 1: Clone or update the DSFR repo (sparse checkout at pinned tag)
+console.error(`Using DSFR ${DSFR_TAG}`);
 if (existsSync(join(REPO_DIR, ".git"))) {
   console.error("Updating existing DSFR repo...");
-  run("git fetch --depth=1 origin main", REPO_DIR);
+  run(`git fetch --depth=1 origin tag ${DSFR_TAG}`, REPO_DIR);
   run("git checkout FETCH_HEAD", REPO_DIR);
 } else {
   console.error("Cloning DSFR repo (sparse)...");
   if (existsSync(REPO_DIR)) rmSync(REPO_DIR, { recursive: true });
-  run(`git clone --filter=blob:none --sparse --depth=1 ${REPO_URL} ${REPO_DIR}`);
+  run(`git clone --filter=blob:none --sparse --depth=1 --branch ${DSFR_TAG} ${REPO_URL} ${REPO_DIR}`);
   run(
     "git sparse-checkout set src/dsfr/component src/dsfr/core src/dsfr/layout",
     REPO_DIR,
@@ -153,6 +155,9 @@ index.sort((a, b) => a.name.localeCompare(b.name));
 
 // Write index
 writeFileSync(join(DOCS_DIR, "index.json"), JSON.stringify(index, null, 2));
+
+// Write meta
+writeFileSync(join(DOCS_DIR, "meta.json"), JSON.stringify({ dsfrVersion: DSFR_TAG }, null, 2));
 
 console.error(`\nDone! Extracted ${index.length} entries:`);
 for (const entry of index) {

@@ -4,12 +4,20 @@
   "description": "MCP server pour la documentation DSFR (Système de Design de l'État français)",
   "type": "module",
   "main": "build/index.js",
+  "bin": {
+    "dsfr-mcp": "build/index.js"
+  },
+  "files": [
+    "build",
+    "docs"
+  ],
   "scripts": {
     "build": "tsc",
     "test": "vitest run",
     "test:watch": "vitest",
     "fetch-docs": "tsx scripts/fetch-docs.ts",
-    "setup": "pnpm run fetch-docs && pnpm build"
+    "setup": "pnpm run fetch-docs && pnpm build",
+    "prepublishOnly": "pnpm run setup"
   },
   "keywords": [
     "mcp",
