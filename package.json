@@ -1,5 +1,5 @@
 {
-  "name": "mcp-dsfr",
+  "name": "dsfr-mcp",
   "version": "1.0.0",
   "description": "MCP server pour la documentation DSFR (Système de Design de l'État français)",
   "type": "module",
