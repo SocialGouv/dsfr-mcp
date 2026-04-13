@@ -27,19 +27,24 @@ interface DsfrData {
   cache: LRUCache<string, string>;
 }
 
+// Module-level cache shared across all server instances built from the same docs dir.
+// This avoids re-parsing index.json/icons.json/colors.json on every HTTP request.
+const dataByDir = new Map<string, DsfrData>();
+
 function makeLazyData(docsDirHint?: string): () => DsfrData {
-  let cached: DsfrData | undefined;
   return () => {
-    if (cached) return cached;
     const docsDir = resolveDocsDir(docsDirHint);
-    cached = {
+    const existing = dataByDir.get(docsDir);
+    if (existing) return existing;
+    const created: DsfrData = {
       docsDir,
       index: loadIndex(docsDir),
       icons: loadIcons(docsDir),
       colors: loadColors(docsDir),
       cache: new LRUCache<string, string>(50),
     };
-    return cached;
+    dataByDir.set(docsDir, created);
+    return created;
   };
 }
 

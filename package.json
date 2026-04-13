@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "start": "node build/http.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "fetch-docs": "tsx scripts/fetch-docs.ts",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@smithery/cli": "^4.8.0",
+    "@types/express": "^5.0.6",
     "@types/node": "^25.3.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",

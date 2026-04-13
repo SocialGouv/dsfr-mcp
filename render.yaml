@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: dsfr-mcp
+    runtime: node
+    plan: free
+    region: frankfurt
+    branch: main
+    buildCommand: pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
