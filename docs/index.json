@@ -1,0 +1,862 @@
+[
+  {
+    "name": "accordion",
+    "title": "Accordéon",
+    "description": "Masquer ou révéler du contenu textuel",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "alert",
+    "title": "Alerte",
+    "description": "Relayer une information importante",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "badge",
+    "title": "Badge",
+    "description": "Affichage d’un statut informatif",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "base",
+    "title": "Les principes à respecter",
+    "description": "Les règles fondamentales pour créer des interfaces conformes au DSFR.",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "breadcrumb",
+    "title": "Fil d'Ariane",
+    "description": "Se repérer dans l’arborescence avec le fil d’Ariane.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "button",
+    "title": "Bouton",
+    "description": "Déclenchement d’une action dans l’interface",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "callout",
+    "title": "Mise en avant",
+    "description": "Mettre en valeur une information secondaire.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "card",
+    "title": "Carte",
+    "description": "Carte cliquable redirigeant vers une page éditoriale avec aperçu.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "checkbox",
+    "title": "Case à cocher",
+    "description": "Sélection multiple dans une liste",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "color",
+    "title": "Couleurs - Utilisation dans le DSFR",
+    "description": "Principes et tokens de couleurs dans le DSFR",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "combobox",
+    "title": "Liste déroulante riche",
+    "description": "Composant de sélection multiple enrichi avec fonctions de recherche.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "design"
+    ]
+  },
+  {
+    "name": "composition",
+    "title": "Zone d'expression visuelle",
+    "description": "Une section riche et impactante pour mettre en avant un message ou une action.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "design"
+    ]
+  },
+  {
+    "name": "connect",
+    "title": "Bouton FranceConnect",
+    "description": "Authentification avec FranceConnect",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "consent",
+    "title": "Gestionnaire de consentement",
+    "description": "Gérer le consentement des usagers sur les cookies et données personnelles.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "content",
+    "title": "Contenu médias",
+    "description": "Structurer visuellement une page avec des contenus média.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "display",
+    "title": "Paramètres d'affichage",
+    "description": "Choisir le thème clair ou sombre d’un site.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "display",
+    "title": "Classes CSS d’affichage",
+    "description": "Classes CSS pour gérer l’affichage et la visibilité",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "download",
+    "title": "Téléchargement de fichier",
+    "description": "Composant obsolète remplacé par les variations des composants carte, lien et tuile.",
+    "category": "component",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "dropdown",
+    "title": "Menu déroulant",
+    "description": "Afficher des actions contextuelles sans encombrer l’interface",
+    "category": "component",
+    "sections": [
+      "overview",
+      "design"
+    ]
+  },
+  {
+    "name": "elevation",
+    "title": "Système d'ombres et d'élévation",
+    "description": "Présentation des niveaux d’élévation et des ombres dans le DSFR.",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "favicon",
+    "title": "Icône de favori",
+    "description": "Guide d’intégration du favicon dans vos projets.",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "follow",
+    "title": "Lettre d'information et réseaux sociaux",
+    "description": "Inscription à une lettre d’info et accès aux réseaux sociaux.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "footer",
+    "title": "Pied de page",
+    "description": "Informations complémentaires en bas de page",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "form",
+    "title": "Formulaire",
+    "description": "Gestion de l'agencement des éléments de formulaire.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "grid",
+    "title": "Grille et points de rupture",
+    "description": "Structure responsive, points de rupture, alignements et classes CSS du DSFR.",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "header",
+    "title": "En-tête",
+    "description": "Identification du site et accès rapides",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "highlight",
+    "title": "Mise en exergue",
+    "description": "Mettre en évidence une information essentielle.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "icon",
+    "title": "Icône",
+    "description": "Présentation des icônes fonctionnelles et de leur intégration",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "input",
+    "title": "Champ de saisie",
+    "description": "Saisie de données dans une interface.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "link",
+    "title": "Lien",
+    "description": "Navigation secondaire vers d’autres contenus",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "logo",
+    "title": "Bloc marque",
+    "description": "Élément de la charte graphique de l'État français utilisé pour représenter l'identité visuelle de l'État.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "media",
+    "title": "Médias",
+    "description": "Intégration des images et vidéos dans le DSFR.",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "modal",
+    "title": "Modale",
+    "description": "Affichage focalisé d’un contenu secondaire",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "navigation",
+    "title": "Navigation principale",
+    "description": "Orienter l’usager dans les sections du site.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "notice",
+    "title": "Bandeau d'information importante",
+    "description": "Afficher une alerte temporaire prioritaire.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "page",
+    "title": "Pages types",
+    "description": "Gabarits de pages standards pour les sites de l’État",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "page/login",
+    "title": "Page de connexion",
+    "description": "Modèle de page de connexion à un service",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "page/register",
+    "title": "Page de création de compte",
+    "description": "Modèle et règles pour une page de création de compte",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "page/response",
+    "title": "Page d’erreurs",
+    "description": "Modèles standardisés de pages d’erreurs 404, 500 et 503",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pagination",
+    "title": "Pagination",
+    "description": "Navigation entre plusieurs pages d’une liste",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "palette",
+    "title": "Couleurs - Palette",
+    "description": "Palette de couleurs officielle du DSFR",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "password",
+    "title": "Mot de passe",
+    "description": "Saisie ou création de mot de passe, avec affichage masqué et recommandations de sécurité.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "pattern",
+    "title": "Blocs fonctionnels",
+    "description": "Blocs réutilisables pour structurer les données des usagers",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pattern/civility",
+    "title": "Civilité",
+    "description": "Bloc de demande de civilité avec options de personnalisation",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pattern/company",
+    "title": "Société",
+    "description": "Bloc de saisie des données relatives à une société",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pattern/date",
+    "title": "Date unique",
+    "description": "Bloc pour la saisie d'une date unique dans un formulaire",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pattern/email",
+    "title": "Adresse électronique",
+    "description": "Champ de saisie pour adresse électronique",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pattern/forms",
+    "title": "Formulaires",
+    "description": "Règles et modèles pour la création de formulaires",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pattern/name",
+    "title": "Nom et prénom",
+    "description": "Bloc de saisie du nom et des prénoms",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pattern/tel",
+    "title": "Numéro de téléphone",
+    "description": "Champ de saisie de numéro de téléphone avec validation",
+    "category": "layout",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "pictogram",
+    "title": "Pictogramme",
+    "description": "Principes, style, couleurs et intégration des pictogrammes dans le DSFR.",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "quote",
+    "title": "Citation",
+    "description": "Citer un texte dans un contenu éditorial.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "radio",
+    "title": "Bouton radio",
+    "description": "Sélection d’une option unique",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "range",
+    "title": "Curseur",
+    "description": "Sélection d’une valeur sur une échelle",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "search",
+    "title": "Barre de recherche",
+    "description": "Accès rapide à un contenu par mot clé",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "segmented",
+    "title": "Contrôle segmenté",
+    "description": "Sélection de vues avec un contrôle segmenté.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "select",
+    "title": "Liste déroulante",
+    "description": "Sélectionner une option dans une liste.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "share",
+    "title": "Partage",
+    "description": "Partager un contenu via différents canaux",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "sidemenu",
+    "title": "Menu latéral",
+    "description": "Naviguer entre pages liées avec un menu latéral.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "skiplink",
+    "title": "Liens d'évitement",
+    "description": "Accéder rapidement au contenu avec le clavier.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "spacing",
+    "title": "Espacement",
+    "description": "Système d’espacement fondé sur la grille 8 points",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "stepper",
+    "title": "Indicateur d’étapes",
+    "description": "Suivi d’un parcours en plusieurs étapes",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "summary",
+    "title": "Sommaire",
+    "description": "Navigation entre les sections d’une page",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "tab",
+    "title": "Onglet",
+    "description": "Structuration de contenu avec des onglets",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "table",
+    "title": "Tableau",
+    "description": "Présentation du composant Tableau pour organiser et comparer des données.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "tabnav",
+    "title": "Navigation tertiaire",
+    "description": "Composant de navigation de 3e niveau en complément du menu latéral",
+    "category": "component",
+    "sections": [
+      "overview",
+      "design"
+    ]
+  },
+  {
+    "name": "tag",
+    "title": "Tag",
+    "description": "Le tag sert à classer ou filtrer les contenus.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "tile",
+    "title": "Tuile",
+    "description": "Rediriger l’usager vers du contenu via des tuiles.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "toggle",
+    "title": "Interrupteur",
+    "description": "Basculer entre deux états opposés",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "tooltip",
+    "title": "Infobulle",
+    "description": "Afficher une aide contextuelle discrète.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "transcription",
+    "title": "Transcription",
+    "description": "Affichage de texte lié à un contenu média",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "translate",
+    "title": "Sélecteur de langues",
+    "description": "Choisir la langue d’affichage du site.",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "typography",
+    "title": "Typographie",
+    "description": "Typographies officielles et styles de texte du DSFR",
+    "category": "core",
+    "sections": [
+      "overview"
+    ]
+  },
+  {
+    "name": "upload",
+    "title": "Ajout de fichier",
+    "description": "Sélection et envoi de fichiers",
+    "category": "component",
+    "sections": [
+      "overview",
+      "code",
+      "design",
+      "accessibility",
+      "demo"
+    ]
+  },
+  {
+    "name": "user",
+    "title": "En-tête connectée",
+    "description": "Variante de l’En-tête dédiée aux usagers connectés",
+    "category": "component",
+    "sections": [
+      "overview",
+      "design"
+    ]
+  }
+]

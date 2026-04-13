@@ -1,6 +1,6 @@
 node_modules/
 build/
-docs/
 .dsfr-repo/
 .claude/
 .mcp.json
+.smithery/

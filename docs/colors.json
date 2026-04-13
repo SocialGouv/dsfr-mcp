@@ -1,0 +1,887 @@
+{
+  "decisionTokens": [
+    {
+      "token": "$background-alt-grey",
+      "context": "background",
+      "description": "Fond de blocs ou de sections Exemple : pied de page",
+      "light": "$grey-975",
+      "dark": "$grey-75"
+    },
+    {
+      "token": "$background-alt-blue-france",
+      "context": "background",
+      "description": "Fond de bloc de page aux couleurs de l’État Exemple : lettre d’information et réseaux sociaux.",
+      "light": "$blue-france-975",
+      "dark": "$blue-france-75"
+    },
+    {
+      "token": "$background-contrast-grey",
+      "context": "background",
+      "description": "Fond de composant contrastant Exemples : mise en avant, champ de saisie",
+      "light": "$grey-950",
+      "dark": "$grey-100"
+    },
+    {
+      "token": "$background-elevated-grey",
+      "context": "background",
+      "description": "Fond de composant en relief Exemples : en-tête, menu déroulant",
+      "light": "$grey-1000",
+      "dark": "$grey-75"
+    },
+    {
+      "token": "$background-action-high-blue-france",
+      "context": "background",
+      "description": "Fond de composant cliquable important et portant l’identité de l’État Exemple : bouton primaire",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    },
+    {
+      "token": "$background-action-low-blue-france",
+      "context": "background",
+      "description": "Fond de composant cliquable mineur et portant l’identité de l’État Exemple : tag cliquable",
+      "light": "$blue-france-925",
+      "dark": "$blue-france-125"
+    },
+    {
+      "token": "$background-active-blue-france",
+      "context": "background",
+      "description": "Fond de composant actif et portant l’identité de l’État Exemple : pagination",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    },
+    {
+      "token": "$background-open-blue-france",
+      "context": "background",
+      "description": "Fond de composant ouvert et portant l’identité de l’État Exemple : élément de navigation",
+      "light": "$blue-france-925",
+      "dark": "$blue-france-125"
+    },
+    {
+      "token": "$background-disabled-grey",
+      "context": "background",
+      "description": "Fond de composant désactivé Exemples : boutons, tag",
+      "light": "$grey-925",
+      "dark": "$grey-125"
+    },
+    {
+      "token": "$background-flat-error",
+      "context": "background",
+      "description": "Fond de composant en état d’erreur Exemple : alerte",
+      "light": "$error-425",
+      "dark": "$error-625"
+    },
+    {
+      "token": "$background-flat-warning",
+      "context": "background",
+      "description": "Fond de composant en état d’avertissement Exemple : alerte",
+      "light": "$warning-425",
+      "dark": "$warning-625"
+    },
+    {
+      "token": "$background-flat-success",
+      "context": "background",
+      "description": "Fond de composant en état de succès Exemple : alerte",
+      "light": "$success-425",
+      "dark": "$success-625"
+    },
+    {
+      "token": "$background-flat-info",
+      "context": "background",
+      "description": "Fond de composant en état d’information Exemple : alerte",
+      "light": "$info-425",
+      "dark": "$info-625"
+    },
+    {
+      "token": "$background-default-grey",
+      "context": "background",
+      "description": "Fonds de page et de composant par défaut Exemples : pied de page, modale, onglet",
+      "light": "$grey-1000",
+      "dark": "$grey-50"
+    },
+    {
+      "token": "$text-title-grey",
+      "context": "text",
+      "description": "Titre ou élément équivalent Exemples : titres éditoriaux, titre de tableau",
+      "light": "$grey-50",
+      "dark": "$grey-1000"
+    },
+    {
+      "token": "$text-title-blue-france",
+      "context": "text",
+      "description": "Titre portant l’identité de l’État",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    },
+    {
+      "token": "$text-default-grey",
+      "context": "text",
+      "description": "Corps de texte",
+      "light": "$grey-200",
+      "dark": "$grey-850"
+    },
+    {
+      "token": "$text-mention-grey",
+      "context": "text",
+      "description": "Texte de mentions ou de détail",
+      "light": "$grey-425",
+      "dark": "$grey-625"
+    },
+    {
+      "token": "$text-label-grey",
+      "context": "text",
+      "description": "Texte de libelléExemple : éléments de formulaire",
+      "light": "$grey-50",
+      "dark": "$grey-1000"
+    },
+    {
+      "token": "$text-action-high-blue-france",
+      "context": "text",
+      "description": "Texte cliquable important et portant l’identité de l’État Exemple : bouton secondaire",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    },
+    {
+      "token": "$text-action-high-grey",
+      "context": "text",
+      "description": "Texte cliquable importantExemple : accordéon, élément de navigation",
+      "light": "$grey-50",
+      "dark": "$grey-1000"
+    },
+    {
+      "token": "$text-inverted-grey",
+      "context": "text",
+      "description": "Texte ou icône contrastant en nuances de gris Exemple : alerte",
+      "light": "$grey-1000",
+      "dark": "$grey-50"
+    },
+    {
+      "token": "$text-inverted-blue-france",
+      "context": "text",
+      "description": "Texte ou icône contrastant portant l’identité de l’État Exemples : bouton primaire, pagination, tag",
+      "light": "$blue-france-975",
+      "dark": "$blue-france-113"
+    },
+    {
+      "token": "$text-active-blue-france",
+      "context": "text",
+      "description": "Texte actif portant l’identité de l’État Exemples : élément de navigation, interrupteur",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    },
+    {
+      "token": "$text-active-grey",
+      "context": "text",
+      "description": "Texte actif neutre Exemple : fil d’Ariane",
+      "light": "$grey-50",
+      "dark": "$grey-1000"
+    },
+    {
+      "token": "$text-disabled-grey",
+      "context": "text",
+      "description": "Texte désactivé",
+      "light": "$grey-625",
+      "dark": "$grey-425"
+    },
+    {
+      "token": "$text-default-error",
+      "context": "text",
+      "description": "Texte ou icône en état d’erreur Exemples : champ de saisie, élément de formulaire",
+      "light": "$error-425",
+      "dark": "$error-625"
+    },
+    {
+      "token": "$text-default-success",
+      "context": "text",
+      "description": "Texte ou icône en état de succès Exemples : champ de saisie, élément de formulaire",
+      "light": "$success-425",
+      "dark": "$success-625"
+    },
+    {
+      "token": "$artwork-major-blue-france",
+      "context": "artwork",
+      "description": "Couleur dominante d’illustration (60%) Exemple : illustration des options de paramètres d’affichage",
+      "light": "$blue-france-sun-113",
+      "dark": "$blue-france-625"
+    },
+    {
+      "token": "$artwork-minor-blue-france",
+      "context": "artwork",
+      "description": "Icône portant l’identité de l’État ou couleur mineure d’illustration (30%) Exemple : citation",
+      "light": "$blue-france-main-525",
+      "dark": "$blue-france-main-525"
+    }
+  ],
+  "families": [
+    {
+      "name": "blue-france",
+      "category": "primaire",
+      "correspondences": {
+        "strong": {
+          "light": "$blue-france-sun-113",
+          "dark": "$blue-france-625"
+        },
+        "softest": {
+          "light": "$blue-france-850",
+          "dark": "$blue-france-200"
+        },
+        "light": {
+          "light": "$blue-france-925",
+          "dark": "$blue-france-125"
+        },
+        "lighter": {
+          "light": "$blue-france-950",
+          "dark": "$blue-france-100"
+        },
+        "lightest": {
+          "light": "$blue-france-975",
+          "dark": "$blue-france-75"
+        },
+        "main": {
+          "light": "$blue-france-main-525",
+          "dark": "$blue-france-main-525"
+        },
+        "inverted": {
+          "light": "$blue-france-975",
+          "dark": "$blue-france-113"
+        }
+      }
+    },
+    {
+      "name": "red-marianne",
+      "category": "neutre",
+      "correspondences": {
+        "strong": {
+          "light": "$red-marianne-425",
+          "dark": "$red-marianne-625"
+        },
+        "softest": {
+          "light": "$red-marianne-850",
+          "dark": "$red-marianne-200"
+        },
+        "light": {
+          "light": "$red-marianne-925",
+          "dark": "$red-marianne-125"
+        },
+        "lighter": {
+          "light": "$red-marianne-950",
+          "dark": "$red-marianne-100"
+        },
+        "lightest": {
+          "light": "$red-marianne-975",
+          "dark": "$red-marianne-75"
+        },
+        "main": {
+          "light": "$red-marianne-main-472",
+          "dark": "$red-marianne-main-472"
+        },
+        "inverted": {
+          "light": "$blue-france-975",
+          "dark": "$blue-france-113"
+        }
+      }
+    },
+    {
+      "name": "grey",
+      "category": "systeme",
+      "correspondences": {
+        "absolute-black": {
+          "light": "$grey-0",
+          "dark": "$grey-1000"
+        },
+        "black": {
+          "light": "$grey-50",
+          "dark": "$grey-1000"
+        },
+        "darkest": {
+          "light": "$grey-75",
+          "dark": "$grey-975"
+        },
+        "darker": {
+          "light": "$grey-100",
+          "dark": "$grey-950"
+        },
+        "dark": {
+          "light": "$grey-125",
+          "dark": "$grey-925"
+        },
+        "strongest": {
+          "light": "$grey-200",
+          "dark": "$grey-850"
+        },
+        "strong": {
+          "light": "$grey-425",
+          "dark": "$grey-625"
+        },
+        "soft": {
+          "light": "$grey-625",
+          "dark": "$grey-425"
+        },
+        "softest": {
+          "light": "$grey-850",
+          "dark": "$grey-200"
+        },
+        "light": {
+          "light": "$grey-925",
+          "dark": "$grey-125"
+        },
+        "lighter": {
+          "light": "$grey-950",
+          "dark": "$grey-100"
+        },
+        "lightest": {
+          "light": "$grey-975",
+          "dark": "$grey-75"
+        },
+        "white": {
+          "light": "$grey-1000",
+          "dark": "$grey-50"
+        },
+        "border": {
+          "light": "$grey-900",
+          "dark": "$grey-175"
+        },
+        "raised": {
+          "light": "$grey-1000",
+          "dark": "$grey-75"
+        },
+        "overlap": {
+          "light": "$grey-1000",
+          "dark": "$grey-100"
+        },
+        "lifted": {
+          "light": "$grey-1000",
+          "dark": "$grey-75"
+        },
+        "alt-raised": {
+          "light": "$grey-975",
+          "dark": "$grey-100"
+        },
+        "alt-overlap": {
+          "light": "$grey-975",
+          "dark": "$grey-125"
+        },
+        "contrast-raised": {
+          "light": "$grey-950",
+          "dark": "$grey-125"
+        },
+        "contrast-overlap": {
+          "light": "$grey-950",
+          "dark": "$grey-150"
+        }
+      }
+    },
+    {
+      "name": "info",
+      "category": "illustrative",
+      "correspondences": {
+        "strong": {
+          "light": "$info-425",
+          "dark": "$info-625"
+        },
+        "softest": {
+          "light": "$info-850",
+          "dark": "$info-200"
+        },
+        "light": {
+          "light": "$info-925",
+          "dark": "$info-125"
+        },
+        "lighter": {
+          "light": "$info-950",
+          "dark": "$info-100"
+        },
+        "lightest": {
+          "light": "$info-975",
+          "dark": "$info-75"
+        },
+        "main": {
+          "light": "$info-main-525",
+          "dark": "$info-main-525"
+        }
+      }
+    },
+    {
+      "name": "warning",
+      "category": "systeme",
+      "correspondences": {
+        "strong": {
+          "light": "$warning-425",
+          "dark": "$warning-625"
+        },
+        "softest": {
+          "light": "$warning-850",
+          "dark": "$warning-200"
+        },
+        "light": {
+          "light": "$warning-925",
+          "dark": "$warning-125"
+        },
+        "lighter": {
+          "light": "$warning-950",
+          "dark": "$warning-100"
+        },
+        "lightest": {
+          "light": "$warning-975",
+          "dark": "$warning-75"
+        },
+        "main": {
+          "light": "$warning-main-525",
+          "dark": "$warning-main-525"
+        }
+      }
+    },
+    {
+      "name": "error",
+      "category": "systeme",
+      "correspondences": {
+        "strong": {
+          "light": "$error-425",
+          "dark": "$error-625"
+        },
+        "softest": {
+          "light": "$error-850",
+          "dark": "$error-200"
+        },
+        "light": {
+          "light": "$error-925",
+          "dark": "$error-125"
+        },
+        "lighter": {
+          "light": "$error-950",
+          "dark": "$error-100"
+        },
+        "lightest": {
+          "light": "$error-975",
+          "dark": "$error-75"
+        },
+        "main": {
+          "light": "$error-main-525",
+          "dark": "$error-main-525"
+        }
+      }
+    },
+    {
+      "name": "success",
+      "category": "systeme",
+      "correspondences": {
+        "strong": {
+          "light": "$success-425",
+          "dark": "$success-625"
+        },
+        "softest": {
+          "light": "$success-850",
+          "dark": "$success-200"
+        },
+        "light": {
+          "light": "$success-925",
+          "dark": "$success-125"
+        },
+        "lighter": {
+          "light": "$success-950",
+          "dark": "$success-100"
+        },
+        "lightest": {
+          "light": "$success-975",
+          "dark": "$success-75"
+        },
+        "main": {
+          "light": "$success-main-525",
+          "dark": "$success-main-525"
+        }
+      }
+    },
+    {
+      "name": "green-tilleul-verveine",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$green-tilleul-verveine-850",
+          "dark": "$green-tilleul-verveine-200"
+        },
+        "light": {
+          "light": "$green-tilleul-verveine-925",
+          "dark": "$green-tilleul-verveine-125"
+        },
+        "lighter": {
+          "light": "$green-tilleul-verveine-950",
+          "dark": "$green-tilleul-verveine-100"
+        },
+        "lightest": {
+          "light": "$green-tilleul-verveine-975",
+          "dark": "$green-tilleul-verveine-75"
+        }
+      }
+    },
+    {
+      "name": "green-bourgeon",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$green-bourgeon-850",
+          "dark": "$green-bourgeon-200"
+        },
+        "light": {
+          "light": "$green-bourgeon-925",
+          "dark": "$green-bourgeon-125"
+        },
+        "lighter": {
+          "light": "$green-bourgeon-950",
+          "dark": "$green-bourgeon-100"
+        },
+        "lightest": {
+          "light": "$green-bourgeon-975",
+          "dark": "$green-bourgeon-75"
+        }
+      }
+    },
+    {
+      "name": "green-emeraude",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$green-emeraude-850",
+          "dark": "$green-emeraude-200"
+        },
+        "light": {
+          "light": "$green-emeraude-925",
+          "dark": "$green-emeraude-125"
+        },
+        "lighter": {
+          "light": "$green-emeraude-950",
+          "dark": "$green-emeraude-100"
+        },
+        "lightest": {
+          "light": "$green-emeraude-975",
+          "dark": "$green-emeraude-75"
+        }
+      }
+    },
+    {
+      "name": "green-menthe",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$green-menthe-850",
+          "dark": "$green-menthe-200"
+        },
+        "light": {
+          "light": "$green-menthe-925",
+          "dark": "$green-menthe-125"
+        },
+        "lighter": {
+          "light": "$green-menthe-950",
+          "dark": "$green-menthe-100"
+        },
+        "lightest": {
+          "light": "$green-menthe-975",
+          "dark": "$green-menthe-75"
+        }
+      }
+    },
+    {
+      "name": "green-archipel",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$green-archipel-850",
+          "dark": "$green-archipel-200"
+        },
+        "light": {
+          "light": "$green-archipel-925",
+          "dark": "$green-archipel-125"
+        },
+        "lighter": {
+          "light": "$green-archipel-950",
+          "dark": "$green-archipel-100"
+        },
+        "lightest": {
+          "light": "$green-archipel-975",
+          "dark": "$green-archipel-75"
+        }
+      }
+    },
+    {
+      "name": "blue-ecume",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$blue-ecume-850",
+          "dark": "$blue-ecume-200"
+        },
+        "light": {
+          "light": "$blue-ecume-925",
+          "dark": "$blue-ecume-125"
+        },
+        "lighter": {
+          "light": "$blue-ecume-950",
+          "dark": "$blue-ecume-100"
+        },
+        "lightest": {
+          "light": "$blue-ecume-975",
+          "dark": "$blue-ecume-75"
+        }
+      }
+    },
+    {
+      "name": "blue-cumulus",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$blue-cumulus-850",
+          "dark": "$blue-cumulus-200"
+        },
+        "light": {
+          "light": "$blue-cumulus-925",
+          "dark": "$blue-cumulus-125"
+        },
+        "lighter": {
+          "light": "$blue-cumulus-950",
+          "dark": "$blue-cumulus-100"
+        },
+        "lightest": {
+          "light": "$blue-cumulus-975",
+          "dark": "$blue-cumulus-75"
+        }
+      }
+    },
+    {
+      "name": "purple-glycine",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$purple-glycine-850",
+          "dark": "$purple-glycine-200"
+        },
+        "light": {
+          "light": "$purple-glycine-925",
+          "dark": "$purple-glycine-125"
+        },
+        "lighter": {
+          "light": "$purple-glycine-950",
+          "dark": "$purple-glycine-100"
+        },
+        "lightest": {
+          "light": "$purple-glycine-975",
+          "dark": "$purple-glycine-75"
+        }
+      }
+    },
+    {
+      "name": "pink-macaron",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$pink-macaron-850",
+          "dark": "$pink-macaron-200"
+        },
+        "light": {
+          "light": "$pink-macaron-925",
+          "dark": "$pink-macaron-125"
+        },
+        "lighter": {
+          "light": "$pink-macaron-950",
+          "dark": "$pink-macaron-100"
+        },
+        "lightest": {
+          "light": "$pink-macaron-975",
+          "dark": "$pink-macaron-75"
+        }
+      }
+    },
+    {
+      "name": "pink-tuile",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$pink-tuile-850",
+          "dark": "$pink-tuile-200"
+        },
+        "light": {
+          "light": "$pink-tuile-925",
+          "dark": "$pink-tuile-125"
+        },
+        "lighter": {
+          "light": "$pink-tuile-950",
+          "dark": "$pink-tuile-100"
+        },
+        "lightest": {
+          "light": "$pink-tuile-975",
+          "dark": "$pink-tuile-75"
+        }
+      }
+    },
+    {
+      "name": "yellow-tournesol",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$yellow-tournesol-850",
+          "dark": "$yellow-tournesol-200"
+        },
+        "light": {
+          "light": "$yellow-tournesol-925",
+          "dark": "$yellow-tournesol-125"
+        },
+        "lighter": {
+          "light": "$yellow-tournesol-950",
+          "dark": "$yellow-tournesol-100"
+        },
+        "lightest": {
+          "light": "$yellow-tournesol-975",
+          "dark": "$yellow-tournesol-75"
+        }
+      }
+    },
+    {
+      "name": "yellow-moutarde",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$yellow-moutarde-850",
+          "dark": "$yellow-moutarde-200"
+        },
+        "light": {
+          "light": "$yellow-moutarde-925",
+          "dark": "$yellow-moutarde-125"
+        },
+        "lighter": {
+          "light": "$yellow-moutarde-950",
+          "dark": "$yellow-moutarde-100"
+        },
+        "lightest": {
+          "light": "$yellow-moutarde-975",
+          "dark": "$yellow-moutarde-75"
+        }
+      }
+    },
+    {
+      "name": "orange-terre-battue",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$orange-terre-battue-850",
+          "dark": "$orange-terre-battue-200"
+        },
+        "light": {
+          "light": "$orange-terre-battue-925",
+          "dark": "$orange-terre-battue-125"
+        },
+        "lighter": {
+          "light": "$orange-terre-battue-950",
+          "dark": "$orange-terre-battue-100"
+        },
+        "lightest": {
+          "light": "$orange-terre-battue-975",
+          "dark": "$orange-terre-battue-75"
+        }
+      }
+    },
+    {
+      "name": "brown-cafe-creme",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$brown-cafe-creme-850",
+          "dark": "$brown-cafe-creme-200"
+        },
+        "light": {
+          "light": "$brown-cafe-creme-925",
+          "dark": "$brown-cafe-creme-125"
+        },
+        "lighter": {
+          "light": "$brown-cafe-creme-950",
+          "dark": "$brown-cafe-creme-100"
+        },
+        "lightest": {
+          "light": "$brown-cafe-creme-975",
+          "dark": "$brown-cafe-creme-75"
+        }
+      }
+    },
+    {
+      "name": "brown-caramel",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$brown-caramel-850",
+          "dark": "$brown-caramel-200"
+        },
+        "light": {
+          "light": "$brown-caramel-925",
+          "dark": "$brown-caramel-125"
+        },
+        "lighter": {
+          "light": "$brown-caramel-950",
+          "dark": "$brown-caramel-100"
+        },
+        "lightest": {
+          "light": "$brown-caramel-975",
+          "dark": "$brown-caramel-75"
+        }
+      }
+    },
+    {
+      "name": "brown-opera",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$brown-opera-850",
+          "dark": "$brown-opera-200"
+        },
+        "light": {
+          "light": "$brown-opera-925",
+          "dark": "$brown-opera-125"
+        },
+        "lighter": {
+          "light": "$brown-opera-950",
+          "dark": "$brown-opera-100"
+        },
+        "lightest": {
+          "light": "$brown-opera-975",
+          "dark": "$brown-opera-75"
+        }
+      }
+    },
+    {
+      "name": "beige-gris-galet",
+      "category": "illustrative",
+      "correspondences": {
+        "softest": {
+          "light": "$beige-gris-galet-850",
+          "dark": "$beige-gris-galet-200"
+        },
+        "light": {
+          "light": "$beige-gris-galet-925",
+          "dark": "$beige-gris-galet-125"
+        },
+        "lighter": {
+          "light": "$beige-gris-galet-950",
+          "dark": "$beige-gris-galet-100"
+        },
+        "lightest": {
+          "light": "$beige-gris-galet-975",
+          "dark": "$beige-gris-galet-75"
+        }
+      }
+    }
+  ],
+  "illustrativeNames": [
+    "green-tilleul-verveine",
+    "green-bourgeon",
+    "green-emeraude",
+    "green-menthe",
+    "green-archipel",
+    "blue-ecume",
+    "blue-cumulus",
+    "purple-glycine",
+    "pink-macaron",
+    "pink-tuile",
+    "yellow-tournesol",
+    "yellow-moutarde",
+    "orange-terre-battue",
+    "brown-cafe-creme",
+    "brown-caramel",
+    "brown-opera",
+    "beige-gris-galet"
+  ]
+}

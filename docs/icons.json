@@ -1,0 +1,6366 @@
+[
+  {
+    "name": "arrow-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-down-fill",
+      "fr-icon-arrow-down-line"
+    ]
+  },
+  {
+    "name": "arrow-down-circle",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-down-circle-fill",
+      "fr-icon-arrow-down-circle-line"
+    ]
+  },
+  {
+    "name": "arrow-down-s",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-down-s-fill",
+      "fr-icon-arrow-down-s-line"
+    ]
+  },
+  {
+    "name": "arrow-go-back",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-go-back-fill",
+      "fr-icon-arrow-go-back-line"
+    ]
+  },
+  {
+    "name": "arrow-go-forward",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-go-forward-fill",
+      "fr-icon-arrow-go-forward-line"
+    ]
+  },
+  {
+    "name": "arrow-left",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-left-fill",
+      "fr-icon-arrow-left-line"
+    ]
+  },
+  {
+    "name": "arrow-left-circle",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-left-circle-fill",
+      "fr-icon-arrow-left-circle-line"
+    ]
+  },
+  {
+    "name": "arrow-left-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-left-down-fill",
+      "fr-icon-arrow-left-down-line"
+    ]
+  },
+  {
+    "name": "arrow-left-right",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-left-right-fill",
+      "fr-icon-arrow-left-right-line"
+    ]
+  },
+  {
+    "name": "arrow-left-s",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-left-s-fill",
+      "fr-icon-arrow-left-s-line"
+    ]
+  },
+  {
+    "name": "arrow-left-up",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-left-up-fill",
+      "fr-icon-arrow-left-up-line"
+    ]
+  },
+  {
+    "name": "arrow-right",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-right-fill",
+      "fr-icon-arrow-right-line"
+    ]
+  },
+  {
+    "name": "arrow-right-circle",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-right-circle-fill",
+      "fr-icon-arrow-right-circle-line"
+    ]
+  },
+  {
+    "name": "arrow-right-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-right-down-fill",
+      "fr-icon-arrow-right-down-line"
+    ]
+  },
+  {
+    "name": "arrow-right-s",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-right-s-fill",
+      "fr-icon-arrow-right-s-line"
+    ]
+  },
+  {
+    "name": "arrow-right-up",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-right-up-fill",
+      "fr-icon-arrow-right-up-line"
+    ]
+  },
+  {
+    "name": "arrow-turn-back",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-turn-back-fill",
+      "fr-icon-arrow-turn-back-line"
+    ]
+  },
+  {
+    "name": "arrow-turn-forward",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-turn-forward-fill",
+      "fr-icon-arrow-turn-forward-line"
+    ]
+  },
+  {
+    "name": "arrow-up",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-up-fill",
+      "fr-icon-arrow-up-line"
+    ]
+  },
+  {
+    "name": "arrow-up-circle",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-up-circle-fill",
+      "fr-icon-arrow-up-circle-line"
+    ]
+  },
+  {
+    "name": "arrow-up-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-up-down-fill",
+      "fr-icon-arrow-up-down-line"
+    ]
+  },
+  {
+    "name": "arrow-up-s",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-up-s-fill",
+      "fr-icon-arrow-up-s-line"
+    ]
+  },
+  {
+    "name": "contract-left",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-contract-left-fill",
+      "fr-icon-contract-left-line"
+    ]
+  },
+  {
+    "name": "contract-left-right",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-contract-left-right-fill",
+      "fr-icon-contract-left-right-line"
+    ]
+  },
+  {
+    "name": "contract-right",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-contract-right-fill",
+      "fr-icon-contract-right-line"
+    ]
+  },
+  {
+    "name": "contract-up-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-contract-up-down-fill",
+      "fr-icon-contract-up-down-line"
+    ]
+  },
+  {
+    "name": "corner-down-left",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-corner-down-left-fill",
+      "fr-icon-corner-down-left-line"
+    ]
+  },
+  {
+    "name": "corner-down-right",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-corner-down-right-fill",
+      "fr-icon-corner-down-right-line"
+    ]
+  },
+  {
+    "name": "corner-left-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-corner-left-down-fill",
+      "fr-icon-corner-left-down-line"
+    ]
+  },
+  {
+    "name": "corner-left-up",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-corner-left-up-fill",
+      "fr-icon-corner-left-up-line"
+    ]
+  },
+  {
+    "name": "corner-right-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-corner-right-down-fill",
+      "fr-icon-corner-right-down-line"
+    ]
+  },
+  {
+    "name": "corner-right-up",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-corner-right-up-fill",
+      "fr-icon-corner-right-up-line"
+    ]
+  },
+  {
+    "name": "corner-up-left",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-corner-up-left-fill",
+      "fr-icon-corner-up-left-line"
+    ]
+  },
+  {
+    "name": "corner-up-right",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-corner-up-right-fill",
+      "fr-icon-corner-up-right-line"
+    ]
+  },
+  {
+    "name": "expand-left",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-expand-left-fill",
+      "fr-icon-expand-left-line"
+    ]
+  },
+  {
+    "name": "expand-left-right",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-expand-left-right-fill",
+      "fr-icon-expand-left-right-line"
+    ]
+  },
+  {
+    "name": "expand-right",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-expand-right-fill",
+      "fr-icon-expand-right-line"
+    ]
+  },
+  {
+    "name": "expand-up-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-expand-up-down-fill",
+      "fr-icon-expand-up-down-line"
+    ]
+  },
+  {
+    "name": "fr--arrow-left-s-first",
+    "category": "arrows",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--arrow-left-s-first-line"
+    ]
+  },
+  {
+    "name": "fr--arrow-left-s-line-double",
+    "category": "arrows",
+    "variants": [],
+    "classes": [
+      "fr-icon-fr--arrow-left-s-line-double"
+    ]
+  },
+  {
+    "name": "fr--arrow-right-s-last",
+    "category": "arrows",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--arrow-right-s-last-line"
+    ]
+  },
+  {
+    "name": "fr--arrow-right-s-line-double",
+    "category": "arrows",
+    "variants": [],
+    "classes": [
+      "fr-icon-fr--arrow-right-s-line-double"
+    ]
+  },
+  {
+    "name": "skip-down",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-skip-down-fill",
+      "fr-icon-skip-down-line"
+    ]
+  },
+  {
+    "name": "skip-up",
+    "category": "arrows",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-skip-up-fill",
+      "fr-icon-skip-up-line"
+    ]
+  },
+  {
+    "name": "ancient-gate",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-ancient-gate-fill",
+      "fr-icon-ancient-gate-line"
+    ]
+  },
+  {
+    "name": "ancient-pavilion",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-ancient-pavilion-fill",
+      "fr-icon-ancient-pavilion-line"
+    ]
+  },
+  {
+    "name": "bank",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bank-fill",
+      "fr-icon-bank-line"
+    ]
+  },
+  {
+    "name": "building",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-building-fill",
+      "fr-icon-building-line"
+    ]
+  },
+  {
+    "name": "building-4",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-building-4-fill",
+      "fr-icon-building-4-line"
+    ]
+  },
+  {
+    "name": "community",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-community-fill",
+      "fr-icon-community-line"
+    ]
+  },
+  {
+    "name": "government",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-government-fill",
+      "fr-icon-government-line"
+    ]
+  },
+  {
+    "name": "home-4",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-home-4-fill",
+      "fr-icon-home-4-line"
+    ]
+  },
+  {
+    "name": "home-office",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-home-office-fill",
+      "fr-icon-home-office-line"
+    ]
+  },
+  {
+    "name": "hospital",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-hospital-fill",
+      "fr-icon-hospital-line"
+    ]
+  },
+  {
+    "name": "hotel",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-hotel-fill",
+      "fr-icon-hotel-line"
+    ]
+  },
+  {
+    "name": "school",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-school-fill",
+      "fr-icon-school-line"
+    ]
+  },
+  {
+    "name": "store",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-store-fill",
+      "fr-icon-store-line"
+    ]
+  },
+  {
+    "name": "tent",
+    "category": "buildings",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-tent-fill",
+      "fr-icon-tent-line"
+    ]
+  },
+  {
+    "name": "archive",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-archive-fill",
+      "fr-icon-archive-line"
+    ]
+  },
+  {
+    "name": "archive-drawer",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-archive-drawer-fill",
+      "fr-icon-archive-drawer-line"
+    ]
+  },
+  {
+    "name": "at",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-at-fill",
+      "fr-icon-at-line"
+    ]
+  },
+  {
+    "name": "attachment",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-attachment-fill",
+      "fr-icon-attachment-line"
+    ]
+  },
+  {
+    "name": "award",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-award-fill",
+      "fr-icon-award-line"
+    ]
+  },
+  {
+    "name": "bar-chart",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bar-chart-fill",
+      "fr-icon-bar-chart-line"
+    ]
+  },
+  {
+    "name": "bar-chart-2",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bar-chart-2-fill",
+      "fr-icon-bar-chart-2-line"
+    ]
+  },
+  {
+    "name": "bar-chart-box",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bar-chart-box-fill",
+      "fr-icon-bar-chart-box-line"
+    ]
+  },
+  {
+    "name": "bar-chart-horizontal",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bar-chart-horizontal-fill",
+      "fr-icon-bar-chart-horizontal-line"
+    ]
+  },
+  {
+    "name": "bookmark",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bookmark-fill",
+      "fr-icon-bookmark-line"
+    ]
+  },
+  {
+    "name": "briefcase",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-briefcase-fill",
+      "fr-icon-briefcase-line"
+    ]
+  },
+  {
+    "name": "bubble-chart",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bubble-chart-fill",
+      "fr-icon-bubble-chart-line"
+    ]
+  },
+  {
+    "name": "calculator",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-calculator-fill",
+      "fr-icon-calculator-line"
+    ]
+  },
+  {
+    "name": "calendar",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-calendar-fill",
+      "fr-icon-calendar-line"
+    ]
+  },
+  {
+    "name": "calendar-2",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-calendar-2-fill",
+      "fr-icon-calendar-2-line"
+    ]
+  },
+  {
+    "name": "calendar-check",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-calendar-check-fill",
+      "fr-icon-calendar-check-line"
+    ]
+  },
+  {
+    "name": "calendar-close",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-calendar-close-fill",
+      "fr-icon-calendar-close-line"
+    ]
+  },
+  {
+    "name": "calendar-event",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-calendar-event-fill",
+      "fr-icon-calendar-event-line"
+    ]
+  },
+  {
+    "name": "calendar-todo",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-calendar-todo-fill",
+      "fr-icon-calendar-todo-line"
+    ]
+  },
+  {
+    "name": "cloud",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-cloud-fill",
+      "fr-icon-cloud-line"
+    ]
+  },
+  {
+    "name": "cloud-off",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-cloud-off-fill",
+      "fr-icon-cloud-off-line"
+    ]
+  },
+  {
+    "name": "copyright",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-copyright-fill",
+      "fr-icon-copyright-line"
+    ]
+  },
+  {
+    "name": "customer-service",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-customer-service-fill",
+      "fr-icon-customer-service-line"
+    ]
+  },
+  {
+    "name": "donut-chart",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-donut-chart-fill",
+      "fr-icon-donut-chart-line"
+    ]
+  },
+  {
+    "name": "flag",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-flag-fill",
+      "fr-icon-flag-line"
+    ]
+  },
+  {
+    "name": "global",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-global-fill",
+      "fr-icon-global-line"
+    ]
+  },
+  {
+    "name": "honour",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-honour-fill",
+      "fr-icon-honour-line"
+    ]
+  },
+  {
+    "name": "inbox",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-inbox-fill",
+      "fr-icon-inbox-line"
+    ]
+  },
+  {
+    "name": "inbox-2",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-inbox-2-fill",
+      "fr-icon-inbox-2-line"
+    ]
+  },
+  {
+    "name": "inbox-archive",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-inbox-archive-fill",
+      "fr-icon-inbox-archive-line"
+    ]
+  },
+  {
+    "name": "inbox-unarchive",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-inbox-unarchive-fill",
+      "fr-icon-inbox-unarchive-line"
+    ]
+  },
+  {
+    "name": "line-chart",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-line-chart-fill",
+      "fr-icon-line-chart-line"
+    ]
+  },
+  {
+    "name": "links",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-links-fill",
+      "fr-icon-links-line"
+    ]
+  },
+  {
+    "name": "mail",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-fill",
+      "fr-icon-mail-line"
+    ]
+  },
+  {
+    "name": "mail-add",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-add-fill",
+      "fr-icon-mail-add-line"
+    ]
+  },
+  {
+    "name": "mail-check",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-check-fill",
+      "fr-icon-mail-check-line"
+    ]
+  },
+  {
+    "name": "mail-close",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-close-fill",
+      "fr-icon-mail-close-line"
+    ]
+  },
+  {
+    "name": "mail-download",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-download-fill",
+      "fr-icon-mail-download-line"
+    ]
+  },
+  {
+    "name": "mail-forbid",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-forbid-fill",
+      "fr-icon-mail-forbid-line"
+    ]
+  },
+  {
+    "name": "mail-lock",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-lock-fill",
+      "fr-icon-mail-lock-line"
+    ]
+  },
+  {
+    "name": "mail-open",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-open-fill",
+      "fr-icon-mail-open-line"
+    ]
+  },
+  {
+    "name": "mail-send",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-send-fill",
+      "fr-icon-mail-send-line"
+    ]
+  },
+  {
+    "name": "mail-settings",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-settings-fill",
+      "fr-icon-mail-settings-line"
+    ]
+  },
+  {
+    "name": "mail-star",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-star-fill",
+      "fr-icon-mail-star-line"
+    ]
+  },
+  {
+    "name": "mail-unread",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-unread-fill",
+      "fr-icon-mail-unread-line"
+    ]
+  },
+  {
+    "name": "mail-volume",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mail-volume-fill",
+      "fr-icon-mail-volume-line"
+    ]
+  },
+  {
+    "name": "medal",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-medal-fill",
+      "fr-icon-medal-line"
+    ]
+  },
+  {
+    "name": "megaphone",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-megaphone-fill",
+      "fr-icon-megaphone-line"
+    ]
+  },
+  {
+    "name": "pass-expired",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pass-expired-fill",
+      "fr-icon-pass-expired-line"
+    ]
+  },
+  {
+    "name": "pass-pending",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pass-pending-fill",
+      "fr-icon-pass-pending-line"
+    ]
+  },
+  {
+    "name": "pass-valid",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pass-valid-fill",
+      "fr-icon-pass-valid-line"
+    ]
+  },
+  {
+    "name": "pie-chart",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pie-chart-fill",
+      "fr-icon-pie-chart-line"
+    ]
+  },
+  {
+    "name": "pie-chart-2",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pie-chart-2-fill",
+      "fr-icon-pie-chart-2-line"
+    ]
+  },
+  {
+    "name": "pie-chart-box",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pie-chart-box-fill",
+      "fr-icon-pie-chart-box-line"
+    ]
+  },
+  {
+    "name": "presentation",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-presentation-fill",
+      "fr-icon-presentation-line"
+    ]
+  },
+  {
+    "name": "printer",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-printer-fill",
+      "fr-icon-printer-line"
+    ]
+  },
+  {
+    "name": "printer-cloud",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-printer-cloud-fill",
+      "fr-icon-printer-cloud-line"
+    ]
+  },
+  {
+    "name": "profil",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-profil-fill",
+      "fr-icon-profil-line"
+    ]
+  },
+  {
+    "name": "projector-2",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-projector-2-fill",
+      "fr-icon-projector-2-line"
+    ]
+  },
+  {
+    "name": "record-mail",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-record-mail-fill",
+      "fr-icon-record-mail-line"
+    ]
+  },
+  {
+    "name": "reply",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-reply-fill",
+      "fr-icon-reply-line"
+    ]
+  },
+  {
+    "name": "reply-all",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-reply-all-fill",
+      "fr-icon-reply-all-line"
+    ]
+  },
+  {
+    "name": "send-plane",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-send-plane-fill",
+      "fr-icon-send-plane-line"
+    ]
+  },
+  {
+    "name": "seo",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-seo-fill",
+      "fr-icon-seo-line"
+    ]
+  },
+  {
+    "name": "service",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-service-fill",
+      "fr-icon-service-line"
+    ]
+  },
+  {
+    "name": "shake-hands",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-shake-hands-fill",
+      "fr-icon-shake-hands-line"
+    ]
+  },
+  {
+    "name": "slideshow",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-slideshow-fill",
+      "fr-icon-slideshow-line"
+    ]
+  },
+  {
+    "name": "stack",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-stack-fill",
+      "fr-icon-stack-line"
+    ]
+  },
+  {
+    "name": "window",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-window-fill",
+      "fr-icon-window-line"
+    ]
+  },
+  {
+    "name": "window-2",
+    "category": "business",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-window-2-fill",
+      "fr-icon-window-2-line"
+    ]
+  },
+  {
+    "name": "chat-2",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-2-fill",
+      "fr-icon-chat-2-line"
+    ]
+  },
+  {
+    "name": "chat-3",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-3-fill",
+      "fr-icon-chat-3-line"
+    ]
+  },
+  {
+    "name": "chat-check",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-check-fill",
+      "fr-icon-chat-check-line"
+    ]
+  },
+  {
+    "name": "chat-delete",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-delete-fill",
+      "fr-icon-chat-delete-line"
+    ]
+  },
+  {
+    "name": "chat-download",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-download-fill",
+      "fr-icon-chat-download-line"
+    ]
+  },
+  {
+    "name": "chat-follow-up",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-follow-up-fill",
+      "fr-icon-chat-follow-up-line"
+    ]
+  },
+  {
+    "name": "chat-forward",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-forward-fill",
+      "fr-icon-chat-forward-line"
+    ]
+  },
+  {
+    "name": "chat-history",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-history-fill",
+      "fr-icon-chat-history-line"
+    ]
+  },
+  {
+    "name": "chat-new",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-new-fill",
+      "fr-icon-chat-new-line"
+    ]
+  },
+  {
+    "name": "chat-off",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-off-fill",
+      "fr-icon-chat-off-line"
+    ]
+  },
+  {
+    "name": "chat-poll",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-poll-fill",
+      "fr-icon-chat-poll-line"
+    ]
+  },
+  {
+    "name": "chat-private",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-private-fill",
+      "fr-icon-chat-private-line"
+    ]
+  },
+  {
+    "name": "chat-quote",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-quote-fill",
+      "fr-icon-chat-quote-line"
+    ]
+  },
+  {
+    "name": "chat-settings",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-settings-fill",
+      "fr-icon-chat-settings-line"
+    ]
+  },
+  {
+    "name": "chat-upload",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-upload-fill",
+      "fr-icon-chat-upload-line"
+    ]
+  },
+  {
+    "name": "chat-voice",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chat-voice-fill",
+      "fr-icon-chat-voice-line"
+    ]
+  },
+  {
+    "name": "discuss",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-discuss-fill",
+      "fr-icon-discuss-line"
+    ]
+  },
+  {
+    "name": "emoji-sticker",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-emoji-sticker-fill",
+      "fr-icon-emoji-sticker-line"
+    ]
+  },
+  {
+    "name": "feedback",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-feedback-fill",
+      "fr-icon-feedback-line"
+    ]
+  },
+  {
+    "name": "message-2",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-message-2-fill",
+      "fr-icon-message-2-line"
+    ]
+  },
+  {
+    "name": "message-3",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-message-3-fill",
+      "fr-icon-message-3-line"
+    ]
+  },
+  {
+    "name": "question-answer",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-question-answer-fill",
+      "fr-icon-question-answer-line"
+    ]
+  },
+  {
+    "name": "questionnaire",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-questionnaire-fill",
+      "fr-icon-questionnaire-line"
+    ]
+  },
+  {
+    "name": "speak",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-speak-fill",
+      "fr-icon-speak-line"
+    ]
+  },
+  {
+    "name": "video-chat",
+    "category": "communication",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-video-chat-fill",
+      "fr-icon-video-chat-line"
+    ]
+  },
+  {
+    "name": "anticlockwise",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-anticlockwise-fill",
+      "fr-icon-anticlockwise-line"
+    ]
+  },
+  {
+    "name": "artboard",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-artboard-fill",
+      "fr-icon-artboard-line"
+    ]
+  },
+  {
+    "name": "ball-pen",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-ball-pen-fill",
+      "fr-icon-ball-pen-line"
+    ]
+  },
+  {
+    "name": "blur-off",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-blur-off-fill",
+      "fr-icon-blur-off-line"
+    ]
+  },
+  {
+    "name": "brush",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-brush-fill",
+      "fr-icon-brush-line"
+    ]
+  },
+  {
+    "name": "brush-3",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-brush-3-fill",
+      "fr-icon-brush-3-line"
+    ]
+  },
+  {
+    "name": "circle",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-circle-fill",
+      "fr-icon-circle-line"
+    ]
+  },
+  {
+    "name": "clockwise",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-clockwise-fill",
+      "fr-icon-clockwise-line"
+    ]
+  },
+  {
+    "name": "collage",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-collage-fill",
+      "fr-icon-collage-line"
+    ]
+  },
+  {
+    "name": "compasses-2",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-compasses-2-fill",
+      "fr-icon-compasses-2-line"
+    ]
+  },
+  {
+    "name": "contrast",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-contrast-fill",
+      "fr-icon-contrast-line"
+    ]
+  },
+  {
+    "name": "contrast-drop-2",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-contrast-drop-2-fill",
+      "fr-icon-contrast-drop-2-line"
+    ]
+  },
+  {
+    "name": "crop",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-crop-fill",
+      "fr-icon-crop-line"
+    ]
+  },
+  {
+    "name": "crosshair-2",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-crosshair-2-fill",
+      "fr-icon-crosshair-2-line"
+    ]
+  },
+  {
+    "name": "drag-drop",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-drag-drop-fill",
+      "fr-icon-drag-drop-line"
+    ]
+  },
+  {
+    "name": "drag-move-2",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-drag-move-2-fill",
+      "fr-icon-drag-move-2-line"
+    ]
+  },
+  {
+    "name": "drop",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-drop-fill",
+      "fr-icon-drop-line"
+    ]
+  },
+  {
+    "name": "edit",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-edit-fill",
+      "fr-icon-edit-line"
+    ]
+  },
+  {
+    "name": "edit-box",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-edit-box-fill",
+      "fr-icon-edit-box-line"
+    ]
+  },
+  {
+    "name": "edit-circle",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-edit-circle-fill",
+      "fr-icon-edit-circle-line"
+    ]
+  },
+  {
+    "name": "eraser",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-eraser-fill",
+      "fr-icon-eraser-line"
+    ]
+  },
+  {
+    "name": "eraser-fill-1",
+    "category": "design",
+    "variants": [],
+    "classes": [
+      "fr-icon-eraser-fill-1"
+    ]
+  },
+  {
+    "name": "eraser-line-1",
+    "category": "design",
+    "variants": [],
+    "classes": [
+      "fr-icon-eraser-line-1"
+    ]
+  },
+  {
+    "name": "focus-3",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-focus-3-fill",
+      "fr-icon-focus-3-line"
+    ]
+  },
+  {
+    "name": "grid",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-grid-fill",
+      "fr-icon-grid-line"
+    ]
+  },
+  {
+    "name": "hammer",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-hammer-fill",
+      "fr-icon-hammer-line"
+    ]
+  },
+  {
+    "name": "hexagon",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-hexagon-fill",
+      "fr-icon-hexagon-line"
+    ]
+  },
+  {
+    "name": "ink-bottle",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-ink-bottle-fill",
+      "fr-icon-ink-bottle-line"
+    ]
+  },
+  {
+    "name": "layout",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-fill",
+      "fr-icon-layout-line"
+    ]
+  },
+  {
+    "name": "layout-bottom",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-bottom-fill",
+      "fr-icon-layout-bottom-line"
+    ]
+  },
+  {
+    "name": "layout-column",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-column-fill",
+      "fr-icon-layout-column-line"
+    ]
+  },
+  {
+    "name": "layout-grid",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-grid-fill",
+      "fr-icon-layout-grid-line"
+    ]
+  },
+  {
+    "name": "layout-left",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-left-fill",
+      "fr-icon-layout-left-line"
+    ]
+  },
+  {
+    "name": "layout-masonry",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-masonry-fill",
+      "fr-icon-layout-masonry-line"
+    ]
+  },
+  {
+    "name": "layout-right",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-right-fill",
+      "fr-icon-layout-right-line"
+    ]
+  },
+  {
+    "name": "layout-row",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-row-fill",
+      "fr-icon-layout-row-line"
+    ]
+  },
+  {
+    "name": "layout-top",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-layout-top-fill",
+      "fr-icon-layout-top-line"
+    ]
+  },
+  {
+    "name": "magic",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-magic-fill",
+      "fr-icon-magic-line"
+    ]
+  },
+  {
+    "name": "mark-pen",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mark-pen-fill",
+      "fr-icon-mark-pen-line"
+    ]
+  },
+  {
+    "name": "markup",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-markup-fill",
+      "fr-icon-markup-line"
+    ]
+  },
+  {
+    "name": "octagon",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-octagon-fill",
+      "fr-icon-octagon-line"
+    ]
+  },
+  {
+    "name": "paint",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-paint-fill",
+      "fr-icon-paint-line"
+    ]
+  },
+  {
+    "name": "paint-brush",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-paint-brush-fill",
+      "fr-icon-paint-brush-line"
+    ]
+  },
+  {
+    "name": "palette",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-palette-fill",
+      "fr-icon-palette-line"
+    ]
+  },
+  {
+    "name": "pantone",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pantone-fill",
+      "fr-icon-pantone-line"
+    ]
+  },
+  {
+    "name": "pen-nib",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pen-nib-fill",
+      "fr-icon-pen-nib-line"
+    ]
+  },
+  {
+    "name": "pencil",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pencil-fill",
+      "fr-icon-pencil-line"
+    ]
+  },
+  {
+    "name": "pencil-ruler",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pencil-ruler-fill",
+      "fr-icon-pencil-ruler-line"
+    ]
+  },
+  {
+    "name": "pentagon",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pentagon-fill",
+      "fr-icon-pentagon-line"
+    ]
+  },
+  {
+    "name": "quill-pen",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-quill-pen-fill",
+      "fr-icon-quill-pen-line"
+    ]
+  },
+  {
+    "name": "rectangle",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-rectangle-fill",
+      "fr-icon-rectangle-line"
+    ]
+  },
+  {
+    "name": "ruler",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-ruler-fill",
+      "fr-icon-ruler-line"
+    ]
+  },
+  {
+    "name": "scissors",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-scissors-fill",
+      "fr-icon-scissors-line"
+    ]
+  },
+  {
+    "name": "scissors-cut",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-scissors-cut-fill",
+      "fr-icon-scissors-cut-line"
+    ]
+  },
+  {
+    "name": "screenshot-2",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-screenshot-2-fill",
+      "fr-icon-screenshot-2-line"
+    ]
+  },
+  {
+    "name": "shape",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-shape-fill",
+      "fr-icon-shape-line"
+    ]
+  },
+  {
+    "name": "shapes",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-shapes-fill",
+      "fr-icon-shapes-line"
+    ]
+  },
+  {
+    "name": "sip",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sip-fill",
+      "fr-icon-sip-line"
+    ]
+  },
+  {
+    "name": "slice",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-slice-fill",
+      "fr-icon-slice-line"
+    ]
+  },
+  {
+    "name": "square",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-square-fill",
+      "fr-icon-square-line"
+    ]
+  },
+  {
+    "name": "table",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-table-fill",
+      "fr-icon-table-line"
+    ]
+  },
+  {
+    "name": "table-alt",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-table-alt-fill",
+      "fr-icon-table-alt-line"
+    ]
+  },
+  {
+    "name": "tools",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-tools-fill",
+      "fr-icon-tools-line"
+    ]
+  },
+  {
+    "name": "triangle",
+    "category": "design",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-triangle-fill",
+      "fr-icon-triangle-line"
+    ]
+  },
+  {
+    "name": "braces",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-braces-fill",
+      "fr-icon-braces-line"
+    ]
+  },
+  {
+    "name": "brackets",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-brackets-fill",
+      "fr-icon-brackets-line"
+    ]
+  },
+  {
+    "name": "bug",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bug-fill",
+      "fr-icon-bug-line"
+    ]
+  },
+  {
+    "name": "code",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-code-fill",
+      "fr-icon-code-line"
+    ]
+  },
+  {
+    "name": "code-box",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-code-box-fill",
+      "fr-icon-code-box-line"
+    ]
+  },
+  {
+    "name": "code-s-slash",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-code-s-slash-fill",
+      "fr-icon-code-s-slash-line"
+    ]
+  },
+  {
+    "name": "command",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-command-fill",
+      "fr-icon-command-line"
+    ]
+  },
+  {
+    "name": "css3",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-css3-fill",
+      "fr-icon-css3-line"
+    ]
+  },
+  {
+    "name": "cursor",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-cursor-fill",
+      "fr-icon-cursor-line"
+    ]
+  },
+  {
+    "name": "git-branch",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-git-branch-fill",
+      "fr-icon-git-branch-line"
+    ]
+  },
+  {
+    "name": "git-close-pull-request",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-git-close-pull-request-fill",
+      "fr-icon-git-close-pull-request-line"
+    ]
+  },
+  {
+    "name": "git-commit",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-git-commit-fill",
+      "fr-icon-git-commit-line"
+    ]
+  },
+  {
+    "name": "git-merge",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-git-merge-fill",
+      "fr-icon-git-merge-line"
+    ]
+  },
+  {
+    "name": "git-pull-request",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-git-pull-request-fill",
+      "fr-icon-git-pull-request-line"
+    ]
+  },
+  {
+    "name": "git-repository",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-git-repository-fill",
+      "fr-icon-git-repository-line"
+    ]
+  },
+  {
+    "name": "git-repository-commits",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-git-repository-commits-fill",
+      "fr-icon-git-repository-commits-line"
+    ]
+  },
+  {
+    "name": "git-repository-private",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-git-repository-private-fill",
+      "fr-icon-git-repository-private-line"
+    ]
+  },
+  {
+    "name": "html5",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-html5-fill",
+      "fr-icon-html5-line"
+    ]
+  },
+  {
+    "name": "javascript",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-javascript-fill",
+      "fr-icon-javascript-line"
+    ]
+  },
+  {
+    "name": "parentheses",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-parentheses-fill",
+      "fr-icon-parentheses-line"
+    ]
+  },
+  {
+    "name": "terminal",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-terminal-fill",
+      "fr-icon-terminal-line"
+    ]
+  },
+  {
+    "name": "terminal-box",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-terminal-box-fill",
+      "fr-icon-terminal-box-line"
+    ]
+  },
+  {
+    "name": "terminal-window",
+    "category": "development",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-terminal-window-fill",
+      "fr-icon-terminal-window-line"
+    ]
+  },
+  {
+    "name": "airplay",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-airplay-fill",
+      "fr-icon-airplay-line"
+    ]
+  },
+  {
+    "name": "barcode",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-barcode-fill",
+      "fr-icon-barcode-line"
+    ]
+  },
+  {
+    "name": "barcode-box",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-barcode-box-fill",
+      "fr-icon-barcode-box-line"
+    ]
+  },
+  {
+    "name": "base-station",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-base-station-fill",
+      "fr-icon-base-station-line"
+    ]
+  },
+  {
+    "name": "battery",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-battery-fill",
+      "fr-icon-battery-line"
+    ]
+  },
+  {
+    "name": "battery-charge",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-battery-charge-fill",
+      "fr-icon-battery-charge-line"
+    ]
+  },
+  {
+    "name": "battery-low",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-battery-low-fill",
+      "fr-icon-battery-low-line"
+    ]
+  },
+  {
+    "name": "bluetooth",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bluetooth-fill",
+      "fr-icon-bluetooth-line"
+    ]
+  },
+  {
+    "name": "bluetooth-connect",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bluetooth-connect-fill",
+      "fr-icon-bluetooth-connect-line"
+    ]
+  },
+  {
+    "name": "cast",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-cast-fill",
+      "fr-icon-cast-line"
+    ]
+  },
+  {
+    "name": "cellphone",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-cellphone-fill",
+      "fr-icon-cellphone-line"
+    ]
+  },
+  {
+    "name": "computer",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-computer-fill",
+      "fr-icon-computer-line"
+    ]
+  },
+  {
+    "name": "cpu",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-cpu-fill",
+      "fr-icon-cpu-line"
+    ]
+  },
+  {
+    "name": "dashboard-3",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-dashboard-3-fill",
+      "fr-icon-dashboard-3-line"
+    ]
+  },
+  {
+    "name": "database",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-database-fill",
+      "fr-icon-database-line"
+    ]
+  },
+  {
+    "name": "device",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-device-fill",
+      "fr-icon-device-line"
+    ]
+  },
+  {
+    "name": "device-recover",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-device-recover-fill",
+      "fr-icon-device-recover-line"
+    ]
+  },
+  {
+    "name": "fingerprint",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fingerprint-fill",
+      "fr-icon-fingerprint-line"
+    ]
+  },
+  {
+    "name": "gamepad",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-gamepad-fill",
+      "fr-icon-gamepad-line"
+    ]
+  },
+  {
+    "name": "gps",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-gps-fill",
+      "fr-icon-gps-line"
+    ]
+  },
+  {
+    "name": "gradienter",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-gradienter-fill",
+      "fr-icon-gradienter-line"
+    ]
+  },
+  {
+    "name": "hard-drive-2",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-hard-drive-2-fill",
+      "fr-icon-hard-drive-2-line"
+    ]
+  },
+  {
+    "name": "hotspot",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-hotspot-fill",
+      "fr-icon-hotspot-line"
+    ]
+  },
+  {
+    "name": "install",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-install-fill",
+      "fr-icon-install-line"
+    ]
+  },
+  {
+    "name": "instance",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-instance-fill",
+      "fr-icon-instance-line"
+    ]
+  },
+  {
+    "name": "keyboard",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-keyboard-fill",
+      "fr-icon-keyboard-line"
+    ]
+  },
+  {
+    "name": "mac",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mac-fill",
+      "fr-icon-mac-line"
+    ]
+  },
+  {
+    "name": "macbook",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-macbook-fill",
+      "fr-icon-macbook-line"
+    ]
+  },
+  {
+    "name": "mouse",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mouse-fill",
+      "fr-icon-mouse-line"
+    ]
+  },
+  {
+    "name": "phone",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-phone-fill",
+      "fr-icon-phone-line"
+    ]
+  },
+  {
+    "name": "phone-find",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-phone-find-fill",
+      "fr-icon-phone-find-line"
+    ]
+  },
+  {
+    "name": "phone-lock",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-phone-lock-fill",
+      "fr-icon-phone-lock-line"
+    ]
+  },
+  {
+    "name": "qr-code",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-qr-code-fill",
+      "fr-icon-qr-code-line"
+    ]
+  },
+  {
+    "name": "qr-scan",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-qr-scan-fill",
+      "fr-icon-qr-scan-line"
+    ]
+  },
+  {
+    "name": "radar",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-radar-fill",
+      "fr-icon-radar-line"
+    ]
+  },
+  {
+    "name": "remote-control",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-remote-control-fill",
+      "fr-icon-remote-control-line"
+    ]
+  },
+  {
+    "name": "remote-control-2",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-remote-control-2-fill",
+      "fr-icon-remote-control-2-line"
+    ]
+  },
+  {
+    "name": "restart",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-restart-fill",
+      "fr-icon-restart-line"
+    ]
+  },
+  {
+    "name": "rfid",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-rfid-fill",
+      "fr-icon-rfid-line"
+    ]
+  },
+  {
+    "name": "rotate-lock",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-rotate-lock-fill",
+      "fr-icon-rotate-lock-line"
+    ]
+  },
+  {
+    "name": "router",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-router-fill",
+      "fr-icon-router-line"
+    ]
+  },
+  {
+    "name": "rss",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-rss-fill",
+      "fr-icon-rss-line"
+    ]
+  },
+  {
+    "name": "save",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-save-fill",
+      "fr-icon-save-line"
+    ]
+  },
+  {
+    "name": "save-3",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-save-3-fill",
+      "fr-icon-save-3-line"
+    ]
+  },
+  {
+    "name": "scan",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-scan-fill",
+      "fr-icon-scan-line"
+    ]
+  },
+  {
+    "name": "sd-card",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sd-card-fill",
+      "fr-icon-sd-card-line"
+    ]
+  },
+  {
+    "name": "sd-card-mini",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sd-card-mini-fill",
+      "fr-icon-sd-card-mini-line"
+    ]
+  },
+  {
+    "name": "sensor",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sensor-fill",
+      "fr-icon-sensor-line"
+    ]
+  },
+  {
+    "name": "server",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-server-fill",
+      "fr-icon-server-line"
+    ]
+  },
+  {
+    "name": "shut-down",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-shut-down-fill",
+      "fr-icon-shut-down-line"
+    ]
+  },
+  {
+    "name": "signal-wifi",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-signal-wifi-fill",
+      "fr-icon-signal-wifi-line"
+    ]
+  },
+  {
+    "name": "signal-wifi-error",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-signal-wifi-error-fill",
+      "fr-icon-signal-wifi-error-line"
+    ]
+  },
+  {
+    "name": "signal-wifi-off",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-signal-wifi-off-fill",
+      "fr-icon-signal-wifi-off-line"
+    ]
+  },
+  {
+    "name": "sim-card-2",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sim-card-2-fill",
+      "fr-icon-sim-card-2-line"
+    ]
+  },
+  {
+    "name": "smartphone",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-smartphone-fill",
+      "fr-icon-smartphone-line"
+    ]
+  },
+  {
+    "name": "tablet",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-tablet-fill",
+      "fr-icon-tablet-line"
+    ]
+  },
+  {
+    "name": "tv",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-tv-fill",
+      "fr-icon-tv-line"
+    ]
+  },
+  {
+    "name": "u-disk",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-u-disk-fill",
+      "fr-icon-u-disk-line"
+    ]
+  },
+  {
+    "name": "uninstall",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-uninstall-fill",
+      "fr-icon-uninstall-line"
+    ]
+  },
+  {
+    "name": "usb",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-usb-fill",
+      "fr-icon-usb-line"
+    ]
+  },
+  {
+    "name": "wifi",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-wifi-fill",
+      "fr-icon-wifi-line"
+    ]
+  },
+  {
+    "name": "wifi-off",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-wifi-off-fill",
+      "fr-icon-wifi-off-line"
+    ]
+  },
+  {
+    "name": "wireless-charging",
+    "category": "device",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-wireless-charging-fill",
+      "fr-icon-wireless-charging-line"
+    ]
+  },
+  {
+    "name": "article",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-article-fill",
+      "fr-icon-article-line"
+    ]
+  },
+  {
+    "name": "book-2",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-book-2-fill",
+      "fr-icon-book-2-line"
+    ]
+  },
+  {
+    "name": "booklet",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-booklet-fill",
+      "fr-icon-booklet-line"
+    ]
+  },
+  {
+    "name": "clipboard",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-clipboard-fill",
+      "fr-icon-clipboard-line"
+    ]
+  },
+  {
+    "name": "draft",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-draft-fill",
+      "fr-icon-draft-line"
+    ]
+  },
+  {
+    "name": "file",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-file-fill",
+      "fr-icon-file-line"
+    ]
+  },
+  {
+    "name": "file-add",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-file-add-fill",
+      "fr-icon-file-add-line"
+    ]
+  },
+  {
+    "name": "file-download",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-file-download-fill",
+      "fr-icon-file-download-line"
+    ]
+  },
+  {
+    "name": "file-pdf",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-file-pdf-fill",
+      "fr-icon-file-pdf-line"
+    ]
+  },
+  {
+    "name": "file-text",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-file-text-fill",
+      "fr-icon-file-text-line"
+    ]
+  },
+  {
+    "name": "folder-2",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-folder-2-fill",
+      "fr-icon-folder-2-line"
+    ]
+  },
+  {
+    "name": "newspaper",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-newspaper-fill",
+      "fr-icon-newspaper-line"
+    ]
+  },
+  {
+    "name": "survey",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-survey-fill",
+      "fr-icon-survey-line"
+    ]
+  },
+  {
+    "name": "todo",
+    "category": "document",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-todo-fill",
+      "fr-icon-todo-line"
+    ]
+  },
+  {
+    "name": "align-center",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-align-center"
+    ]
+  },
+  {
+    "name": "align-justify",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-align-justify"
+    ]
+  },
+  {
+    "name": "align-left",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-align-left"
+    ]
+  },
+  {
+    "name": "align-right",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-align-right"
+    ]
+  },
+  {
+    "name": "code-block",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-code-block"
+    ]
+  },
+  {
+    "name": "code-view",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-code-view"
+    ]
+  },
+  {
+    "name": "font-color",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-font-color"
+    ]
+  },
+  {
+    "name": "font-size",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-font-size"
+    ]
+  },
+  {
+    "name": "format-clear",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-format-clear"
+    ]
+  },
+  {
+    "name": "fr--bold",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-fr--bold"
+    ]
+  },
+  {
+    "name": "fr--highlight",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-fr--highlight"
+    ]
+  },
+  {
+    "name": "fr--quote",
+    "category": "editor",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--quote-fill",
+      "fr-icon-fr--quote-line"
+    ]
+  },
+  {
+    "name": "h-1",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-h-1"
+    ]
+  },
+  {
+    "name": "h-2",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-h-2"
+    ]
+  },
+  {
+    "name": "h-3",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-h-3"
+    ]
+  },
+  {
+    "name": "h-4",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-h-4"
+    ]
+  },
+  {
+    "name": "h-5",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-h-5"
+    ]
+  },
+  {
+    "name": "h-6",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-h-6"
+    ]
+  },
+  {
+    "name": "hashtag",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-hashtag"
+    ]
+  },
+  {
+    "name": "indent-decrease",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-indent-decrease"
+    ]
+  },
+  {
+    "name": "indent-increase",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-indent-increase"
+    ]
+  },
+  {
+    "name": "italic",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-italic"
+    ]
+  },
+  {
+    "name": "link",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-link"
+    ]
+  },
+  {
+    "name": "link-unlink",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-link-unlink"
+    ]
+  },
+  {
+    "name": "list-check",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-list-check"
+    ]
+  },
+  {
+    "name": "list-ordered",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-list-ordered"
+    ]
+  },
+  {
+    "name": "list-unordered",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-list-unordered"
+    ]
+  },
+  {
+    "name": "question-mark",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-question-mark"
+    ]
+  },
+  {
+    "name": "separator",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-separator"
+    ]
+  },
+  {
+    "name": "sort-asc",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-sort-asc"
+    ]
+  },
+  {
+    "name": "sort-desc",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-sort-desc"
+    ]
+  },
+  {
+    "name": "space",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-space"
+    ]
+  },
+  {
+    "name": "strikethrough",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-strikethrough"
+    ]
+  },
+  {
+    "name": "subscript",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-subscript"
+    ]
+  },
+  {
+    "name": "superscript",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-superscript"
+    ]
+  },
+  {
+    "name": "table-2",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-table-2"
+    ]
+  },
+  {
+    "name": "text-direction-r",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-text-direction-r"
+    ]
+  },
+  {
+    "name": "translate-2",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-translate-2"
+    ]
+  },
+  {
+    "name": "underline",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-underline"
+    ]
+  },
+  {
+    "name": "bank-card",
+    "category": "finance",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bank-card-fill",
+      "fr-icon-bank-card-line"
+    ]
+  },
+  {
+    "name": "coin",
+    "category": "finance",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-coin-fill"
+    ]
+  },
+  {
+    "name": "gift",
+    "category": "finance",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-gift-fill",
+      "fr-icon-gift-line"
+    ]
+  },
+  {
+    "name": "money-euro-box",
+    "category": "finance",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-money-euro-box-fill",
+      "fr-icon-money-euro-box-line"
+    ]
+  },
+  {
+    "name": "money-euro-circle",
+    "category": "finance",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-money-euro-circle-fill",
+      "fr-icon-money-euro-circle-line"
+    ]
+  },
+  {
+    "name": "secure-payment",
+    "category": "finance",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-secure-payment-fill",
+      "fr-icon-secure-payment-line"
+    ]
+  },
+  {
+    "name": "shopping-bag",
+    "category": "finance",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-shopping-bag-fill",
+      "fr-icon-shopping-bag-line"
+    ]
+  },
+  {
+    "name": "shopping-cart-2",
+    "category": "finance",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-shopping-cart-2-fill",
+      "fr-icon-shopping-cart-2-line"
+    ]
+  },
+  {
+    "name": "trophy",
+    "category": "finance",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-trophy-fill",
+      "fr-icon-trophy-line"
+    ]
+  },
+  {
+    "name": "capsule",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-capsule-fill",
+      "fr-icon-capsule-line"
+    ]
+  },
+  {
+    "name": "dislike",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-dislike-fill",
+      "fr-icon-dislike-line"
+    ]
+  },
+  {
+    "name": "dossier",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-dossier-fill",
+      "fr-icon-dossier-line"
+    ]
+  },
+  {
+    "name": "first-aid-kit",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-first-aid-kit-fill",
+      "fr-icon-first-aid-kit-line"
+    ]
+  },
+  {
+    "name": "hand-sanitizer",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-hand-sanitizer-fill",
+      "fr-icon-hand-sanitizer-line"
+    ]
+  },
+  {
+    "name": "health-book",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-health-book-fill",
+      "fr-icon-health-book-line"
+    ]
+  },
+  {
+    "name": "heart",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-heart-fill",
+      "fr-icon-heart-line"
+    ]
+  },
+  {
+    "name": "heart-pulse",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-heart-pulse-fill",
+      "fr-icon-heart-pulse-line"
+    ]
+  },
+  {
+    "name": "lungs",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-lungs-fill",
+      "fr-icon-lungs-line"
+    ]
+  },
+  {
+    "name": "medicine-bottle",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-medicine-bottle-fill",
+      "fr-icon-medicine-bottle-line"
+    ]
+  },
+  {
+    "name": "mental-health",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mental-health-fill",
+      "fr-icon-mental-health-line"
+    ]
+  },
+  {
+    "name": "microscope",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-microscope-fill",
+      "fr-icon-microscope-line"
+    ]
+  },
+  {
+    "name": "psychotherapy",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-psychotherapy-fill",
+      "fr-icon-psychotherapy-line"
+    ]
+  },
+  {
+    "name": "pulse",
+    "category": "health",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pulse-line"
+    ]
+  },
+  {
+    "name": "stethoscope",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-stethoscope-fill",
+      "fr-icon-stethoscope-line"
+    ]
+  },
+  {
+    "name": "surgical-mask",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-surgical-mask-fill",
+      "fr-icon-surgical-mask-line"
+    ]
+  },
+  {
+    "name": "syringe",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-syringe-fill",
+      "fr-icon-syringe-line"
+    ]
+  },
+  {
+    "name": "test-tube",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-test-tube-fill",
+      "fr-icon-test-tube-line"
+    ]
+  },
+  {
+    "name": "thermometer",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-thermometer-fill",
+      "fr-icon-thermometer-line"
+    ]
+  },
+  {
+    "name": "virus",
+    "category": "health",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-virus-fill",
+      "fr-icon-virus-line"
+    ]
+  },
+  {
+    "name": "bluesky",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bluesky-fill",
+      "fr-icon-bluesky-line"
+    ]
+  },
+  {
+    "name": "chrome",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-chrome-fill",
+      "fr-icon-chrome-line"
+    ]
+  },
+  {
+    "name": "edge",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-edge-fill",
+      "fr-icon-edge-line"
+    ]
+  },
+  {
+    "name": "facebook-circle",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-facebook-circle-fill",
+      "fr-icon-facebook-circle-line"
+    ]
+  },
+  {
+    "name": "firefox",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-firefox-fill",
+      "fr-icon-firefox-line"
+    ]
+  },
+  {
+    "name": "fr--dailymotion",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--dailymotion-fill",
+      "fr-icon-fr--dailymotion-line"
+    ]
+  },
+  {
+    "name": "fr--tiktok",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--tiktok-fill",
+      "fr-icon-fr--tiktok-line"
+    ]
+  },
+  {
+    "name": "github",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-github-fill",
+      "fr-icon-github-line"
+    ]
+  },
+  {
+    "name": "google",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-google-fill",
+      "fr-icon-google-line"
+    ]
+  },
+  {
+    "name": "ie",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-ie-fill",
+      "fr-icon-ie-line"
+    ]
+  },
+  {
+    "name": "instagram",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-instagram-fill",
+      "fr-icon-instagram-line"
+    ]
+  },
+  {
+    "name": "linkedin-box",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-linkedin-box-fill",
+      "fr-icon-linkedin-box-line"
+    ]
+  },
+  {
+    "name": "mastodon",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mastodon-fill",
+      "fr-icon-mastodon-line"
+    ]
+  },
+  {
+    "name": "npmjs",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-npmjs-fill",
+      "fr-icon-npmjs-line"
+    ]
+  },
+  {
+    "name": "remixicon",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-remixicon-fill",
+      "fr-icon-remixicon-line"
+    ]
+  },
+  {
+    "name": "safari",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-safari-fill",
+      "fr-icon-safari-line"
+    ]
+  },
+  {
+    "name": "slack",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-slack-fill",
+      "fr-icon-slack-line"
+    ]
+  },
+  {
+    "name": "snapchat",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-snapchat-fill",
+      "fr-icon-snapchat-line"
+    ]
+  },
+  {
+    "name": "telegram",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-telegram-fill",
+      "fr-icon-telegram-line"
+    ]
+  },
+  {
+    "name": "threads",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-threads-fill",
+      "fr-icon-threads-line"
+    ]
+  },
+  {
+    "name": "twitch",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-twitch-fill",
+      "fr-icon-twitch-line"
+    ]
+  },
+  {
+    "name": "twitter",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-twitter-fill",
+      "fr-icon-twitter-line"
+    ]
+  },
+  {
+    "name": "twitter-x",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-twitter-x-fill",
+      "fr-icon-twitter-x-line"
+    ]
+  },
+  {
+    "name": "vimeo",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-vimeo-fill",
+      "fr-icon-vimeo-line"
+    ]
+  },
+  {
+    "name": "vuejs",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-vuejs-fill",
+      "fr-icon-vuejs-line"
+    ]
+  },
+  {
+    "name": "whatsapp",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-whatsapp-fill",
+      "fr-icon-whatsapp-line"
+    ]
+  },
+  {
+    "name": "youtube",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-youtube-fill",
+      "fr-icon-youtube-line"
+    ]
+  },
+  {
+    "name": "anchor",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-anchor-fill",
+      "fr-icon-anchor-line"
+    ]
+  },
+  {
+    "name": "bike",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bike-fill",
+      "fr-icon-bike-line"
+    ]
+  },
+  {
+    "name": "bus",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-bus-fill",
+      "fr-icon-bus-line"
+    ]
+  },
+  {
+    "name": "car",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-car-fill",
+      "fr-icon-car-line"
+    ]
+  },
+  {
+    "name": "caravan",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-caravan-fill",
+      "fr-icon-caravan-line"
+    ]
+  },
+  {
+    "name": "charging-pile-2",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-charging-pile-2-fill",
+      "fr-icon-charging-pile-2-line"
+    ]
+  },
+  {
+    "name": "compass-3",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-compass-3-fill",
+      "fr-icon-compass-3-line"
+    ]
+  },
+  {
+    "name": "cup",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-cup-fill",
+      "fr-icon-cup-line"
+    ]
+  },
+  {
+    "name": "earth",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-earth-fill",
+      "fr-icon-earth-line"
+    ]
+  },
+  {
+    "name": "france",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-france-fill",
+      "fr-icon-france-line"
+    ]
+  },
+  {
+    "name": "gas-station",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-gas-station-fill",
+      "fr-icon-gas-station-line"
+    ]
+  },
+  {
+    "name": "goblet",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-goblet-fill",
+      "fr-icon-goblet-line"
+    ]
+  },
+  {
+    "name": "map-pin-2",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-map-pin-2-fill",
+      "fr-icon-map-pin-2-line"
+    ]
+  },
+  {
+    "name": "map-pin-user",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-map-pin-user-fill",
+      "fr-icon-map-pin-user-line"
+    ]
+  },
+  {
+    "name": "motorbike",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-motorbike-fill",
+      "fr-icon-motorbike-line"
+    ]
+  },
+  {
+    "name": "passport",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-passport-fill",
+      "fr-icon-passport-line"
+    ]
+  },
+  {
+    "name": "restaurant",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-restaurant-fill",
+      "fr-icon-restaurant-line"
+    ]
+  },
+  {
+    "name": "road-map",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-road-map-fill",
+      "fr-icon-road-map-line"
+    ]
+  },
+  {
+    "name": "sailboat",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sailboat-fill",
+      "fr-icon-sailboat-line"
+    ]
+  },
+  {
+    "name": "ship-2",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-ship-2-fill",
+      "fr-icon-ship-2-line"
+    ]
+  },
+  {
+    "name": "signal-tower",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-signal-tower-fill",
+      "fr-icon-signal-tower-line"
+    ]
+  },
+  {
+    "name": "suitcase-2",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-suitcase-2-fill",
+      "fr-icon-suitcase-2-line"
+    ]
+  },
+  {
+    "name": "taxi",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-taxi-fill",
+      "fr-icon-taxi-line"
+    ]
+  },
+  {
+    "name": "train",
+    "category": "map",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-train-fill",
+      "fr-icon-train-line"
+    ]
+  },
+  {
+    "name": "camera",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-camera-fill",
+      "fr-icon-camera-line"
+    ]
+  },
+  {
+    "name": "clapperboard",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-clapperboard-fill",
+      "fr-icon-clapperboard-line"
+    ]
+  },
+  {
+    "name": "equalizer",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-equalizer-fill",
+      "fr-icon-equalizer-line"
+    ]
+  },
+  {
+    "name": "film",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-film-fill",
+      "fr-icon-film-line"
+    ]
+  },
+  {
+    "name": "fullscreen",
+    "category": "media",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fullscreen-line"
+    ]
+  },
+  {
+    "name": "gallery",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-gallery-fill",
+      "fr-icon-gallery-line"
+    ]
+  },
+  {
+    "name": "headphone",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-headphone-fill",
+      "fr-icon-headphone-line"
+    ]
+  },
+  {
+    "name": "image",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-image-fill",
+      "fr-icon-image-line"
+    ]
+  },
+  {
+    "name": "image-add",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-image-add-fill",
+      "fr-icon-image-add-line"
+    ]
+  },
+  {
+    "name": "image-edit",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-image-edit-fill",
+      "fr-icon-image-edit-line"
+    ]
+  },
+  {
+    "name": "live",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-live-fill",
+      "fr-icon-live-line"
+    ]
+  },
+  {
+    "name": "mic",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mic-fill",
+      "fr-icon-mic-line"
+    ]
+  },
+  {
+    "name": "music-2",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-music-2-fill",
+      "fr-icon-music-2-line"
+    ]
+  },
+  {
+    "name": "notification-3",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-notification-3-fill",
+      "fr-icon-notification-3-line"
+    ]
+  },
+  {
+    "name": "pause-circle",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-pause-circle-fill",
+      "fr-icon-pause-circle-line"
+    ]
+  },
+  {
+    "name": "play-circle",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-play-circle-fill",
+      "fr-icon-play-circle-line"
+    ]
+  },
+  {
+    "name": "stop-circle",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-stop-circle-fill",
+      "fr-icon-stop-circle-line"
+    ]
+  },
+  {
+    "name": "volume-down",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-volume-down-fill",
+      "fr-icon-volume-down-line"
+    ]
+  },
+  {
+    "name": "volume-mute",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-volume-mute-fill",
+      "fr-icon-volume-mute-line"
+    ]
+  },
+  {
+    "name": "volume-up",
+    "category": "media",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-volume-up-fill",
+      "fr-icon-volume-up-line"
+    ]
+  },
+  {
+    "name": "fr--accessibility",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--accessibility-fill",
+      "fr-icon-fr--accessibility-line"
+    ]
+  },
+  {
+    "name": "fr--ear-off",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--ear-off-fill",
+      "fr-icon-fr--ear-off-line"
+    ]
+  },
+  {
+    "name": "fr--mental-disabilities",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--mental-disabilities-fill",
+      "fr-icon-fr--mental-disabilities-line"
+    ]
+  },
+  {
+    "name": "fr--sign-language",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--sign-language-fill",
+      "fr-icon-fr--sign-language-line"
+    ]
+  },
+  {
+    "name": "leaf",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-leaf-fill",
+      "fr-icon-leaf-line"
+    ]
+  },
+  {
+    "name": "lightbulb",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-lightbulb-fill",
+      "fr-icon-lightbulb-line"
+    ]
+  },
+  {
+    "name": "plant",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-plant-fill",
+      "fr-icon-plant-line"
+    ]
+  },
+  {
+    "name": "recycle",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-recycle-fill",
+      "fr-icon-recycle-line"
+    ]
+  },
+  {
+    "name": "scales-3",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-scales-3-fill",
+      "fr-icon-scales-3-line"
+    ]
+  },
+  {
+    "name": "seedling",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-seedling-fill",
+      "fr-icon-seedling-line"
+    ]
+  },
+  {
+    "name": "umbrella",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-umbrella-fill",
+      "fr-icon-umbrella-line"
+    ]
+  },
+  {
+    "name": "wheelchair",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-wheelchair-fill",
+      "fr-icon-wheelchair-line"
+    ]
+  },
+  {
+    "name": "add",
+    "category": "system",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-add-line"
+    ]
+  },
+  {
+    "name": "add-circle",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-add-circle-fill",
+      "fr-icon-add-circle-line"
+    ]
+  },
+  {
+    "name": "alarm-warning",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-alarm-warning-fill",
+      "fr-icon-alarm-warning-line"
+    ]
+  },
+  {
+    "name": "alert",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-alert-fill",
+      "fr-icon-alert-line"
+    ]
+  },
+  {
+    "name": "check",
+    "category": "system",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-check-line"
+    ]
+  },
+  {
+    "name": "checkbox",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-checkbox-fill",
+      "fr-icon-checkbox-line"
+    ]
+  },
+  {
+    "name": "checkbox-circle",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-checkbox-circle-fill",
+      "fr-icon-checkbox-circle-line"
+    ]
+  },
+  {
+    "name": "close",
+    "category": "system",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-close-line"
+    ]
+  },
+  {
+    "name": "close-circle",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-close-circle-fill",
+      "fr-icon-close-circle-line"
+    ]
+  },
+  {
+    "name": "delete-bin",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-delete-bin-fill",
+      "fr-icon-delete-bin-line"
+    ]
+  },
+  {
+    "name": "download",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-download-fill",
+      "fr-icon-download-line"
+    ]
+  },
+  {
+    "name": "error-warning",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-error-warning-fill",
+      "fr-icon-error-warning-line"
+    ]
+  },
+  {
+    "name": "external-link",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-external-link-fill",
+      "fr-icon-external-link-line"
+    ]
+  },
+  {
+    "name": "eye",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-eye-fill",
+      "fr-icon-eye-line"
+    ]
+  },
+  {
+    "name": "eye-off",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-eye-off-fill",
+      "fr-icon-eye-off-line"
+    ]
+  },
+  {
+    "name": "filter",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-filter-fill",
+      "fr-icon-filter-line"
+    ]
+  },
+  {
+    "name": "fr--alert-warning",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-fr--alert-warning-fill"
+    ]
+  },
+  {
+    "name": "fr--alert-warning-2",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-fr--alert-warning-2-fill"
+    ]
+  },
+  {
+    "name": "fr--capslock",
+    "category": "system",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--capslock-line"
+    ]
+  },
+  {
+    "name": "fr--equal-circle",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-fr--equal-circle-fill"
+    ]
+  },
+  {
+    "name": "fr--error",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--error-fill",
+      "fr-icon-fr--error-line"
+    ]
+  },
+  {
+    "name": "fr--info",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--info-fill",
+      "fr-icon-fr--info-line"
+    ]
+  },
+  {
+    "name": "fr--success",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--success-fill",
+      "fr-icon-fr--success-line"
+    ]
+  },
+  {
+    "name": "fr--theme",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-fr--theme-fill"
+    ]
+  },
+  {
+    "name": "fr--warning",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--warning-fill",
+      "fr-icon-fr--warning-line"
+    ]
+  },
+  {
+    "name": "information",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-information-fill",
+      "fr-icon-information-line"
+    ]
+  },
+  {
+    "name": "lock",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-lock-fill",
+      "fr-icon-lock-line"
+    ]
+  },
+  {
+    "name": "lock-unlock",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-lock-unlock-fill",
+      "fr-icon-lock-unlock-line"
+    ]
+  },
+  {
+    "name": "logout-box-r",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-logout-box-r-fill",
+      "fr-icon-logout-box-r-line"
+    ]
+  },
+  {
+    "name": "menu",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-menu-fill"
+    ]
+  },
+  {
+    "name": "menu-2",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-menu-2-fill"
+    ]
+  },
+  {
+    "name": "more",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-more-fill",
+      "fr-icon-more-line"
+    ]
+  },
+  {
+    "name": "notification-badge",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-notification-badge-fill",
+      "fr-icon-notification-badge-line"
+    ]
+  },
+  {
+    "name": "question",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-question-fill",
+      "fr-icon-question-line"
+    ]
+  },
+  {
+    "name": "refresh",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-refresh-fill",
+      "fr-icon-refresh-line"
+    ]
+  },
+  {
+    "name": "search",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-search-fill",
+      "fr-icon-search-line"
+    ]
+  },
+  {
+    "name": "settings-5",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-settings-5-fill",
+      "fr-icon-settings-5-line"
+    ]
+  },
+  {
+    "name": "share",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-share-fill",
+      "fr-icon-share-line"
+    ]
+  },
+  {
+    "name": "share-forward",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-share-forward-fill",
+      "fr-icon-share-forward-line"
+    ]
+  },
+  {
+    "name": "shield",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-shield-fill",
+      "fr-icon-shield-line"
+    ]
+  },
+  {
+    "name": "star",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-star-fill",
+      "fr-icon-star-line"
+    ]
+  },
+  {
+    "name": "star-s",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-star-s-fill",
+      "fr-icon-star-s-line"
+    ]
+  },
+  {
+    "name": "subtract",
+    "category": "system",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-subtract-line"
+    ]
+  },
+  {
+    "name": "thumb-down",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-thumb-down-fill",
+      "fr-icon-thumb-down-line"
+    ]
+  },
+  {
+    "name": "thumb-up",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-thumb-up-fill",
+      "fr-icon-thumb-up-line"
+    ]
+  },
+  {
+    "name": "time",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-time-fill",
+      "fr-icon-time-line"
+    ]
+  },
+  {
+    "name": "timer",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-timer-fill",
+      "fr-icon-timer-line"
+    ]
+  },
+  {
+    "name": "upload",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-upload-fill",
+      "fr-icon-upload-line"
+    ]
+  },
+  {
+    "name": "upload-2",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-upload-2-fill",
+      "fr-icon-upload-2-line"
+    ]
+  },
+  {
+    "name": "zoom-in",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-zoom-in-fill",
+      "fr-icon-zoom-in-line"
+    ]
+  },
+  {
+    "name": "zoom-out",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-zoom-out-fill",
+      "fr-icon-zoom-out-line"
+    ]
+  },
+  {
+    "name": "account-circle",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-account-circle-fill",
+      "fr-icon-account-circle-line"
+    ]
+  },
+  {
+    "name": "account-pin-circle",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-account-pin-circle-fill",
+      "fr-icon-account-pin-circle-line"
+    ]
+  },
+  {
+    "name": "admin",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-admin-fill",
+      "fr-icon-admin-line"
+    ]
+  },
+  {
+    "name": "group",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-group-fill",
+      "fr-icon-group-line"
+    ]
+  },
+  {
+    "name": "parent",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-parent-fill",
+      "fr-icon-parent-line"
+    ]
+  },
+  {
+    "name": "team",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-team-fill",
+      "fr-icon-team-line"
+    ]
+  },
+  {
+    "name": "user",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-user-fill",
+      "fr-icon-user-line"
+    ]
+  },
+  {
+    "name": "user-add",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-user-add-fill",
+      "fr-icon-user-add-line"
+    ]
+  },
+  {
+    "name": "user-heart",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-user-heart-fill",
+      "fr-icon-user-heart-line"
+    ]
+  },
+  {
+    "name": "user-search",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-user-search-fill",
+      "fr-icon-user-search-line"
+    ]
+  },
+  {
+    "name": "user-setting",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-user-setting-fill",
+      "fr-icon-user-setting-line"
+    ]
+  },
+  {
+    "name": "user-star",
+    "category": "user",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-user-star-fill",
+      "fr-icon-user-star-line"
+    ]
+  },
+  {
+    "name": "cloudy-2",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-cloudy-2-fill",
+      "fr-icon-cloudy-2-line"
+    ]
+  },
+  {
+    "name": "fire",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fire-fill",
+      "fr-icon-fire-line"
+    ]
+  },
+  {
+    "name": "flashlight",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-flashlight-fill",
+      "fr-icon-flashlight-line"
+    ]
+  },
+  {
+    "name": "flood",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-flood-fill",
+      "fr-icon-flood-line"
+    ]
+  },
+  {
+    "name": "fr--avalanches",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--avalanches-fill",
+      "fr-icon-fr--avalanches-line"
+    ]
+  },
+  {
+    "name": "fr--submersion",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-fr--submersion-fill",
+      "fr-icon-fr--submersion-line"
+    ]
+  },
+  {
+    "name": "heavy-showers",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-heavy-showers-fill",
+      "fr-icon-heavy-showers-line"
+    ]
+  },
+  {
+    "name": "moon",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-moon-fill",
+      "fr-icon-moon-line"
+    ]
+  },
+  {
+    "name": "snowy",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-snowy-fill",
+      "fr-icon-snowy-line"
+    ]
+  },
+  {
+    "name": "sparkling-2",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sparkling-2-fill",
+      "fr-icon-sparkling-2-line"
+    ]
+  },
+  {
+    "name": "sun",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sun-fill",
+      "fr-icon-sun-line"
+    ]
+  },
+  {
+    "name": "temp-cold",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-temp-cold-fill",
+      "fr-icon-temp-cold-line"
+    ]
+  },
+  {
+    "name": "thunderstorms",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-thunderstorms-fill",
+      "fr-icon-thunderstorms-line"
+    ]
+  },
+  {
+    "name": "tornado",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-tornado-fill",
+      "fr-icon-tornado-line"
+    ]
+  },
+  {
+    "name": "typhoon",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-typhoon-fill",
+      "fr-icon-typhoon-line"
+    ]
+  },
+  {
+    "name": "windy",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-windy-fill",
+      "fr-icon-windy-line"
+    ]
+  }
+]

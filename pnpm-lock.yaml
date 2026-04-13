@@ -15,6 +15,9 @@ importers:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
+      '@smithery/cli':
+        specifier: ^4.8.0
+        version: 4.8.0(zod@4.3.6)
       '@types/node':
         specifier: ^25.3.0
         version: 25.3.0
@@ -342,6 +345,13 @@ packages:
     resolution: {integrity: sha512-mxRFDdHIWRxg3UfIIAwCm6NzvxG0jDX/wBN6KsQFTvKFqqg9vTrWUE68qEjHt19A5wwx5X5aUi2zuZT7YR0jrA==}
     cpu: [x64]
     os: [win32]
+
+  '@smithery/cli@4.8.0':
+    resolution: {integrity: sha512-MPUoEsRsEvJfeQ0nzvVY9C4s7JwxTT4JjmiLKyIg+NMsZqjsF4wDEma+D2MvwY4UucA0jcxc33QCJZ5gCNSSgQ==}
+    engines: {node: '>=20.0.0'}
+    hasBin: true
+    peerDependencies:
+      zod: ^3.20.0 || ^4
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
@@ -1112,6 +1122,10 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.57.1':
     optional: true
+
+  '@smithery/cli@4.8.0(zod@4.3.6)':
+    dependencies:
+      zod: 4.3.6
 
   '@standard-schema/spec@1.1.0': {}
 
