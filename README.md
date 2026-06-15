@@ -37,11 +37,12 @@ pnpm run setup    # Fetches DSFR docs and builds the server
 | Tool | Description |
 |---|---|
 | `list_components` | Lists all DSFR components, fundamentals, and patterns with their name, French title, description, and available doc sections. |
-| `get_component_doc` | Returns the documentation for a specific component section (`overview`, `code`, `design`, `accessibility`, `demo`). Defaults to `code`. Suggests alternatives if the component name is not found. |
-| `search_components` | Full-text search across all DSFR documentation — metadata and markdown content. Returns matching components with excerpts. |
+| `get_component_doc` | Returns the documentation for a specific component section (`overview`, `code`, `design`, `accessibility`, `demo`). Defaults to `code`. Output is cleaned of YAML frontmatter and DSFR navigation chrome. Suggests alternatives if the component name is not found. |
+| `search_components` | Ranked full-text search across all DSFR documentation — metadata and markdown content. Tokenizes the query, scores matches (metadata weighted above content), and returns the top results with the matching section and a clean excerpt. |
 | `search_icons` | Search DSFR icons by name or category. Returns icon name, category, variants (fill/line), and CSS classes. Supports filtering by category (`arrows`, `system`, `business`, etc.). |
 | `get_color_tokens` | Returns DSFR color tokens filtered by context (`background`, `text`, `artwork`), functional usage (`action`, `error`, `disabled`, etc.), or color family (`blue-france`, `grey`, `green-tilleul-verveine`, etc.). Includes light/dark theme mappings. |
 | `get_component_accessibility` | Returns structured RGAA accessibility data for a component: keyboard interactions, accessibility rules (with do/don't guidelines), color contrasts, screen-reader behavior, applicable RGAA criteria, and references. Suggests alternatives when the component has no accessibility section. |
+| `get_component_code` | Extracts ready-to-use HTML code examples (with their labels) and the deduplicated list of `fr-*` CSS classes from a component's `code` section. Suggests alternatives when the component or its code section is missing. |
 
 ## Configuration
 

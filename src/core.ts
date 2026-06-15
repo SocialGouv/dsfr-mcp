@@ -15,6 +15,28 @@ function readFileWithCache(
   return content;
 }
 
+/**
+ * Remove documentation "chrome" that is noise for an AI consumer: the leading
+ * YAML frontmatter and the DSFR tab-navigation directive block (which only
+ * contains dead relative links to sibling .md files). Content directives
+ * (:::fr-table, code fences, etc.) are left intact — they carry real meaning.
+ */
+export function stripDocChrome(content: string): string {
+  return content
+    .replace(/^---\n[\s\S]*?\n---\n?/, "")
+    .replace(/:::dsfr-doc-tab-navigation[\s\S]*?\n:::\n?/g, "")
+    .trimStart();
+}
+
+/** Tidy a search excerpt: drop directive fences, frontmatter delimiters, nbsp, collapse whitespace. */
+function cleanExcerpt(text: string): string {
+  return text
+    .replace(/:{3,}[^\n]*/g, " ")
+    .replace(/ |&nbsp;/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export function loadIndex(docsDir: string): ComponentEntry[] {
   const indexPath = join(docsDir, "index.json");
   if (!existsSync(indexPath)) {
@@ -79,8 +101,8 @@ export function getComponentDoc(
   }
 
   const filePath = join(docsDir, entry.category, entry.name, `${section}.md`);
-  const content = readFileWithCache(filePath, cache);
-  if (content === undefined) {
+  const raw = readFileWithCache(filePath, cache);
+  if (raw === undefined) {
     return {
       content: [
         {
@@ -95,11 +117,13 @@ export function getComponentDoc(
     content: [
       {
         type: "text" as const,
-        text: `# ${entry.title} — ${section}\n\n${content}`,
+        text: `# ${entry.title} — ${section}\n\n${stripDocChrome(raw)}`,
       },
     ],
   };
 }
+
+const SEARCH_LIMIT = 15;
 
 export function searchComponents(
   index: ComponentEntry[],
@@ -107,53 +131,80 @@ export function searchComponents(
   query: string,
   cache: LRUCache<string, string>,
 ): ToolTextResult {
-  const q = query.toLowerCase();
-  const results: SearchResult[] = [];
-
-  for (const entry of index) {
-    const metaMatch =
-      entry.name.toLowerCase().includes(q) ||
-      entry.title.toLowerCase().includes(q) ||
-      entry.description.toLowerCase().includes(q);
-
-    if (metaMatch) {
-      results.push({
-        name: entry.name,
-        title: entry.title,
-        category: entry.category,
-        matchType: "metadata",
-        excerpt: entry.description,
-      });
-      continue;
-    }
-
-    for (const section of entry.sections) {
-      const filePath = join(docsDir, entry.category, entry.name, `${section}.md`);
-      const content = readFileWithCache(filePath, cache);
-      if (!content) continue;
-
-      const lowerContent = content.toLowerCase();
-      const idx = lowerContent.indexOf(q);
-      if (idx !== -1) {
-        const start = Math.max(0, idx - 80);
-        const end = Math.min(content.length, idx + q.length + 80);
-        const excerpt =
-          (start > 0 ? "..." : "") +
-          content.slice(start, end).replace(/\n/g, " ") +
-          (end < content.length ? "..." : "");
-        results.push({
-          name: entry.name,
-          title: entry.title,
-          category: entry.category,
-          matchType: `content (${section})`,
-          excerpt,
-        });
-        break;
-      }
-    }
+  const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
+  if (terms.length === 0) {
+    return {
+      content: [
+        { type: "text" as const, text: `Requête vide. Indiquez un ou plusieurs mots-clés.` },
+      ],
+    };
   }
 
-  if (results.length === 0) {
+  interface Scored extends SearchResult {
+    score: number;
+  }
+  const scored: Scored[] = [];
+
+  for (const entry of index) {
+    const name = entry.name.toLowerCase();
+    const title = entry.title.toLowerCase();
+    const description = entry.description.toLowerCase();
+
+    // Metadata scoring — name/title/description carry the strongest signal.
+    let metaScore = 0;
+    for (const term of terms) {
+      if (name === term) metaScore += 10;
+      else if (name.includes(term)) metaScore += 5;
+      if (title.includes(term)) metaScore += 4;
+      if (description.includes(term)) metaScore += 2;
+    }
+
+    // Content scoring — pick the section matching the most terms, for an excerpt.
+    let contentScore = 0;
+    let bestSection: string | undefined;
+    let bestExcerpt = "";
+    for (const section of entry.sections) {
+      const filePath = join(docsDir, entry.category, entry.name, `${section}.md`);
+      const raw = readFileWithCache(filePath, cache);
+      if (!raw) continue;
+      const content = stripDocChrome(raw); // keep frontmatter/nav out of excerpts
+      const lower = content.toLowerCase();
+
+      let sectionScore = 0;
+      let firstIdx = -1;
+      for (const term of terms) {
+        const idx = lower.indexOf(term);
+        if (idx !== -1) {
+          sectionScore += 1;
+          if (firstIdx === -1 || idx < firstIdx) firstIdx = idx;
+        }
+      }
+      if (sectionScore > contentScore) {
+        contentScore = sectionScore;
+        bestSection = section;
+        const start = Math.max(0, firstIdx - 80);
+        const end = Math.min(content.length, firstIdx + 100);
+        bestExcerpt =
+          (start > 0 ? "…" : "") +
+          cleanExcerpt(content.slice(start, end)) +
+          (end < content.length ? "…" : "");
+      }
+    }
+
+    const total = metaScore + contentScore;
+    if (total === 0) continue;
+
+    scored.push({
+      name: entry.name,
+      title: entry.title,
+      category: entry.category,
+      matchType: metaScore > 0 ? "metadata" : `content (${bestSection})`,
+      excerpt: metaScore > 0 ? entry.description : bestExcerpt,
+      score: total,
+    });
+  }
+
+  if (scored.length === 0) {
     return {
       content: [
         {
@@ -164,11 +215,19 @@ export function searchComponents(
     };
   }
 
+  scored.sort((a, b) => b.score - a.score || a.name.localeCompare(b.name));
+  const limited = scored.slice(0, SEARCH_LIMIT);
+  const truncated = scored.length - limited.length;
+
+  const lines = limited.map(
+    (r) => `- **${r.name}** (${r.title}) [${r.category}] — ${r.matchType}\n  ${r.excerpt}`,
+  );
+
   return {
     content: [
       {
         type: "text" as const,
-        text: `${results.length} résultat(s) pour "${query}" :\n\n${results.map((r) => `- **${r.name}** (${r.title}) [${r.category}] — ${r.matchType}\n  ${r.excerpt}`).join("\n\n")}`,
+        text: `${scored.length} résultat(s) pour "${query}"${truncated > 0 ? ` (${limited.length} affichés)` : ""} :\n\n${lines.join("\n\n")}`,
       },
     ],
   };
@@ -450,6 +509,124 @@ export function getComponentAccessibility(
   if (a11y.references.length > 0) {
     const lines = a11y.references.map((r) => `- ${r.label} : ${r.url}`);
     sections.push(`## Références\n${lines.join("\n")}`);
+  }
+
+  return {
+    content: [{ type: "text" as const, text: sections.join("\n\n") }],
+  };
+}
+
+export function getComponentCode(
+  index: ComponentEntry[],
+  docsDir: string,
+  name: string,
+  cache: LRUCache<string, string>,
+): ToolTextResult {
+  const entry = index.find(
+    (e) => e.name === name || e.name === name.toLowerCase(),
+  );
+  if (!entry) {
+    const suggestions = index
+      .filter(
+        (e) =>
+          e.name.includes(name.toLowerCase()) ||
+          e.title.toLowerCase().includes(name.toLowerCase()),
+      )
+      .map((e) => `${e.name} (${e.title})`)
+      .slice(0, 5);
+    return {
+      content: [
+        {
+          type: "text" as const,
+          text: `Composant "${name}" non trouvé.${suggestions.length > 0 ? ` Suggestions : ${suggestions.join(", ")}` : ""}\nUtilisez list_components pour voir la liste complète.`,
+        },
+      ],
+    };
+  }
+
+  if (!entry.sections.includes("code")) {
+    return {
+      content: [
+        {
+          type: "text" as const,
+          text: `Pas de section code pour ${entry.name} (${entry.title}). Sections disponibles : ${entry.sections.join(", ")}. Utilisez get_component_doc pour la documentation.`,
+        },
+      ],
+    };
+  }
+
+  const filePath = join(docsDir, entry.category, entry.name, "code.md");
+  const raw = readFileWithCache(filePath, cache);
+  if (raw === undefined) {
+    return {
+      content: [
+        {
+          type: "text" as const,
+          text: `Section code introuvable pour ${entry.name} (${entry.title}).`,
+        },
+      ],
+    };
+  }
+  const content = stripDocChrome(raw);
+
+  // Extract fenced code blocks, each tagged with the nearest preceding label.
+  const lines = content.split("\n");
+  const blocks: { label: string; lang: string; code: string }[] = [];
+  let lastLabel = "";
+  for (let i = 0; i < lines.length; i++) {
+    const fence = lines[i].match(/^```(\w*)\s*$/);
+    if (fence) {
+      const lang = (fence[1] || "html").toLowerCase();
+      const codeLines: string[] = [];
+      let j = i + 1;
+      for (; j < lines.length; j++) {
+        if (/^```\s*$/.test(lines[j])) break;
+        codeLines.push(lines[j]);
+      }
+      blocks.push({ label: lastLabel, lang, code: codeLines.join("\n") });
+      i = j;
+      continue;
+    }
+    const trimmed = lines[i].trim();
+    if (/^#{2,6}\s+/.test(trimmed)) lastLabel = trimmed.replace(/^#+\s+/, "");
+    else if (/^\*\*(.+)\*\*$/.test(trimmed)) lastLabel = trimmed.replace(/\*\*/g, "");
+  }
+
+  // Collect DSFR CSS classes from code (class="…") and from prose backticks.
+  const classes = new Set<string>();
+  let m: RegExpExecArray | null;
+  for (const b of blocks) {
+    const classAttrRe = /class="([^"]*)"/g;
+    while ((m = classAttrRe.exec(b.code))) {
+      for (const c of m[1].split(/\s+/)) if (c.startsWith("fr-")) classes.add(c);
+    }
+  }
+  const backtickRe = /`(fr-[\w-]+)`/g;
+  while ((m = backtickRe.exec(content))) classes.add(m[1]);
+
+  if (blocks.length === 0 && classes.size === 0) {
+    return {
+      content: [
+        {
+          type: "text" as const,
+          text: `Aucun exemple de code extrait pour ${entry.name}. Utilisez get_component_doc avec section="code".`,
+        },
+      ],
+    };
+  }
+
+  const sections: string[] = [`# ${entry.title} — Code`];
+  if (classes.size > 0) {
+    sections.push(
+      `## Classes CSS\n${[...classes].sort().map((c) => `\`${c}\``).join(", ")}`,
+    );
+  }
+  if (blocks.length > 0) {
+    const examples = blocks.map((b) => {
+      const head = b.label ? `### ${b.label}\n` : "";
+      return `${head}\`\`\`${b.lang}\n${b.code}\n\`\`\``;
+    });
+    sections.push(`## Exemples\n${examples.join("\n\n")}`);
   }
 
   return {

@@ -2,7 +2,7 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { join } from "node:path";
 import { existsSync } from "node:fs";
-import { loadIndex, listComponents, getComponentDoc, searchComponents, loadIcons, loadColors, searchIcons, getColorTokens, loadAccessibility, getComponentAccessibility } from "./core.js";
+import { loadIndex, listComponents, getComponentDoc, searchComponents, loadIcons, loadColors, searchIcons, getColorTokens, loadAccessibility, getComponentAccessibility, getComponentCode } from "./core.js";
 import { LRUCache } from "./cache.js";
 import type { ComponentEntry, IconEntry, ColorsIndex, AccessibilityIndex } from "./types.js";
 
@@ -32,19 +32,41 @@ interface DsfrData {
 // This avoids re-parsing index.json/icons.json/colors.json on every HTTP request.
 const dataByDir = new Map<string, DsfrData>();
 
+// Build the data bundle for a docs dir. The index is essential (errors bubble
+// up); the per-tool data files (icons/colors/accessibility) load defensively so
+// one missing or corrupt file degrades only its own tool rather than the whole
+// server. The cache is sized to hold the full doc corpus so search stays warm.
+export function buildDsfrData(docsDir: string): DsfrData {
+  const safeLoad = <T>(fn: () => T, fallback: T, label: string): T => {
+    try {
+      return fn();
+    } catch (err) {
+      console.error(
+        `Warning: données "${label}" indisponibles (${(err as Error).message}). Lancez "pnpm run fetch-docs".`,
+      );
+      return fallback;
+    }
+  };
+  return {
+    docsDir,
+    index: loadIndex(docsDir),
+    icons: safeLoad(() => loadIcons(docsDir), [], "icons"),
+    colors: safeLoad(
+      () => loadColors(docsDir),
+      { decisionTokens: [], families: [], illustrativeNames: [] },
+      "colors",
+    ),
+    accessibility: safeLoad(() => loadAccessibility(docsDir), {}, "accessibility"),
+    cache: new LRUCache<string, string>(500),
+  };
+}
+
 function makeLazyData(docsDirHint?: string): () => DsfrData {
   return () => {
     const docsDir = resolveDocsDir(docsDirHint);
     const existing = dataByDir.get(docsDir);
     if (existing) return existing;
-    const created: DsfrData = {
-      docsDir,
-      index: loadIndex(docsDir),
-      icons: loadIcons(docsDir),
-      colors: loadColors(docsDir),
-      accessibility: loadAccessibility(docsDir),
-      cache: new LRUCache<string, string>(50),
-    };
+    const created = buildDsfrData(docsDir);
     dataByDir.set(docsDir, created);
     return created;
   };
@@ -139,6 +161,18 @@ export function createDsfrServer(opts: { docsDir?: string } = {}): McpServer {
     async ({ name }) => {
       const d = getData();
       return getComponentAccessibility(d.index, d.accessibility, name);
+    },
+  );
+
+  server.tool(
+    "get_component_code",
+    "Extrait les exemples de code HTML et les classes CSS DSFR d'un composant à partir de sa section 'code'. Idéal pour intégrer un composant : renvoie les snippets HTML prêts à l'emploi (avec leur intitulé) et la liste dédupliquée des classes `fr-*` utilisées.",
+    {
+      name: z.string().describe("Nom du composant (ex: 'button', 'card', 'input', 'accordion')"),
+    },
+    async ({ name }) => {
+      const d = getData();
+      return getComponentCode(d.index, d.docsDir, name, d.cache);
     },
   );
 

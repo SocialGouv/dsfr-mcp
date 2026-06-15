@@ -1,0 +1,9 @@
+[
+  {
+    "name": "button",
+    "title": "Bouton",
+    "description": "Déclenchement d'une action dans l'interface",
+    "category": "component",
+    "sections": ["overview", "code", "accessibility"]
+  }
+]
