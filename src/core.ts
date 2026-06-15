@@ -1,6 +1,6 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import type { ComponentEntry, SearchResult, ToolTextResult, IconEntry, ColorsIndex } from "./types.js";
+import type { ComponentEntry, SearchResult, ToolTextResult, IconEntry, ColorsIndex, AccessibilityIndex } from "./types.js";
 import type { LRUCache } from "./cache.js";
 
 function readFileWithCache(
@@ -194,6 +194,16 @@ export function loadColors(docsDir: string): ColorsIndex {
   return JSON.parse(readFileSync(colorsPath, "utf-8"));
 }
 
+export function loadAccessibility(docsDir: string): AccessibilityIndex {
+  const accessibilityPath = join(docsDir, "accessibility.json");
+  if (!existsSync(accessibilityPath)) {
+    throw new Error(
+      `Accessibility index not found at ${accessibilityPath}. Run "pnpm run fetch-docs" first.`,
+    );
+  }
+  return JSON.parse(readFileSync(accessibilityPath, "utf-8"));
+}
+
 const ICON_CATEGORIES = [
   "arrows", "buildings", "business", "communication", "design",
   "development", "device", "document", "editor", "finance",
@@ -352,5 +362,97 @@ export function getColorTokens(
         text: sections.join("\n\n"),
       },
     ],
+  };
+}
+
+export function getComponentAccessibility(
+  index: ComponentEntry[],
+  accessibility: AccessibilityIndex,
+  name: string,
+): ToolTextResult {
+  const entry = index.find(
+    (e) => e.name === name || e.name === name.toLowerCase(),
+  );
+  if (!entry) {
+    const suggestions = index
+      .filter(
+        (e) =>
+          e.name.includes(name.toLowerCase()) ||
+          e.title.toLowerCase().includes(name.toLowerCase()),
+      )
+      .map((e) => `${e.name} (${e.title})`)
+      .slice(0, 5);
+    return {
+      content: [
+        {
+          type: "text" as const,
+          text: `Composant "${name}" non trouvé.${suggestions.length > 0 ? ` Suggestions : ${suggestions.join(", ")}` : ""}\nUtilisez list_components pour voir la liste complète.`,
+        },
+      ],
+    };
+  }
+
+  const a11y = accessibility[entry.name];
+  if (!a11y) {
+    const available = Object.keys(accessibility).sort();
+    return {
+      content: [
+        {
+          type: "text" as const,
+          text: `Pas de section accessibilité pour ${entry.name} (${entry.title}). Utilisez get_component_doc pour la documentation générale.\nComposants avec accessibilité : ${available.slice(0, 20).join(", ")}${available.length > 20 ? "…" : ""}`,
+        },
+      ],
+    };
+  }
+
+  const sections: string[] = [`# ${a11y.title} — Accessibilité`];
+
+  if (a11y.keyboardInteractions.length > 0) {
+    const lines = a11y.keyboardInteractions.map(
+      (k) => `- ${k.key}${k.action ? ` : ${k.action}` : ""}`,
+    );
+    sections.push(`## Interactions clavier\n${lines.join("\n")}`);
+  }
+
+  if (a11y.rules.text || a11y.rules.guidelines.length > 0) {
+    let s = `## Règles d'accessibilité`;
+    if (a11y.rules.text) s += `\n${a11y.rules.text}`;
+    if (a11y.rules.guidelines.length > 0) {
+      const g = a11y.rules.guidelines.map(
+        (gl) => `${gl.type === "do" ? "✅" : "❌"} ${gl.caption || gl.label}`,
+      );
+      s += `\n\n${g.join("\n")}`;
+    }
+    sections.push(s);
+  }
+
+  if (a11y.contrasts.length > 0) {
+    const blocks = a11y.contrasts.map((c) => {
+      const rows = c.rows
+        .map((r) => `  - ${r.state} : ${r.lightTheme} (clair) / ${r.darkTheme} (sombre)`)
+        .join("\n");
+      return `**${c.label}**${rows ? `\n${rows}` : ""}`;
+    });
+    sections.push(`## Contrastes de couleurs\n${blocks.join("\n")}`);
+  }
+
+  if (a11y.screenReader) {
+    sections.push(`## Restitution par les lecteurs d'écran\n${a11y.screenReader}`);
+  }
+
+  if (a11y.rgaaCriteria.length > 0) {
+    const lines = a11y.rgaaCriteria.map(
+      (c) => `- **${c.topic}** : ${c.criteria.join(", ")}`,
+    );
+    sections.push(`## Critères RGAA applicables\n${lines.join("\n")}`);
+  }
+
+  if (a11y.references.length > 0) {
+    const lines = a11y.references.map((r) => `- ${r.label} : ${r.url}`);
+    sections.push(`## Références\n${lines.join("\n")}`);
+  }
+
+  return {
+    content: [{ type: "text" as const, text: sections.join("\n\n") }],
   };
 }

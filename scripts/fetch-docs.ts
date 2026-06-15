@@ -1,6 +1,7 @@
 import { execSync } from "node:child_process";
 import { existsSync, mkdirSync, cpSync, readdirSync, readFileSync, writeFileSync, rmSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
+import { parseAccessibility } from "./parse-accessibility.js";
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const REPO_DIR = join(ROOT, ".dsfr-repo");
@@ -401,8 +402,31 @@ function extractColors(docsDir: string) {
   console.error(`Extracted ${colors.decisionTokens.length} decision tokens, ${colors.families.length} color families`);
 }
 
+// Extract structured accessibility (RGAA) data per component
+function extractAccessibility(docsDir: string) {
+  const result: Record<string, ReturnType<typeof parseAccessibility>> = {};
+  let count = 0;
+
+  for (const entry of index) {
+    if (!entry.sections.includes("accessibility")) continue;
+    const filePath = join(docsDir, entry.category, entry.name, "accessibility.md");
+    if (!existsSync(filePath)) continue;
+    try {
+      const content = readFileSync(filePath, "utf-8");
+      result[entry.name] = parseAccessibility(content, entry.name, entry.title);
+      count++;
+    } catch (err) {
+      console.error(`Warning: failed to parse accessibility for ${entry.name}: ${err}`);
+    }
+  }
+
+  writeFileSync(join(docsDir, "accessibility.json"), JSON.stringify(result, null, 2));
+  console.error(`Extracted accessibility for ${count} components`);
+}
+
 extractIcons(REPO_DIR, DOCS_DIR);
 extractColors(DOCS_DIR);
+extractAccessibility(DOCS_DIR);
 
 console.error(`\nDone! Extracted ${index.length} entries:`);
 for (const entry of index) {
