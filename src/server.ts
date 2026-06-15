@@ -2,9 +2,9 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { join } from "node:path";
 import { existsSync } from "node:fs";
-import { loadIndex, listComponents, getComponentDoc, searchComponents, loadIcons, loadColors, searchIcons, getColorTokens } from "./core.js";
+import { loadIndex, listComponents, getComponentDoc, searchComponents, loadIcons, loadColors, searchIcons, getColorTokens, loadAccessibility, getComponentAccessibility } from "./core.js";
 import { LRUCache } from "./cache.js";
-import type { ComponentEntry, IconEntry, ColorsIndex } from "./types.js";
+import type { ComponentEntry, IconEntry, ColorsIndex, AccessibilityIndex } from "./types.js";
 
 function resolveDocsDir(hint?: string): string {
   const candidates = [
@@ -24,6 +24,7 @@ interface DsfrData {
   index: ComponentEntry[];
   icons: IconEntry[];
   colors: ColorsIndex;
+  accessibility: AccessibilityIndex;
   cache: LRUCache<string, string>;
 }
 
@@ -41,6 +42,7 @@ function makeLazyData(docsDirHint?: string): () => DsfrData {
       index: loadIndex(docsDir),
       icons: loadIcons(docsDir),
       colors: loadColors(docsDir),
+      accessibility: loadAccessibility(docsDir),
       cache: new LRUCache<string, string>(50),
     };
     dataByDir.set(docsDir, created);
@@ -126,6 +128,18 @@ export function createDsfrServer(opts: { docsDir?: string } = {}): McpServer {
         .describe("Famille de couleur (ex: 'blue-france', 'grey', 'error', 'green-tilleul-verveine')"),
     },
     async ({ context, usage, family }) => getColorTokens(getData().colors, { context, usage, family }),
+  );
+
+  server.tool(
+    "get_component_accessibility",
+    "Retourne les informations d'accessibilité structurées d'un composant DSFR : interactions clavier, règles d'accessibilité (avec exemples à faire / à ne pas faire), contrastes de couleurs, restitution par les lecteurs d'écran, critères RGAA applicables et références. Suggère des alternatives si le composant n'a pas de section accessibilité.",
+    {
+      name: z.string().describe("Nom du composant (ex: 'button', 'input', 'accordion', 'modal')"),
+    },
+    async ({ name }) => {
+      const d = getData();
+      return getComponentAccessibility(d.index, d.accessibility, name);
+    },
   );
 
   return server;

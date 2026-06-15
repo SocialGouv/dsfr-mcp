@@ -41,6 +41,7 @@ pnpm run setup    # Fetches DSFR docs and builds the server
 | `search_components` | Full-text search across all DSFR documentation — metadata and markdown content. Returns matching components with excerpts. |
 | `search_icons` | Search DSFR icons by name or category. Returns icon name, category, variants (fill/line), and CSS classes. Supports filtering by category (`arrows`, `system`, `business`, etc.). |
 | `get_color_tokens` | Returns DSFR color tokens filtered by context (`background`, `text`, `artwork`), functional usage (`action`, `error`, `disabled`, etc.), or color family (`blue-france`, `grey`, `green-tilleul-verveine`, etc.). Includes light/dark theme mappings. |
+| `get_component_accessibility` | Returns structured RGAA accessibility data for a component: keyboard interactions, accessibility rules (with do/don't guidelines), color contrasts, screen-reader behavior, applicable RGAA criteria, and references. Suggests alternatives when the component has no accessibility section. |
 
 ## Configuration
 

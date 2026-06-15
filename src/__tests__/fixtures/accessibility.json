@@ -1,0 +1,50 @@
+{
+  "button": {
+    "name": "button",
+    "title": "Bouton",
+    "keyboardInteractions": [
+      { "key": "Entrée", "action": "actionne le bouton." },
+      { "key": "Espace", "action": "actionne le bouton." }
+    ],
+    "rules": {
+      "text": "Un bouton doit avoir un intitulé pertinent. On doit en comprendre la fonction sans ambiguïté.",
+      "guidelines": [
+        {
+          "type": "do",
+          "label": "Utiliser un intitulé textuel précis.",
+          "caption": "Utiliser un intitulé textuel précis."
+        },
+        {
+          "type": "dont",
+          "label": "Utiliser un intitulé générique et ambigu.",
+          "caption": "Utiliser un intitulé générique et ambigu."
+        }
+      ]
+    },
+    "contrasts": [
+      {
+        "label": "Bouton primaire",
+        "rows": [
+          { "state": "par défaut", "lightTheme": "14,9:1", "darkTheme": "4,7:1" },
+          { "state": "au survol", "lightTheme": "8,2:1", "darkTheme": "7,5:1" }
+        ]
+      }
+    ],
+    "screenReader": "Par défaut, les lecteurs d'écran restituent le nom, la description, l'état et le type.",
+    "rgaaCriteria": [
+      { "topic": "Couleurs", "criteria": ["3.2", "3.3"] },
+      { "topic": "Consultation", "criteria": ["13.9", "13.11"] }
+    ],
+    "references": [
+      {
+        "label": "Référentiel général d'amélioration de l'accessibilité (RGAA 4.1.2)",
+        "url": "https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/"
+      },
+      {
+        "label": "Spécification HTML – élément button",
+        "url": "https://html.spec.whatwg.org/#the-button-element"
+      }
+    ],
+    "cleanedMarkdown": "Le composant Bouton est conçu pour être accessible et respecter les critères du RGAA."
+  }
+}
