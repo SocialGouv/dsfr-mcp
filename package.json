@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "MCP server pour la documentation DSFR (Système de Design de l'État français)",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SocialGouv/dsfr-mcp.git"
+  },
+  "homepage": "https://github.com/SocialGouv/dsfr-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/SocialGouv/dsfr-mcp/issues"
+  },
   "main": "build/index.js",
   "module": "src/smithery.ts",
   "bin": {
