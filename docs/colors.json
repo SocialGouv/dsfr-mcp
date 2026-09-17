@@ -129,7 +129,7 @@
     {
       "token": "$text-label-grey",
       "context": "text",
-      "description": "Texte de libelléExemple : éléments de formulaire",
+      "description": "Texte de libellé Exemple : éléments de formulaire",
       "light": "$grey-50",
       "dark": "$grey-1000"
     },
@@ -143,7 +143,7 @@
     {
       "token": "$text-action-high-grey",
       "context": "text",
-      "description": "Texte cliquable importantExemple : accordéon, élément de navigation",
+      "description": "Texte cliquable important Exemple : accordéon, élément de navigation",
       "light": "$grey-50",
       "dark": "$grey-1000"
     },
@@ -248,7 +248,7 @@
     },
     {
       "name": "red-marianne",
-      "category": "neutre",
+      "category": "primaire",
       "correspondences": {
         "strong": {
           "light": "$red-marianne-425",
@@ -282,7 +282,7 @@
     },
     {
       "name": "grey",
-      "category": "systeme",
+      "category": "neutre",
       "correspondences": {
         "absolute-black": {
           "light": "$grey-0",
@@ -372,7 +372,7 @@
     },
     {
       "name": "info",
-      "category": "illustrative",
+      "category": "systeme",
       "correspondences": {
         "strong": {
           "light": "$info-425",

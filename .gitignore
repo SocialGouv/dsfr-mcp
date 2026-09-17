@@ -1,6 +1,7 @@
 node_modules/
 build/
 .dsfr-repo/
+.dsfr-chart-repo/
 .claude/
 .mcp.json
 .smithery/

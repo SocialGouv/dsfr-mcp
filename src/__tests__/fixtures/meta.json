@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 2,
+  "dsfrVersion": "v1.15.3",
+  "dsfrCommit": "0000000000000000000000000000000000000000",
+  "dsfrRepository": "https://github.com/GouvernementFR/dsfr",
+  "dsfrChartVersion": "v2.1.1",
+  "dsfrChartCommit": "1111111111111111111111111111111111111111",
+  "dsfrChartRepository": "https://github.com/GouvernementFR/dsfr-chart",
+  "fetchedAt": "2026-09-17T00:00:00.000Z",
+  "counts": {
+    "entries": 3,
+    "icons": 8,
+    "iconClasses": 14,
+    "decisionTokens": 3,
+    "colorFamilies": 2,
+    "illustrativeNames": 2,
+    "accessibilityComponents": 1,
+    "charts": 3
+  }
+}

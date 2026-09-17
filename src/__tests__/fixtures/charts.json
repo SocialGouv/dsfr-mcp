@@ -1,0 +1,193 @@
+{
+  "version": "v2.1.1",
+  "package": "@gouvfr/dsfr-chart",
+  "repository": "https://github.com/GouvernementFR/dsfr-chart",
+  "charts": [
+    {
+      "name": "bar-chart",
+      "tag": "<bar-chart>",
+      "component": "BarChart",
+      "title": "Graphique en barre (BarChart)",
+      "description": "Les graphiques en barre sont accessibles à travers la balise : `<bar-chart>`.",
+      "aliases": [
+        "BarChart",
+        "barchart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "x",
+          "prop": "x",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l'axe des abscisses sous forme d'une liste de listes entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "y",
+          "prop": "y",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l'axe des ordonnées sous forme d'une liste de listes entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "horizontal",
+          "prop": "horizontal",
+          "type": "Boolean | String",
+          "required": false,
+          "default": "false",
+          "description": "Affiche le graphique en barres horizontales.",
+          "documented": true
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "default": "''",
+          "description": "Palette de couleurs utilisée pour le graphique.",
+          "allowedValues": [
+            "default",
+            "neutral",
+            "categorical"
+          ],
+          "documented": true
+        },
+        {
+          "name": "sub-x",
+          "prop": "subX",
+          "type": "String",
+          "required": false,
+          "default": "null",
+          "description": "",
+          "documented": false
+        }
+      ],
+      "examples": [
+        {
+          "label": "Barres verticales simples",
+          "code": "<bar-chart\n  x='[[\"2025\", \"2030\"]]'\n  y=\"[[69.1, 70.3]]\"\n></bar-chart>"
+        },
+        {
+          "label": "Barres horizontales",
+          "code": "<bar-chart\n  x='[[\"2025\", \"2030\"]]'\n  y=\"[[10, 20]]\"\n  horizontal=\"true\"\n></bar-chart>"
+        }
+      ],
+      "notes": [
+        "Format des données : x et y sont des chaînes représentant des listes."
+      ]
+    },
+    {
+      "name": "data-box",
+      "tag": "<data-box>",
+      "component": "DataBox",
+      "title": "DataBox",
+      "description": "",
+      "aliases": [
+        "DataBox",
+        "databox"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "id",
+          "prop": "id",
+          "type": "String",
+          "required": true,
+          "description": "identifiant unique de la DataBox",
+          "documented": true
+        },
+        {
+          "name": "heading-level",
+          "prop": "headingLevel",
+          "type": "String",
+          "required": false,
+          "default": "'h3'",
+          "description": "niveau du titre de la DataBox",
+          "documented": true
+        }
+      ],
+      "examples": [],
+      "notes": []
+    },
+    {
+      "name": "table-chart",
+      "tag": "<table-chart>",
+      "component": "TableChart",
+      "title": "Tableau de données (TableChart)",
+      "description": "",
+      "aliases": [
+        "TableChart",
+        "tablechart"
+      ],
+      "documented": false,
+      "params": [
+        {
+          "name": "max-overflow",
+          "prop": "maxOverflow",
+          "type": "Number | String",
+          "required": false,
+          "default": "128",
+          "description": "",
+          "documented": false
+        }
+      ],
+      "examples": [],
+      "notes": []
+    }
+  ],
+  "guides": [
+    {
+      "name": "install",
+      "title": "Installation et intégration",
+      "markdown": "# DSFR Chart\n\n```bash\nnpm install @gouvfr/dsfr-chart\n```"
+    },
+    {
+      "name": "colors",
+      "title": "Gestion des couleurs et palettes",
+      "markdown": "## Gestion des couleurs\n\nLes graphiques unicolores utilisent la palette `default`."
+    },
+    {
+      "name": "accessibility",
+      "title": "Accessibilité : non-conformités et alternatives obligatoires",
+      "markdown": "## Accessibilité\n\nUtilisés seuls, les graphiques sont inaccessibles aux personnes aveugles."
+    },
+    {
+      "name": "databox",
+      "title": "DataBox : tableaux de bord et alternative accessible",
+      "markdown": "### Mise en place du graphique et de son alternative\n\nPour y intégrer un graphique, il faut juxtaposer la balise d'un graphique."
+    }
+  ],
+  "palettes": [
+    {
+      "name": "default",
+      "description": "Couleur par défaut."
+    },
+    {
+      "name": "neutral",
+      "description": "Palette neutre."
+    },
+    {
+      "name": "categorical",
+      "description": "Palette catégorielle par défaut."
+    }
+  ],
+  "colorTokens": [
+    {
+      "token": "dsfr-chart-colors-01",
+      "light": "#5C68E5",
+      "dark": "#5C68E5"
+    },
+    {
+      "token": "dsfr-chart-colors-default",
+      "light": "#5C68E5",
+      "dark": "#5C68E5"
+    },
+    {
+      "token": "dsfr-chart-colors-neutral",
+      "light": "#B1B1B1",
+      "dark": "#808080"
+    }
+  ]
+}
