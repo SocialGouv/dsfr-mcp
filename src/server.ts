@@ -2,9 +2,9 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { join } from "node:path";
 import { existsSync } from "node:fs";
-import { loadIndex, listComponents, getComponentDoc, searchComponents, loadIcons, loadColors, searchIcons, getColorTokens, loadAccessibility, getComponentAccessibility, getComponentCode } from "./core.js";
+import { loadIndex, listComponents, getComponentDoc, searchComponents, loadIcons, loadColors, searchIcons, getColorTokens, loadAccessibility, getComponentAccessibility, getComponentCode, loadCharts, loadMeta, getChartDoc, ICON_CATEGORIES, DOC_SECTIONS } from "./core.js";
 import { LRUCache } from "./cache.js";
-import type { ComponentEntry, IconEntry, ColorsIndex, AccessibilityIndex } from "./types.js";
+import type { ComponentEntry, IconEntry, ColorsIndex, AccessibilityIndex, ChartsIndex, DocsMeta } from "./types.js";
 
 function resolveDocsDir(hint?: string): string {
   const candidates = [
@@ -19,12 +19,24 @@ function resolveDocsDir(hint?: string): string {
   return join(process.cwd(), "docs");
 }
 
+const EMPTY_CHARTS: ChartsIndex = {
+  version: "",
+  package: "@gouvfr/dsfr-chart",
+  repository: "https://github.com/GouvernementFR/dsfr-chart",
+  charts: [],
+  guides: [],
+  palettes: [],
+  colorTokens: [],
+};
+
 interface DsfrData {
   docsDir: string;
   index: ComponentEntry[];
   icons: IconEntry[];
   colors: ColorsIndex;
   accessibility: AccessibilityIndex;
+  charts: ChartsIndex;
+  meta?: DocsMeta;
   cache: LRUCache<string, string>;
 }
 
@@ -57,6 +69,8 @@ export function buildDsfrData(docsDir: string): DsfrData {
       "colors",
     ),
     accessibility: safeLoad(() => loadAccessibility(docsDir), {}, "accessibility"),
+    charts: safeLoad(() => loadCharts(docsDir), EMPTY_CHARTS, "charts"),
+    meta: safeLoad<DocsMeta | undefined>(() => loadMeta(docsDir), undefined, "meta"),
     cache: new LRUCache<string, string>(500),
   };
 }
@@ -82,9 +96,12 @@ export function createDsfrServer(opts: { docsDir?: string } = {}): McpServer {
 
   server.tool(
     "list_components",
-    "Liste tous les composants, fondamentaux et modèles DSFR disponibles. Retourne nom, titre français, description et sections documentées.",
+    "Liste tous les composants, fondamentaux et modèles DSFR disponibles, ainsi que les graphiques DSFR Chart. Retourne les versions épinglées du DSFR et de DSFR Chart, puis, pour chaque entrée, nom, titre français, description et sections documentées. Les entrées de catégorie 'chart' sont des web-components d'un paquet npm distinct : leur documentation se lit avec get_chart_doc, pas avec get_component_doc.",
     {},
-    async () => listComponents(getData().index),
+    async () => {
+      const d = getData();
+      return listComponents(d.index, d.charts, d.meta);
+    },
   );
 
   server.tool(
@@ -93,9 +110,11 @@ export function createDsfrServer(opts: { docsDir?: string } = {}): McpServer {
     {
       name: z.string().describe("Nom du composant (ex: 'button', 'input', 'accordion', 'card')"),
       section: z
-        .enum(["overview", "code", "design", "accessibility", "demo"])
+        .enum(DOC_SECTIONS)
         .default("code")
-        .describe("Section de la doc à lire (défaut: 'code')"),
+        .describe(
+          "Section de la doc à lire (défaut: 'code'). 'usage' n'existe que pour le fondamental 'color' : depuis DSFR 1.15, 'color' + 'overview' donne la palette (tokens d'option) et 'color' + 'usage' les tokens de décision ($background-*, $text-*, $artwork-*).",
+        ),
     },
     async ({ name, section }) => {
       const d = getData();
@@ -105,13 +124,13 @@ export function createDsfrServer(opts: { docsDir?: string } = {}): McpServer {
 
   server.tool(
     "search_components",
-    "Recherche dans la documentation DSFR par mot-clé. Cherche dans les noms, titres, descriptions et le contenu des fichiers markdown.",
+    "Recherche dans la documentation DSFR par mot-clé. Cherche dans les noms, titres, descriptions et le contenu des fichiers markdown, ainsi que dans le catalogue des graphiques DSFR Chart (rendus dans un bloc séparé).",
     {
       query: z.string().describe("Mot-clé de recherche (ex: 'tableau', 'navigation', 'formulaire', 'fr-btn')"),
     },
     async ({ query }) => {
       const d = getData();
-      return searchComponents(d.index, d.docsDir, query, d.cache);
+      return searchComponents(d.index, d.docsDir, query, d.cache, d.charts);
     },
   );
 
@@ -121,11 +140,7 @@ export function createDsfrServer(opts: { docsDir?: string } = {}): McpServer {
     {
       query: z.string().describe("Terme de recherche (ex: 'download', 'arrow', 'user')"),
       category: z
-        .enum([
-          "arrows", "buildings", "business", "communication", "design",
-          "development", "device", "document", "editor", "finance",
-          "health", "logo", "map", "media", "others", "system", "user", "weather",
-        ])
+        .enum(ICON_CATEGORIES)
         .optional()
         .describe("Filtrer par catégorie d'icônes (optionnel)"),
     },
@@ -174,6 +189,20 @@ export function createDsfrServer(opts: { docsDir?: string } = {}): McpServer {
       const d = getData();
       return getComponentCode(d.index, d.docsDir, name, d.cache);
     },
+  );
+
+  server.tool(
+    "get_chart_doc",
+    "Documentation d'une visualisation de données DSFR Chart. ATTENTION : DSFR Chart est un paquet npm distinct (@gouvfr/dsfr-chart), composé de web-components Vue.js, et non de composants CSS du DSFR — ils s'utilisent via des balises personnalisées (<bar-chart>, <line-chart>, <data-box>…) et des attributs HTML, sans classes `fr-*`. Retourne la balise, les attributs obligatoires et optionnels avec leur type et leur valeur par défaut, et des exemples prêts à l'emploi. Accepte aussi quatre sujets transverses : 'install' (intégration, imports, prérequis DSFR), 'colors' (palettes et jetons), 'accessibility' (non-conformités RGAA connues et alternatives textuelles obligatoires), 'databox' (tableaux de bord et alternative accessible).",
+    {
+      name: z
+        .string()
+        .min(1)
+        .describe(
+          "Balise, nom de composant ou sujet transverse (ex: 'bar-chart', 'BarChart', 'data-box', 'map-chart', 'accessibility', 'install')",
+        ),
+    },
+    async ({ name }) => getChartDoc(getData().charts, name),
   );
 
   return server;

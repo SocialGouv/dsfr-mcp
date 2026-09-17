@@ -1,0 +1,2099 @@
+{
+  "version": "v2.1.1",
+  "package": "@gouvfr/dsfr-chart",
+  "repository": "https://github.com/GouvernementFR/dsfr-chart",
+  "charts": [
+    {
+      "name": "bar-chart",
+      "tag": "<bar-chart>",
+      "component": "BarChart",
+      "title": "Graphique en barre (BarChart)",
+      "description": "Les graphiques en barre sont accessibles à travers la balise : `<bar-chart>`.",
+      "aliases": [
+        "BarChart",
+        "barchart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "x",
+          "prop": "x",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l’axe des abscisses sous forme d’une liste de listes entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "y",
+          "prop": "y",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l’axe des ordonnées sous forme d’une liste de listes entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "sub-x",
+          "prop": "subX",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "null"
+        },
+        {
+          "name": "sub-y",
+          "prop": "subY",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "null"
+        },
+        {
+          "name": "x-min",
+          "prop": "xMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des abscisses.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "x-max",
+          "prop": "xMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des abscisses.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-min",
+          "prop": "yMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des ordonnées.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-max",
+          "prop": "yMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des ordonnées.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": false,
+          "description": "Les noms des séries de données sous forme d'une liste entre crochets.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "stacked",
+          "prop": "stacked",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "Permet d'empiler les barres pour afficher des données empilées. Mettre à `true` pour activer.",
+          "documented": true,
+          "default": "false"
+        },
+        {
+          "name": "horizontal",
+          "prop": "horizontal",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "Permet d'afficher le graphique en barre horizontales. Mettre à `true` pour activer.",
+          "documented": true,
+          "default": "false"
+        },
+        {
+          "name": "bar-size",
+          "prop": "barSize",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir la largeur des barres en pixels. Par défaut, la largeur est automatique (`'flex'`).",
+          "documented": true,
+          "default": "'flex'"
+        },
+        {
+          "name": "max-bar-size",
+          "prop": "maxBarSize",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir la largeur maximale des barres en pixels. Par défaut, la largeur maximale est de `32` pixels.",
+          "documented": true,
+          "default": "32"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "Permet d'afficher une date associée au graphique.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "aspect-ratio",
+          "prop": "aspectRatio",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le ratio largeur/hauteur du graphique. Par défaut, le ratio est de `2`.",
+          "documented": true,
+          "default": "2"
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "description": "Permet de choisir la palette de couleurs utilisée pour le graphique. Les valeurs possibles sont :",
+          "documented": true,
+          "default": "''",
+          "allowedValues": [
+            "default",
+            "neutral",
+            "categorical",
+            "sequentialAscending",
+            "sequentialDescending",
+            "divergentAscending",
+            "divergentDescending"
+          ]
+        },
+        {
+          "name": "highlight-index",
+          "prop": "highlightIndex",
+          "type": "Array | String",
+          "required": false,
+          "description": "Liste d'index des barres à mettre en avant (utilisé principalement avec la palette `'neutral'`).",
+          "documented": true,
+          "default": "() => []"
+        },
+        {
+          "name": "unit-tooltip",
+          "prop": "unitTooltip",
+          "type": "String",
+          "required": false,
+          "description": "Permet de spécifier l’unité à afficher dans l’infobulle (tooltip) du graphique. Par exemple, `%`, `€`, `$`, etc.",
+          "documented": true,
+          "default": "''"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Barres verticales simples",
+          "code": "<bar-chart\n  x='[[\"2025\", \"2030\", \"2035\", \"2040\", \"2050\", \"2060\", \"2070\"]]'\n  y=\"[[69.1, 70.3, 71.4, 72.5, 74, 75.2, 76.4]]\"\n  name='[\"Population en millions\"]'\n  selected-palette=\"default\"\n  unit-tooltip=\"millions\"\n></bar-chart>"
+        },
+        {
+          "label": "Barres horizontales",
+          "code": "<bar-chart\n  x='[[\"2025\", \"2030\", \"2035\", \"2040\"]]'\n  y=\"[[10, 20, 30, 40]]\"\n  horizontal=\"true\"\n  selected-palette=\"categorical\"\n></bar-chart>"
+        },
+        {
+          "label": "Barres empilées",
+          "code": "<bar-chart\n  x='[[\"Catégorie A\", \"Catégorie B\", \"Catégorie C\", \"Catégorie D\"]]'\n  y=\"[[15, 19, 15, 13], [45, 40, 47, 41], [36, 32, 34, 44], [4, 9, 4, 2]]\"\n  name='[\"Série 1\", \"Série 2\", \"Série 3\", \"Série 4\"]'\n  stacked=\"true\"\n  selected-palette=\"divergentDescending\"\n  unit-tooltip=\"%\"\n></bar-chart>"
+        },
+        {
+          "label": "Barres avec mise en avant de certaines catégories",
+          "code": "<bar-chart\n  x='[[\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\"]]'\n  y=\"[[5, 10, 15, 20, 25, 30]]\"\n  selected-palette=\"neutral\"\n  highlight-index=\"[2, 4]\"\n  unit-tooltip=\"k€\"\n></bar-chart>"
+        },
+        {
+          "label": "Barres avec palette séquentielle ascendante",
+          "code": "<bar-chart\n  x='[[\"Q1\", \"Q2\", \"Q3\", \"Q4\"]]'\n  y=\"[[200, 400, 600, 800]]\"\n  selected-palette=\"sequentialAscending\"\n  unit-tooltip=\"units\"\n></bar-chart>"
+        },
+        {
+          "label": "Exemple combinant plusieurs options",
+          "code": "<bar-chart\n  x='[[\"Produit A\", \"Produit B\", \"Produit C\", \"Produit D\"]]'\n  y=\"[[50, 70, 30, 90]]\"\n  name='[\"Ventes\"]'\n  selected-palette=\"neutral\"\n  highlight-index=\"[3]\"\n  horizontal=\"true\"\n  unit-tooltip=\"€\"\n></bar-chart>"
+        }
+      ],
+      "notes": [
+        "selected-palette : Ce paramètre vous permet de personnaliser les couleurs utilisées dans le graphique. Choisissez parmi les options disponibles pour représenter vos données de manière appropriée.",
+        "highlight-index : Utilisé en combinaison avec la palette `'neutral'`, ce paramètre vous permet de mettre en avant des barres spécifiques du graphique. Les index commencent à 0.",
+        "unit-tooltip : Ce paramètre vous permet de spécifier l’unité qui sera affichée dans l’infobulle (tooltip) lorsque l’utilisateur survole une barre du graphique. Cela rend la lecture des valeurs plus intuitive en indiquant l’unité de mesure.",
+        "horizontal : Définit l’orientation du graphique. Par défaut, les barres sont verticales.",
+        "stacked : Permet d'empiler les séries de données, utile pour visualiser la contribution de chaque série au total.",
+        "Format des données : Assurez-vous que les valeurs de `x` et `y` sont des chaînes représentant des listes de listes, par exemple `x='[[\"Label1\", \"Label2\"]]'` et `y='[[10, 20], [30, 40]]'`.",
+        "Combinaison des options : Vous pouvez combiner plusieurs options pour personnaliser davantage votre graphique, comme utiliser `horizontal=\"true\"` avec `stacked=\"true\"`.",
+        "Indexation : Les index utilisés dans `highlight-index` correspondent aux positions des barres dans vos données `x`. Par exemple, `highlight-index=\"[0, 2]\"` mettra en avant la première et la troisième barre.",
+        "Personnalisation des couleurs : Si vous n’indiquez pas de couleurs spécifiques pour les lignes, des couleurs par défaut seront utilisées.",
+        "Visualisation des seuils : L’ajout de lignes de référence est utile pour visualiser des seuils, des moyennes ou d'autres valeurs importantes sur le graphique."
+      ]
+    },
+    {
+      "name": "bar-line-chart",
+      "tag": "<bar-line-chart>",
+      "component": "BarLineChart",
+      "title": "Graphique en ligne / Diagramme en barres (BarLineChart)",
+      "description": "Les graphiques en ligne et barres sont accessibles à travers la balise : `<bar-line-chart>`.",
+      "aliases": [
+        "BarLineChart",
+        "barlinechart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "x",
+          "prop": "x",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l’axe des abscisses sous forme d'une liste entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "y-bar",
+          "prop": "yBar",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs pour les barres sous forme d'une liste entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "y-line",
+          "prop": "yLine",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs pour la ligne sous forme d'une liste entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "x-min",
+          "prop": "xMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des abscisses.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "x-max",
+          "prop": "xMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des abscisses.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-bar-min",
+          "prop": "yBarMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des ordonnées pour les barres.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-bar-max",
+          "prop": "yBarMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des ordonnées pour les barres.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-line-min",
+          "prop": "yLineMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des ordonnées pour la ligne.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-line-max",
+          "prop": "yLineMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des ordonnées pour la ligne.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "name-bar",
+          "prop": "nameBar",
+          "type": "String",
+          "required": false,
+          "description": "Les noms des séries de données pour les barres sous forme d'une liste entre crochets.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "name-line",
+          "prop": "nameLine",
+          "type": "String",
+          "required": false,
+          "description": "Le nom de la série de données pour la ligne.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "bar-size",
+          "prop": "barSize",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir la largeur des barres en pixels. Par défaut, la largeur est automatique (`'flex'`).",
+          "documented": true,
+          "default": "'flex'"
+        },
+        {
+          "name": "max-bar-size",
+          "prop": "maxBarSize",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir la largeur maximale des barres en pixels. Par défaut, la largeur maximale est de `32` pixels.",
+          "documented": true,
+          "default": "32"
+        },
+        {
+          "name": "vline",
+          "prop": "vline",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "vlinecolor",
+          "prop": "vlinecolor",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "vlinename",
+          "prop": "vlinename",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hline",
+          "prop": "hline",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hlinecolor",
+          "prop": "hlinecolor",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hlinename",
+          "prop": "hlinename",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "Permet d'afficher une date associée au graphique.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "aspect-ratio",
+          "prop": "aspectRatio",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le ratio largeur/hauteur du graphique. Par défaut, le ratio est de `2`.",
+          "documented": true,
+          "default": "2"
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "description": "Permet de choisir la palette de couleurs utilisée pour le graphique. Les valeurs possibles sont :",
+          "documented": true,
+          "default": "''",
+          "allowedValues": [
+            "default",
+            "neutral",
+            "categorical",
+            "sequentialAscending",
+            "sequentialDescending",
+            "divergentAscending",
+            "divergentDescending"
+          ]
+        },
+        {
+          "name": "unit-tooltip-bar",
+          "prop": "unitTooltipBar",
+          "type": "String",
+          "required": false,
+          "description": "Permet de spécifier l’unité à afficher dans l’infobulle (tooltip) des barres.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "unit-tooltip-line",
+          "prop": "unitTooltipLine",
+          "type": "String",
+          "required": false,
+          "description": "Permet de spécifier l’unité à afficher dans l’infobulle (tooltip) de la ligne.",
+          "documented": true,
+          "default": "''"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Graphique en ligne / Diagramme en barres (BarLineChart)",
+          "code": "<bar-line-chart\n  x=\"[1, 2, 3, 4, 5]\"\n  y=\"[20, 25, 30, 35, 40]\"\n  y-bar=\"[15, 18, 22, 28, 33]\"\n  selected-palette=\"sequentialAscending\"\n  unit-tooltip=\"kW\"\n  unit-tooltip-bar=\"kWh\"\n></bar-line-chart>"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "data-box",
+      "tag": "<data-box>",
+      "component": "DataBox",
+      "title": "DataBox",
+      "description": "Le composant `DataBox` est un composant permettant d’afficher dans un cadre normé des données sous différentes formes (graphiques, chiffres clés, tableaux, etc.). Il est à utiliser pour composer un tableau de bord, ou toute page nécessitant de structurer la visualisation de données.",
+      "aliases": [
+        "DataBox",
+        "databox"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "id",
+          "prop": "id",
+          "type": "String",
+          "required": true,
+          "description": "identifiant unique de la DataBox",
+          "documented": true
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": true,
+          "description": "titre de la DataBox",
+          "documented": true
+        },
+        {
+          "name": "heading-level",
+          "prop": "headingLevel",
+          "type": "String",
+          "required": false,
+          "description": "niveau du titre de la DataBox (h1, h2, h3, h4, h5, h6)",
+          "documented": true,
+          "default": "'h3'"
+        },
+        {
+          "name": "description",
+          "prop": "description",
+          "type": "String",
+          "required": false,
+          "description": "description de la tooltip (HTML possible)",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "tooltip-title",
+          "prop": "tooltipTitle",
+          "type": "String",
+          "required": false,
+          "description": "titre de la tooltip",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "tooltip-content",
+          "prop": "tooltipContent",
+          "type": "String",
+          "required": false,
+          "description": "contenu de la tooltip",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "modal-title",
+          "prop": "modalTitle",
+          "type": "String",
+          "required": false,
+          "description": "titre de la modale",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "modal-content",
+          "prop": "modalContent",
+          "type": "String",
+          "required": false,
+          "description": "contenu de la modale",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "value",
+          "prop": "value",
+          "type": "Number | String",
+          "required": false,
+          "description": "valeur de la tooltip si chiffre clé",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "source",
+          "prop": "source",
+          "type": "String",
+          "required": true,
+          "description": "source des données affichées",
+          "documented": true
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": true,
+          "description": "date des données affichées",
+          "documented": true
+        },
+        {
+          "name": "link-ia",
+          "prop": "linkIa",
+          "type": "String",
+          "required": false,
+          "description": "lien vers une page d'information sur l’IA ou la source des données générées par l’IA",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "text-ia",
+          "prop": "textIa",
+          "type": "String",
+          "required": false,
+          "description": "texte indiquant que les données ont été générées par une IA",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "default-source",
+          "prop": "defaultSource",
+          "type": "String",
+          "required": false,
+          "description": "source à afficher par défaut",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "trend",
+          "prop": "trend",
+          "type": "Number | String",
+          "required": false,
+          "description": "tendance de l’évolution des données",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "segmented-control",
+          "prop": "segmentedControl",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "afficher le système de vue graphique/tableau",
+          "documented": true,
+          "default": "true"
+        },
+        {
+          "name": "fullscreen",
+          "prop": "fullscreen",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "donner la possibilité d'ouvrir le graphique dans une modale",
+          "documented": true,
+          "default": "false"
+        },
+        {
+          "name": "screenshot",
+          "prop": "screenshot",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "permettre une capture d'écran de la DataBox",
+          "documented": true,
+          "default": "false"
+        },
+        {
+          "name": "download",
+          "prop": "download",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "télécharger les données du graphique au format CSV",
+          "documented": true,
+          "default": "false"
+        },
+        {
+          "name": "actions",
+          "prop": "actions",
+          "type": "Array | String",
+          "required": false,
+          "description": "liste des actions supplémentaires à afficher dans le menu (pour se greffer par la suite avec l’id)",
+          "documented": true,
+          "default": "() => []"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Utilisation classique avec toutes les options :",
+          "code": "<data-box\n  id=\"abc\"\n  name=\"Emplois en France de 1926 à 1950\"\n  heading-level=\"h3\"\n  description=\"Description du graphique <b>avec du HTML</b>\"\n  tooltip-title=\"Emplois en France\"\n  tooltip-content=\"Nombre d'emplois en France de 1926 à 1950, par genre. Se base sur les données de l’INSEE et de Pôle Emploi et d'une autre source.\"\n  modal-title=\"Titre de la modale\"\n  modal-content=\"Contenu de la modale\"\n  source=\"INSEE, Pôle Emploi, Autre source\"\n  date=\"2021-01-01\"\n  text-ia=\"Données générées par Intelligence Artificielle (IA)\"\n  link-ia=\"https://www.info.gouv.fr/actualite/lintelligence-artificielle\"\n  default-source=\"pole-emploi\"\n  trend=\"5%\"\n  segmented-control=\"true\"\n  fullscreen=\"true\"\n  screenshot=\"true\"\n  download=\"true\"\n  actions='[\"Source officielle\", \"Pôle emploi\"]'\n></data-box>"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "gauge-chart",
+      "tag": "<gauge-chart>",
+      "component": "GaugeChart",
+      "title": "Jauge (GaugeChart)",
+      "description": "Les jauges sont accessibles à travers la balise : `<gauge-chart>`.",
+      "aliases": [
+        "GaugeChart",
+        "gaugechart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "value",
+          "prop": "value",
+          "type": "Number | String",
+          "required": false,
+          "description": "La valeur actuelle de la jauge.",
+          "documented": true,
+          "default": "0"
+        },
+        {
+          "name": "percent",
+          "prop": "percent",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet d’afficher la valeur en pourcentage par rapport à la valeur cible. Remplace le pourcentage calculé automatiquement si la prop value est renseignée.",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "init",
+          "prop": "init",
+          "type": "Number | String",
+          "required": true,
+          "description": "La valeur de départ de la jauge.",
+          "documented": true
+        },
+        {
+          "name": "target",
+          "prop": "target",
+          "type": "Number | String",
+          "required": true,
+          "description": "La valeur cible de la jauge.",
+          "documented": true
+        },
+        {
+          "name": "init-date",
+          "prop": "initDate",
+          "type": "String",
+          "required": false,
+          "description": "Permet d’afficher une date associée à la valeur de départ.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "target-date",
+          "prop": "targetDate",
+          "type": "String",
+          "required": false,
+          "description": "Permet d’afficher une date associée à la valeur cible.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "height",
+          "prop": "height",
+          "type": "String",
+          "required": false,
+          "description": "Permet de définir la hauteur de la jauge. Par défaut, la hauteur est de `2rem`.",
+          "documented": true,
+          "default": "'2rem'"
+        },
+        {
+          "name": "legend",
+          "prop": "legend",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "Permet d’afficher une légende sous la jauge, avec \"Valeur cible\" et \"Valeur actuelle\". Par défaut, la légende est affichée.",
+          "documented": true,
+          "default": "true"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "Permet d'afficher une date associée au graphique.",
+          "documented": true,
+          "default": "''"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Jauge (GaugeChart)",
+          "code": "<gauge-chart\n  value=\"16\"\n  init=\"10\"\n  target=\"20\"\n></gauge-chart>"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "line-chart",
+      "tag": "<line-chart>",
+      "component": "LineChart",
+      "title": "Graphique en ligne (LineChart)",
+      "description": "Les graphiques en ligne sont accessibles à travers la balise : `<line-chart>`.",
+      "aliases": [
+        "LineChart",
+        "linechart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "x",
+          "prop": "x",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l’axe des abscisses sous forme d'une liste entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "y",
+          "prop": "y",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l’axe des ordonnées sous forme d'une liste entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "x-min",
+          "prop": "xMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des abscisses.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "x-max",
+          "prop": "xMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des abscisses.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-min",
+          "prop": "yMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des ordonnées.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-max",
+          "prop": "yMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des ordonnées.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": false,
+          "description": "Les noms des séries de données sous forme d'une liste entre crochets.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "vline",
+          "prop": "vline",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "vlinecolor",
+          "prop": "vlinecolor",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "vlinename",
+          "prop": "vlinename",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hline",
+          "prop": "hline",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hlinecolor",
+          "prop": "hlinecolor",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hlinename",
+          "prop": "hlinename",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "Permet d'afficher une date associée au graphique.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "aspect-ratio",
+          "prop": "aspectRatio",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le ratio largeur/hauteur du graphique. Par défaut, le ratio est de `2`.",
+          "documented": true,
+          "default": "2"
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "description": "Permet de choisir la palette de couleurs utilisée pour le graphique. Les valeurs possibles sont :",
+          "documented": true,
+          "default": "''",
+          "allowedValues": [
+            "default",
+            "neutral",
+            "categorical",
+            "sequentialAscending",
+            "sequentialDescending",
+            "divergentAscending",
+            "divergentDescending"
+          ]
+        },
+        {
+          "name": "unit-tooltip",
+          "prop": "unitTooltip",
+          "type": "String",
+          "required": false,
+          "description": "Permet de spécifier l’unité à afficher dans l’infobulle (tooltip) du graphique. Par exemple, `%`, `€`, `$`, etc.",
+          "documented": true,
+          "default": "''"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Graphique en ligne simple",
+          "code": "<line-chart\n  x=\"[[1, 2, 3, 4]]\"\n  y=\"[[10, 20, 30, 40]]\"\n></line-chart>"
+        },
+        {
+          "label": "Graphique en ligne avec palette divergente ascendante",
+          "code": "<line-chart\n  x=\"[[1, 2, 3, 4]]\"\n  y=\"[[10, 20, 30, 40]]\"\n  selected-palette=\"divergentAscending\"\n></line-chart>"
+        },
+        {
+          "label": "Graphique en ligne avec unité personnalisée dans l’infobulle",
+          "code": "<line-chart\n  x=\"[[1, 2, 3, 4]]\"\n  y=\"[[1000, 2000, 3000, 4000]]\"\n  unit-tooltip=\"€\"\n></line-chart>"
+        },
+        {
+          "label": "Graphique en ligne avec deux courbes",
+          "code": "<line-chart\n  x=\"[[1, 2, 3], [1, 2, 3]]\"\n  y=\"[[30, 10, 20], [10, 20, 30]]\"\n  unit-tooltip=\"%\"\n></line-chart>"
+        },
+        {
+          "label": "Exemple combinant plusieurs options",
+          "code": "<line-chart\n  x=\"[[1, 2, 3, 4, 5]]\"\n  y=\"[[15, 25, 35, 45, 55]]\"\n  selected-palette=\"categorical\"\n  unit-tooltip=\"kWh\"\n></line-chart>"
+        }
+      ],
+      "notes": [
+        "unit-tooltip : Ce paramètre vous permet de spécifier l’unité qui sera affichée dans l’infobulle (tooltip) lorsque l’utilisateur survole un point du graphique. Cela rend la lecture des valeurs plus intuitive en indiquant l’unité de mesure.",
+        "selected-palette : Ce paramètre vous permet de personnaliser les couleurs utilisées dans le graphique. Choisissez parmi les options disponibles pour représenter vos données de manière appropriée.",
+        "Format des données : Assurez-vous que les valeurs de `x` et `y` sont des chaînes représentant des listes, par exemple `x=\"[1, 2, 3]\"`.",
+        "Combinaison des options : Vous pouvez combiner plusieurs options pour personnaliser davantage votre graphique, par exemple en utilisant `selected-palette` avec `unit-tooltip`.",
+        "Personnalisation des séries : Chaque série de données sera représentée par une ligne distincte. Les couleurs des lignes seront attribuées en fonction de la palette sélectionnée."
+      ]
+    },
+    {
+      "name": "map-chart",
+      "tag": "<map-chart>",
+      "component": "MapChart",
+      "title": "Cartes (MapChart)",
+      "description": "Les cartes sont accessibles à travers la balise : `<map-chart>`.",
+      "aliases": [
+        "MapChart",
+        "mapchart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "data",
+          "prop": "data",
+          "type": "String",
+          "required": true,
+          "description": "Un dictionnaire qui, pour chaque numéro de département, de région ou de pays, associe la valeur de l’indicateur dans cette zone géographique.",
+          "documented": true
+        },
+        {
+          "name": "value",
+          "prop": "value",
+          "type": "Number | String",
+          "required": false,
+          "description": "La valeur de l’indicateur à l’échelle nationale. Cette valeur sera affichée dans la barre latérale (documenté comme obligatoire en amont, bien que le composant déclare une valeur par défaut)",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "Permet d'afficher une date associée au graphique.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "level",
+          "prop": "level",
+          "type": "String",
+          "required": false,
+          "description": "Choix du niveau de zoom. Les valeurs possibles sont :",
+          "documented": true,
+          "default": "'dep'",
+          "allowedValues": [
+            "dep",
+            "reg",
+            "aca",
+            "monde"
+          ]
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": false,
+          "description": "Nom de l’indicateur (documenté comme obligatoire en amont, bien que le composant déclare une valeur par défaut)",
+          "documented": true,
+          "default": "'Données'"
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "description": "Permet de choisir la palette de couleurs utilisée pour la carte. Les valeurs possibles sont :",
+          "documented": true,
+          "default": "'sequentialAscending'",
+          "allowedValues": [
+            "categorical",
+            "sequentialAscending",
+            "sequentialDescending",
+            "divergentAscending",
+            "divergentDescending",
+            "neutral"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "label": "Carte avec découpage par départements",
+          "code": "<map-chart\n  data='{\n    \"01\": 10, \"02\": 83, \"03\": 67, \"04\": 6, \"05\": 47, \"06\": 96, \"07\": 77, \"08\": 75,\n    \"09\": 57, \"10\": 58, \"11\": 28, \"12\": 33, \"13\": 89, \"14\": 24, \"15\": 5, \"16\": 41,\n    \"17\": 79, \"18\": 8, \"19\": 42, \"2A\": 63, \"2B\": 16, \"21\": 25, \"22\": 26, \"23\": 37,\n    \"24\": 65, \"25\": 88, \"26\": 48, \"27\": 61, \"28\": 80, \"29\": 99, \"30\": 71, \"31\": 5,\n    \"32\": 0, \"33\": 86, \"34\": 19, \"35\": 13, \"36\": 32, \"37\": 59, \"38\": 82, \"39\": 13,\n    \"40\": 78, \"41\": 92, \"42\": 9, \"43\": 22, \"44\": 70, \"45\": 85, \"46\": 58, \"47\": 72,\n    \"48\": 61, \"49\": 27, \"50\": 47, \"51\": 41, \"52\": 44, \"53\": 29, \"54\": 22, \"55\": 4,\n    \"56\": 57, \"57\": 96, \"58\": 46, \"59\": 33, \"60\": 0, \"61\": 15, \"62\": 60, \"63\": 100,\n    \"64\": 98, \"65\": 77, \"66\": 51, \"67\": 67, \"68\": 19, \"69\": 44, \"70\": 92, \"71\": 93,\n    \"72\": 51, \"73\": 32, \"74\": 19, \"75\": 96, \"76\": 91, \"77\": 21, \"78\": 48, \"79\": 72,\n    \"80\": 52, \"81\": 48, \"82\": 57, \"83\": 38, \"84\": 23, \"85\": 46, \"86\": 37, \"87\": 64,\n    \"88\": 78, \"89\": 72, \"90\": 85, \"91\": 87, \"92\": 46, \"93\": 89, \"94\": 18, \"95\": 56,\n    \"971\": 48, \"972\": 64, \"973\": 6, \"974\": 70, \"976\": 38\n  }'\n  value=\"10\"\n  name=\"Nom de l’indicateur\"\n  level=\"dep\"\n  date=\"11/02/2025\"\n></map-chart>"
+        },
+        {
+          "label": "Carte avec découpage par régions",
+          "code": "<map-chart\n  data='{\n    \"ARA\": 32, \"BFC\": 8, \"BRE\": 38, \"CVL\": 12, \"GES\": 67, \"HDF\": 89, \"IDF\": 0,\n    \"NOR\": 23, \"NAQ\": 56, \"OCC\": 78, \"PDL\": 95, \"PAC\": 100, \"20R\": 14,\n    \"971\": 21, \"972\": 32, \"973\": 45, \"974\": 78, \"976\": 98\n  }'\n  value=\"10\"\n  name=\"Nom de l’indicateur\"\n  level=\"reg\"\n  date=\"11/02/2025\"\n></map-chart>"
+        },
+        {
+          "label": "Carte avec découpage par académies",
+          "code": "<map-chart\n  data='{\n    \"AIX-MARSEILLE\": 5, \"AMIENS\": 88, \"BESANCON\": 54, \"BORDEAUX\": 0, \"CLERMONT-FERRAND\": 9,\n    \"CORSE\": 34, \"CRETEIL\": 84, \"DIJON\": 46, \"GRENOBLE\": 58, \"LILLE\": 38,\n    \"LIMOGES\": 75, \"LYON\": 14, \"MONTPELLIER\": 27, \"NANCY-METZ\": 20, \"NANTES\": 76,\n    \"NICE\": 92, \"NORMANDIE\": 5, \"ORLEANS-TOURS\": 65, \"PARIS\": 100, \"POITIERS\": 85,\n    \"REIMS\": 41, \"RENNES\": 57, \"STRASBOURG\": 67, \"TOULOUSE\": 50, \"VERSAILLES\": 61,\n    \"GUADELOUPE\": 89, \"MARTINIQUE\": 45, \"GUYANE\": 31, \"REUNION\": 19, \"MAYOTTE\": 64\n  }'\n  value=\"10\"\n  name=\"Nom de l’indicateur\"\n  level=\"aca\"\n  date=\"11/02/2025\"\n></map-chart>"
+        },
+        {
+          "label": "Carte avec découpage par pays du monde",
+          "code": "<map-chart\n  data='{\n    \"AE\": 35, \"AF\": 65, \"AL\": 28, \"AM\": 9, \"AO\": 21, \"AR\": 71, \"AT\": 79, \"AU\": 17, \"AZ\": 76,\n    \"BA\": 38, \"BD\": 51, \"BE\": 83, \"BF\": 62, \"BG\": 67, \"BI\": 61, \"BJ\": 68, \"BN\": 56, \"BO\": 8,\n    \"BR\": 32, \"BS\": 2, \"BT\": 98, \"BW\": 33, \"BY\": 88, \"BZ\": 24, \"CA\": 96, \"CD\": 54, \"CF\": 33,\n    \"CG\": 57, \"CH\": 60, \"CI\": 33, \"CL\": 41, \"CM\": 61, \"CN\": 6, \"CO\": 59, \"CR\": 71, \"CU\": 23,\n    \"CY\": 52, \"CZ\": 73, \"DE\": 85, \"DJ\": 40, \"DK\": 3, \"DO\": 65, \"DZ\": 58, \"EC\": 35, \"EE\": 19,\n    \"EG\": 88, \"EH\": 60, \"ER\": 4, \"ES\": 84, \"ET\": 49, \"FI\": 9, \"FJ\": 12, \"FK\": 81, \"FR\": 100,\n    \"GA\": 16, \"GB\": 51, \"GD\": 2, \"GE\": 76, \"GF\": 68, \"GH\": 28, \"GM\": 97, \"GN\": 97, \"GQ\": 91,\n    \"GR\": 87, \"GT\": 5, \"GW\": 12, \"GY\": 38, \"HN\": 41, \"HR\": 71, \"HT\": 61, \"HU\": 87, \"ID\": 72,\n    \"IE\": 38, \"IL\": 82, \"IN\": 30, \"IQ\": 32, \"IR\": 4, \"IS\": 81, \"IT\": 60, \"JM\": 81, \"JO\": 56,\n    \"JP\": 17, \"KE\": 63, \"KG\": 93, \"KH\": 15, \"KP\": 19, \"KR\": 10, \"KW\": 44, \"KZ\": 8, \"LA\": 95,\n    \"LB\": 82, \"LK\": 35, \"LR\": 1, \"LS\": 77, \"LT\": 6, \"LU\": 17, \"LV\": 46, \"LY\": 27, \"MA\": 29,\n    \"MD\": 55, \"ME\": 12, \"MG\": 22, \"MK\": 63, \"ML\": 72, \"MM\": 2, \"MN\": 25, \"MR\": 2, \"MW\": 60,\n    \"MX\": 35, \"MY\": 42, \"MZ\": 7, \"NA\": 98, \"NC\": 84, \"NE\": 97, \"NG\": 94, \"NI\": 5, \"NL\": 87,\n    \"NO\": 46, \"NP\": 85, \"NZ\": 56, \"OM\": 90, \"PA\": 11, \"PE\": 93, \"PG\": 50, \"PH\": 20, \"PK\": 0,\n    \"PL\": 51, \"PR\": 57, \"PS\": 55, \"PT\": 23, \"PY\": 50, \"QA\": 67, \"RO\": 70, \"RS\": 24, \"RU\": 9,\n    \"RW\": 91, \"SA\": 50, \"SB\": 5, \"SD\": 96, \"SE\": 33, \"SI\": 80, \"SJ\": 54, \"SK\": 59, \"SL\": 71,\n    \"SN\": 57, \"SO\": 9, \"SR\": 94, \"SS\": 98, \"SV\": 40, \"SY\": 37, \"SZ\": 65, \"TD\": 88, \"TF\": 23,\n    \"TG\": 78, \"TH\": 65, \"TJ\": 44, \"TL\": 53, \"TM\": 41, \"TN\": 32, \"TR\": 8, \"TT\": 63, \"TW\": 9,\n    \"TZ\": 66, \"UA\": 82, \"UG\": 90, \"US\": 72, \"UY\": 64, \"UZ\": 25, \"VE\": 48, \"VN\": 9, \"VU\": 29,\n    \"XK\": 73, \"YE\": 84, \"ZA\": 32, \"ZM\": 46, \"ZW\": 56\n  }'\n  value=\"10\"\n  name=\"Nom de l’indicateur\"\n  level=\"monde\"\n  date=\"11/02/2025\"\n></map-chart>"
+        }
+      ],
+      "notes": [
+        "selected-palette : Ce paramètre vous permet de personnaliser les couleurs utilisées sur la carte. Les palettes disponibles permettent de représenter les données selon différentes échelles de couleurs.",
+        "level : Par défaut, la carte affiche le découpage par départements (`'dep'`). En spécifiant `'reg'`, vous pouvez afficher la carte avec le découpage par régions. Vous pouvez également utiliser `'aca'` pour afficher la carte avec le découpage par académies.= ou `'monde'` pour une carte mondiale.",
+        "Format des données :",
+        "Combinaison des options : Vous pouvez combiner plusieurs options pour personnaliser votre carte."
+      ]
+    },
+    {
+      "name": "map-chart-reg",
+      "tag": "<map-chart-reg>",
+      "component": "MapChartReg",
+      "title": "Carte régionale détaillée (MapChartReg)",
+      "description": "Les cartes par région sont accessibles à travers la balise : `<map-chart-reg>`.",
+      "aliases": [
+        "MapChartReg",
+        "mapchartreg"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "data",
+          "prop": "data",
+          "type": "String",
+          "required": true,
+          "description": "Un dictionnaire qui, pour chaque numéro de département, associe la valeur de l’indicateur dans ce département au sein d'une région spécifique. Seul les numéro de départements de la région seront affichés et sont obligatoires.",
+          "documented": true
+        },
+        {
+          "name": "value",
+          "prop": "value",
+          "type": "Number | String",
+          "required": false,
+          "description": "valeur de l’indicateur à l’échelle régionale (documenté comme obligatoire en amont, bien que le composant déclare une valeur par défaut)",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "Date de référence de l’indicateur",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "region",
+          "prop": "region",
+          "type": "String",
+          "required": true,
+          "description": "Code de la région à afficher.",
+          "documented": true
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": false,
+          "description": "nom de l’indicateur (documenté comme obligatoire en amont, bien que le composant déclare une valeur par défaut)",
+          "documented": true,
+          "default": "'Données'"
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "description": "palette de couleurs utilisée pour la carte",
+          "documented": true,
+          "default": "'sequentialAscending'"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Carte régionale détaillée (MapChartReg)",
+          "code": "<map-chart-reg\n  data='{\n    \"08\": 9, \"10\": 17, \"51\": 69, \"52\": 0, \"54\": 39,\n    \"55\": 11, \"57\": 45, \"67\": 100, \"68\": 42, \"88\": 18\n  }'\n  value=\"10\"\n  name=\"Nom de l’indicateur\"\n  region=\"GES\"\n  date=\"11/02/2025\"\n></map-chart-reg>"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "pie-chart",
+      "tag": "<pie-chart>",
+      "component": "PieChart",
+      "title": "Diagramme circulaire (PieChart)",
+      "description": "Les diagrammes circulaires sont accessibles à travers la balise : `<pie-chart>`.",
+      "aliases": [
+        "PieChart",
+        "piechart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "x",
+          "prop": "x",
+          "type": "String",
+          "required": true,
+          "description": "Les noms de chaque groupe sous la forme d’une liste entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "y",
+          "prop": "y",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs de chaque groupe sous la forme d’une liste entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "sub-x",
+          "prop": "subX",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "null"
+        },
+        {
+          "name": "sub-y",
+          "prop": "subY",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "null"
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": false,
+          "description": "Les noms des séries de données sous forme d'une liste entre crochets.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "fill",
+          "prop": "fill",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "Permet de remplir l’intérieur du graphique. Mettre à `true` pour un diagramme circulaire plein.",
+          "documented": true,
+          "default": "false"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "Permet d'afficher une date associée au graphique.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "aspect-ratio",
+          "prop": "aspectRatio",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le ratio largeur/hauteur du graphique. Par défaut, le ratio est de `2`.",
+          "documented": true,
+          "default": "2"
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "description": "Permet de choisir la palette de couleurs utilisée pour le graphique. Les valeurs possibles sont :",
+          "documented": true,
+          "default": "''",
+          "allowedValues": [
+            "categorical",
+            "sequentialAscending",
+            "sequentialDescending",
+            "divergentAscending",
+            "divergentDescending",
+            "neutral",
+            "default"
+          ]
+        },
+        {
+          "name": "unit-tooltip",
+          "prop": "unitTooltip",
+          "type": "String",
+          "required": false,
+          "description": "Permet de spécifier l’unité à afficher dans l’infobulle (tooltip) du graphique. Par exemple, `%`, `€`, `$`, etc.",
+          "documented": true,
+          "default": "''"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Diagramme circulaire creux (donut)",
+          "code": "<pie-chart\n  x='[[\"Emplois à durée indéterminée\", \"Non-salariés\", \"Contrats à durée déterminée\", \"Apprentis\", \"Intérimaires\"]]'\n  y=\"[[74.8, 11.7, 9.3, 1.6, 2.6]]\"\n  name='[\"Emplois à durée indéterminée\", \"Non-salariés\", \"Contrats à durée déterminée\", \"Apprentis\", \"Intérimaires\"]'\n  unit-tooltip=\"%\"\n  selected-palette=\"categorical\"\n></pie-chart>"
+        },
+        {
+          "label": "Diagramme circulaire plein",
+          "code": "<pie-chart\n  x='[[\"Groupe A\", \"Groupe B\", \"Groupe C\"]]'\n  y=\"[[10, 20, 30]]\"\n  fill=\"true\"\n  unit-tooltip=\"%\"\n  selected-palette=\"divergentAscending\"\n></pie-chart>"
+        }
+      ],
+      "notes": [
+        "selected-palette : Ce paramètre vous permet de personnaliser les couleurs utilisées dans le graphique. Choisissez parmi les options disponibles pour représenter vos données de manière appropriée.",
+        "unit-tooltip : Ce paramètre vous permet de spécifier l’unité qui sera affichée dans l’infobulle (tooltip) lorsque l’utilisateur survole une portion du diagramme. Cela rend la lecture des valeurs plus intuitive en indiquant l’unité de mesure.",
+        "fill : Par défaut, le PieChart est affiché sous forme de donut (creux au centre). En définissant fill=\"true\", vous obtiendrez un diagramme circulaire plein.",
+        "Format des données : Assurez-vous que les valeurs de `x` et `y` sont des chaînes représentant des listes, par exemple `x='[\"Groupe A\", \"Groupe B\"]'`.",
+        "Combinaison des options : Vous pouvez combiner plusieurs options pour personnaliser davantage votre graphique, comme utiliser `fill=\"true\"` avec `selected-palette`.",
+        "Personnalisation des séries : Le paramètre `name` peut être utilisé pour spécifier des noms de séries personnalisés."
+      ]
+    },
+    {
+      "name": "radar-chart",
+      "tag": "<radar-chart>",
+      "component": "RadarChart",
+      "title": "Diagramme en étoile (RadarChart)",
+      "description": "Les diagrammes en étoile (ou RadarChart) sont accessibles à travers la balise : `<radar-chart>`.",
+      "aliases": [
+        "RadarChart",
+        "radarchart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "x",
+          "prop": "x",
+          "type": "String",
+          "required": true,
+          "description": "Les noms de chaque groupe sous la forme d’une liste de listes entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "y",
+          "prop": "y",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs de chaque groupe sous la forme d’une liste de listes entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "scale-min",
+          "prop": "scaleMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "null"
+        },
+        {
+          "name": "scale-max",
+          "prop": "scaleMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "null"
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": false,
+          "description": "Les noms des séries de données sous forme d'une liste entre crochets.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "aspect-ratio",
+          "prop": "aspectRatio",
+          "type": "Number | String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "2"
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "description": "Permet de choisir la palette de couleurs utilisée pour le graphique. Les valeurs possibles sont :",
+          "documented": true,
+          "default": "''",
+          "allowedValues": [
+            "categorical",
+            "sequentialAscending",
+            "sequentialDescending",
+            "divergentAscending",
+            "divergentDescending",
+            "neutral",
+            "default"
+          ]
+        },
+        {
+          "name": "unit-tooltip",
+          "prop": "unitTooltip",
+          "type": "String",
+          "required": false,
+          "description": "Permet de spécifier l’unité à afficher dans l’infobulle (tooltip) du graphique. Par exemple, `%`, `€`, `$`, etc.",
+          "documented": true,
+          "default": "''"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Diagramme en étoile (RadarChart)",
+          "code": "<radar-chart\n  x='[[\"Non-salariés\", \"Emplois à durée indéterminée\", \"Contrats à durée déterminée\", \"Apprentis\", \"Intérimaires\"]]'\n  y=\"[[2.4, 43.9, 28.5, 17.2, 8.0],\n      [10.6, 77.8, 8.8, 0.2, 2.6],\n      [16.5, 77.3, 4.9, 0.0, 1.3]]\"\n  name='[\"15-24 ans\", \"25-49 ans\", \"50-64 ans\"]'\n  selected-palette=\"categorical\"\n  unit-tooltip=\"%\"\n></radar-chart>"
+        },
+        {
+          "label": "Diagramme en étoile avec palette divergente ascendante",
+          "code": "<radar-chart\n  x='[[\"Critère 1\", \"Critère 2\", \"Critère 3\", \"Critère 4\", \"Critère 5\"]]'\n  y=\"[[80, 90, 70, 60, 50], [60, 70, 80, 90, 100]]\"\n  name='[\"Série A\", \"Série B\"]'\n  selected-palette=\"divergentAscending\"\n  unit-tooltip=\"%\"\n></radar-chart>"
+        },
+        {
+          "label": "Diagramme en étoile avec unité personnalisée",
+          "code": "<radar-chart\n  x='[[\"Vitesse\", \"Puissance\", \"Agilité\", \"Endurance\", \"Précision\"]]'\n  y=\"[[85, 90, 75, 80, 70]]\"\n  name='[\"Athlète 1\"]'\n  unit-tooltip=\"points\"\n></radar-chart>"
+        }
+      ],
+      "notes": [
+        "selected-palette : Ce paramètre vous permet de personnaliser les couleurs utilisées dans le graphique. Choisissez parmi les options disponibles pour représenter vos données de manière appropriée.",
+        "unit-tooltip : Ce paramètre vous permet de spécifier l’unité qui sera affichée dans l’infobulle (tooltip) lorsque l’utilisateur survole une valeur du graphique. Cela rend la lecture des valeurs plus intuitive en indiquant l’unité de mesure.",
+        "Format des données : Assurez-vous que les valeurs de `x` et `y` sont des chaînes représentant des listes de listes. Par exemple :",
+        "Combinaison des options : Vous pouvez combiner plusieurs options pour personnaliser davantage votre graphique, comme utiliser `selected-palette` avec `unit-tooltip`.",
+        "Personnalisation des séries : Le paramètre `name` est utilisé pour spécifier les noms des séries de données. Si vous avez plusieurs séries (plusieurs listes dans `y`), vous devez fournir une liste de noms correspondante dans `name`."
+      ]
+    },
+    {
+      "name": "scatter-chart",
+      "tag": "<scatter-chart>",
+      "component": "ScatterChart",
+      "title": "Nuage de points (ScatterChart)",
+      "description": "Les nuages de points sont accessibles à travers la balise : `<scatter-chart>`.",
+      "aliases": [
+        "ScatterChart",
+        "scatterchart"
+      ],
+      "documented": true,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'default'"
+        },
+        {
+          "name": "x",
+          "prop": "x",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l’axe des abscisses sous forme d'une liste de listes entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "y",
+          "prop": "y",
+          "type": "String",
+          "required": true,
+          "description": "Les valeurs sur l’axe des ordonnées sous forme d'une liste de listes entre crochets.",
+          "documented": true
+        },
+        {
+          "name": "x-min",
+          "prop": "xMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des abscisses.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "x-max",
+          "prop": "xMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des abscisses.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-min",
+          "prop": "yMin",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le minimum sur l’axe des ordonnées.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "y-max",
+          "prop": "yMax",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le maximum sur l’axe des ordonnées.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": false,
+          "description": "Les noms des séries de données sous forme d'une liste entre crochets.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "vline",
+          "prop": "vline",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "vlinecolor",
+          "prop": "vlinecolor",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "vlinename",
+          "prop": "vlinename",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hline",
+          "prop": "hline",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hlinecolor",
+          "prop": "hlinecolor",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "hlinename",
+          "prop": "hlinename",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "show-line",
+          "prop": "showLine",
+          "type": "Boolean | String",
+          "required": false,
+          "description": "Permet de relier les points du nuage. Mettre à `true` pour afficher les lignes entre les points.",
+          "documented": true,
+          "default": "false"
+        },
+        {
+          "name": "date",
+          "prop": "date",
+          "type": "String",
+          "required": false,
+          "description": "Permet d'afficher une date associée au graphique.",
+          "documented": true,
+          "default": "''"
+        },
+        {
+          "name": "aspect-ratio",
+          "prop": "aspectRatio",
+          "type": "Number | String",
+          "required": false,
+          "description": "Permet de définir le ratio largeur/hauteur du graphique. Par défaut, le ratio est de `2`.",
+          "documented": true,
+          "default": "2"
+        },
+        {
+          "name": "selected-palette",
+          "prop": "selectedPalette",
+          "type": "String",
+          "required": false,
+          "description": "Permet de choisir la palette de couleurs utilisée pour le graphique. Les valeurs possibles sont :",
+          "documented": true,
+          "default": "''",
+          "allowedValues": [
+            "categorical",
+            "sequentialAscending",
+            "sequentialDescending",
+            "divergentAscending",
+            "divergentDescending",
+            "neutral",
+            "default"
+          ]
+        },
+        {
+          "name": "unit-tooltip",
+          "prop": "unitTooltip",
+          "type": "String",
+          "required": false,
+          "description": "Permet de spécifier l’unité à afficher dans l’infobulle (tooltip) du graphique. Par exemple, `%`, `€`, `$`, etc.",
+          "documented": true,
+          "default": "''"
+        }
+      ],
+      "examples": [
+        {
+          "label": "Nuage de points simple",
+          "code": "<scatter-chart\n  x=\"[[1, 5, 8]]\"\n  y=\"[[30, 10, 20]]\"\n></scatter-chart>"
+        },
+        {
+          "label": "Nuage de points reliés",
+          "code": "<scatter-chart\n  x='[[\"A\", \"B\", \"C\"]]'\n  y=\"[[100, 25, 75]]\"\n  show-line=\"true\"\n></scatter-chart>"
+        },
+        {
+          "label": "Nuage de points avec palette divergente ascendante",
+          "code": "<scatter-chart\n  x=\"[[1, 5, 8], [2, 6, 9]]\"\n  y=\"[[30, 10, 20], [15, 25, 35]]\"\n  selected-palette=\"divergentAscending\"\n></scatter-chart>"
+        }
+      ],
+      "notes": [
+        "selected-palette : Ce paramètre vous permet de personnaliser les couleurs utilisées dans le graphique. Les différentes options vous offrent une flexibilité pour représenter vos données selon vos besoins esthétiques ou sémantiques.",
+        "show-line : Utile pour visualiser les tendances ou les relations entre les points en les reliant par des lignes."
+      ]
+    },
+    {
+      "name": "table-chart",
+      "tag": "<table-chart>",
+      "component": "TableChart",
+      "title": "Tableau de données (TableChart)",
+      "description": "",
+      "aliases": [
+        "TableChart",
+        "tablechart"
+      ],
+      "documented": false,
+      "params": [
+        {
+          "name": "databox-id",
+          "prop": "databoxId",
+          "type": "String",
+          "required": false,
+          "description": "identifiant de la DataBox",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-type",
+          "prop": "databoxType",
+          "type": "String",
+          "required": false,
+          "description": "valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle",
+          "documented": true,
+          "default": "null"
+        },
+        {
+          "name": "databox-source",
+          "prop": "databoxSource",
+          "type": "String",
+          "required": false,
+          "description": "correspond au paramètre defaultSource de la DataBox",
+          "documented": true,
+          "default": "'global'"
+        },
+        {
+          "name": "x",
+          "prop": "x",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "y",
+          "prop": "y",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "sub-x",
+          "prop": "subX",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "null"
+        },
+        {
+          "name": "sub-y",
+          "prop": "subY",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "null"
+        },
+        {
+          "name": "line",
+          "prop": "line",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "max-overflow",
+          "prop": "maxOverflow",
+          "type": "Number | String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "128"
+        },
+        {
+          "name": "name",
+          "prop": "name",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        },
+        {
+          "name": "table-name",
+          "prop": "tableName",
+          "type": "String",
+          "required": false,
+          "description": "",
+          "documented": false,
+          "default": "''"
+        }
+      ],
+      "examples": [],
+      "notes": []
+    }
+  ],
+  "guides": [
+    {
+      "name": "install",
+      "title": "Installation et intégration",
+      "markdown": "# DSFR Chart\n\nDSFR Chart est un module complémentaire au Système de design de l’État (DSFR) pour la visualisation de données. Il s’agit d'une bibliothèque de web-components, implementés sous [Vue.js](https://vuejs.org/), à destination des développeurs ayant besoin de graphiques pour représenter des données.\n\n## Demo\n\nL’ensemble des graphiques disponibles sont mis en situation sur la page de [demo](https://gouvernementfr.github.io/dsfr-chart/).\n\n## Installation\n\nL’installation de **DSFR Chart** peut se faire de manières différentes. En téléchargeant l’ensemble des fichiers nécessaires à son utilisation ou en utilisant le gestionnaire de paquets **NPM**.\n\n### Fichiers statiques\n\nIl est possible de télécharger l’ensemble du DSFR au format zip ci-dessous. Le zip contient un ensemble de fichiers CSS et Javascript permettant l’utilisation des différents graphiques.\n\nVous trouverez sur la page [Release de Github](https://github.com/GouvernementFR/dsfr-chart/releases), toutes les sources des versions précédentes et la dernière en date.\n\n### NPM\n\n**DSFR Chart** est disponible sur NPM via un ensemble de packages qu’il est possible d'ajouter directement à votre projet. Il est de ce fait nécessaire d'installer [NodeJS](https://nodejs.org), et d'avoir un fichier **package.json** à la racine de votre projet. (Il est possible d'en créer un directement via la commande `npm init`).\n\nUne fois en place, il suffit d'installer le package **dsfr-chart** contenant l’ensemble des composants:\n\n```bash\nnpm install @gouvfr/dsfr-chart\n```\n\nUne fois terminé dsfr-chart sera alors installé dans le dossier `node_modules/@gouvfr/dsfr-chart/`\n\n### Structure de DSFR-Chart\n\nLa structure mise à disposition, sur le zip ou npm est la suivante :\n\n- **Charts** : contient les fichiers js et css à importer pour utiliser toutes les représentations disponibles.\n\n- **Un dossier par type de représentation** (ex : LineChart) contenant les fichiers js et css à importer pour l’utilisation d'un seul type de graphique.\n\n### Configuration de votre projet\n\n#### Prérequis\n\n**DSFR Chart** doit être utilisé dans un projet utilisant le [DSFR](https://www.systeme-de-design.gouv.fr/comment-utiliser-le-dsfr/developpeurs/prise-en-main-du-dsfr/). Le projet doit à minima importer les feuilles css :\n\n- dsfr.min.css\n- icons-system.min.css (dans _utility/icons/icons-system_)\n\nIl est également nécessaire de charger [l’API Javascript](https://www.systeme-de-design.gouv.fr/comment-utiliser-le-dsfr/developpeurs/api-javascript/) : dsfr.module.min.js\n\n#### Importation des web-components dans un fichier HTML\n\nPour pouvoir utiliser une représentation graphique dans votre projet, il est nécessaire de charger le fichier javascript correspondant ainsi que sa feuille css associée.\n\nIl existe deux possibilités :\n\n- Charger tous les composants :\n\n```html\n<!-- Avec le build ESM -->\n<script type=\"module\" src=\"./DSFRChart.js\"></script>\n<link rel=\"stylesheet\" href=\"./DSFRChart.css\" />\n```\n\n```html\n<!-- Avec le build CJS -->\n<script src=\"./DSFRChart.umd.cjs\"></script>\n<link rel=\"stylesheet\" href=\"./DSFRChart.css\" />\n```\n\n- Charger uniquement un ou plusieurs composants nécessaires à votre projet :\n\n```html\n<!-- Avec le build ESM -->\n<script type=\"module\" src=\"./ScatterChart.js\"></script>\n<link rel=\"stylesheet\" href=\"./ScatterChart.css\" />\n```\n\n```html\n<!-- Avec le build CJS -->\n<script src=\"./ScatterChart.umd.cjs\"></script>\n<link rel=\"stylesheet\" href=\"./ScatterChart.css\" />\n```\n\n#### Importation des web-components avec un bundler\n\nPour importer la librairie dans un projet utilisant un bundler comme Vite, il est nécessaire d'importer les fichiers JavaScript et CSS dans votre fichier principal.\n\n```javascript\nimport '@gouvfr/dsfr-chart';\nimport '@gouvfr/dsfr-chart/css';\n```\n\nIl est également possible d'importer uniquement un ou plusieurs composants :\n\n```javascript\nimport '@gouvfr/dsfr-chart/LineChart';\nimport '@gouvfr/dsfr-chart/LineChart.css'; // Ou '@gouvfr/dsfr-chart/LineChart/css'\nimport '@gouvfr/dsfr-chart/BarChart';\nimport '@gouvfr/dsfr-chart/BarChart.css'; // Ou '@gouvfr/dsfr-chart/BarChart/css'\n```\n\n#### ⚠️ Important : Si vous importez plus que deux composants, il est préférable d'importer toute la librairie `dsfr-chart` pour éviter de charger plusieurs fois les moteurs de rendu de Vue.js & Chart.js, etc."
+    },
+    {
+      "name": "databox",
+      "title": "DataBox : tableaux de bord et alternative accessible",
+      "markdown": "### Mise en place du graphique et de son alternative\n\nL’ensemble de ces informations permettront d'afficher une databox sans graphique.\n\nPour y intégrer un graphique, il faut juxtaposer la balise d'un graphique en spécifiant les attributs suivants qui permettront de faire le lien entre la Databox et le graphique :\n\n- databox-id : identifiant de la DataBox\n- databox-type : valeurs possibles : \"chart\" pour la vue du graphique et \"table\" pour la vue du tableau d'alternative textuelle\n- databox-source : correspond au paramètre defaultSource de la DataBox\n\n```html\n<data-box\n  id=\"abc\"\n  name=\"Emplois en France de 1926 à 1950\"\n  heading-level=\"h3\"\n  description=\"Description du graphique <b>avec du HTML</b>\"\n  tooltip-title=\"Emplois en France\"\n  tooltip-content=\"Nombre d'emplois en France de 1926 à 1950, par genre. Se base sur les données de l’INSEE et de Pôle Emploi et d'une autre source.\"\n  modal-title=\"Titre de la modale\"\n  modal-content=\"Contenu de la modale\"\n  source=\"INSEE, Pôle Emploi, Autre source\"\n  date=\"2021-01-01\"\n  default-source=\"pole-emploi\"\n  trend=\"5%\"\n  segmented-control=\"true\"\n  fullscreen=\"true\"\n  screenshot=\"true\"\n  download=\"true\"\n  actions='[\"Source officielle\", \"Pôle emploi\"]'\n></data-box>\n\n<scatter-chart\n  databox-id=\"abc\"\n  databox-type=\"chart\"\n  databox-source=\"pole-emploi\"\n  x=\"[[1926, 1928, 1930, 1932, 1934, 1936, 1938, 1940, 1942, 1944, 1946, 1948, 1950, 1952], [1926, 1928, 1930, 1932, 1934, 1936, 1938, 1940, 1942, 1944, 1946, 1948, 1950, 1952], [1926, 1928, 1930, 1932, 1934, 1936, 1938, 1940, 1942, 1944, 1946, 1948, 1950, 1952]]\"\n  y=\"[[35, 35, 37, 37, 39, 41, 43, 48, 51, 52, 54, 55, 55, 58], [76, 83, 82, 80, 81, 80, 81, 80, 81, 80, 79, 75, 72, 72], [54, 56, 58, 57, 59, 60, 62, 64, 66, 66, 66, 65, 64, 65]]\"\n  name='[\"Femmes\", \"Hommes\", \"Ensemble\"]'\n  unit-tooltip=\"%\"\n  show-line=\"true\"\n></scatter-chart>\n\n<table-chart\n  databox-id=\"abc\"\n  databox-type=\"table\"\n  databox-source=\"pole-emploi\"\n  x=\"[1926, 1928, 1930, 1932, 1934, 1936, 1938, 1940, 1942, 1944, 1946, 1948, 1950]\"\n  y=\"[[48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60], [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73], [55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67]]\"\n  name='[\"Femmes\", \"Hommes\", \"Ensemble\"]'\n  table-name=\"Années\"\n></table-chart>\n```\n\n### Un composant flexible pour construire vos tableaux de bord\n\nLa databox s’appuie sur [la grille proposée par le DSFR](https://www.systeme-de-design.gouv.fr/fondamentaux/grille-et-points-de-rupture/), et peut s’afficher selon vos besoins, sur une ou plusieurs colonnes de la grille, grâce à la classe `fr-col`. Pensez toutefois à utiliser un `fr-grid-row` par ligne pour permettre le bon fonctionnement des infobulles du composant.\n\nVous pourrez ainsi construire des dashboard en donnant aux databox la taille nécessaire, en fonction de vos besoins métiers et de l’aspect souhaité pour vos graphiques.\n\n### Structure\n\nLa databox est composée des éléments suivants :\n\n- **un titre** (obligatoire)\n- une infobulle permettant de préciser la donnée affichée (optionnelle)\n- un bouton permettant l’affichage d’une modale en plein écran (optionnel)\n- un menu à points permettant l’affichage d’actions supplémentaires (optionnel et personnalisable voir plus bas)\n- un indicateur de tendance (optionnel)\n- **la donnée principale : chiffre, graphique ou tableau** (obligatoire)\n- **une source** (obligatoire)\n- **une date de mise à jour de la donnée** (obligatoire)\n- **un contrôle segmenté pour afficher la donnée en vue tableau** (obligatoire lorsque c’est un graphique qui est affiché)\n\n### Personnalisation du menu à points\n\nPar défaut, la librairie DSFR Chart propose dans le menu à points deux fonctionnalités :\n\n- une fonctionnalité d’export CSV des données\n- une fonctionnalité de téléchargement de capture d’écran\n\nToutefois, ces fonctionnalités sont optionnelles, et ne doivent pas apparaître obligatoirement si vous n’en avez pas le besoin. Par ailleurs, le menu à points peut contenir tous les liens ou actions utilisateurs dont vous avez besoin pour votre projet.\n\n---"
+    },
+    {
+      "name": "colors",
+      "title": "Gestion des couleurs et palettes",
+      "markdown": "## Gestion des couleurs\n\nUn graphique étant par définition une représentation visuelle d’un ensemble de données, la couleur est un paramètre avec lequel il est possible de jouer pour en améliorer la compréhension et la perception. Une utilisation appropriée des couleurs est par conséquent essentielle pour réussir vos graphiques.\n\nDans DSFR Chart, le paramètre `selectedPalette` vous permet de personnaliser les couleurs utilisées dans le graphique. Choisissez parmi les options disponibles pour représenter vos données de manière appropriée :\n\n- `'default'` : Couleur par défaut.\n- `'neutral'` : Palette neutre.\n- `'categorical'` : Palette catégorielle par défaut.\n- `'sequentialAscending'` : Palette séquentielle ascendante.\n- `'sequentialDescending'` : Palette séquentielle descendante.\n- `'divergentAscending'` : Palette divergente ascendante.\n- `'divergentDescending'` : Palette divergente descendante.\n\n### Graphiques unicolores\n\n`default Catégorie 1`\n\nUne représentation graphique n’a pas toujours besoin d’être colorée. Lorsqu’il n’est pas nécessaire de différencier les formes par des couleurs, on affichera les graphes avec la couleur par défaut pour les graphes unicolores, avec l’option `'default'`.\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #5C68E5     | #5C68E5      |\n| État de survol | #2846bc     | #2846bc      |\n\n`neutral Catégorie 1`\n\nPour mettre en évidence une donnée d'un ensemble de données, utilisez la couleur par défaut pour colorer cette donnée, et colorez les autres données en utilisant l’option `'neutral'`.\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #B1B1B1     | #808080      |\n| État de survol | #8b8b8b     | #5c5c5c      |\n\n### Graphiques catégoriels\n\nLorsque les formes du graphique doivent être différenciées par des couleurs mais que celles-ci ne sont pas porteuses de sens supplémentaire que la catégorisation, la palette catégorielle doit être utilisée : utilisez alors l’option `'categorical'`.\n\nLa palette catégorielle ne comprend que 8 teintes de couleurs pour limiter le nombre de catégories affichées, car représenter plus de 8 catégories nuirait à la compréhension de l’utilisateur. Au-delà de ce nombre, il conviendra de rassembler les dernières catégories dans un ensemble “Autres”.\n\n`Catégorie 1`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #5C68E5     | #5C68E5      |\n| État de survol | #2846bc     | #2846bc      |\n\n`Catégorie 2`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #82B5F2     | #699BD6      |\n| État de survol | #598fc9     | #3f76ae      |\n\n`Catégorie 3`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #29598F     | #4878B1      |\n| État de survol | #00386a     | #18558b      |\n\n`Catégorie 4`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #31A7AE     | #00828A      |\n| État de survol | #008188     | #005e66      |\n\n`Catégorie 5`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #81EEF5     | #51C1C8      |\n| État de survol | #55c5cc     | #199aa1      |\n\n`Catégorie 6`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #B478F1     | #BC8AF2      |\n| État de survol | #8b53c8     | #9465c9      |\n\n`Catégorie 7`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #CFB1F5     | #CFB1F5      |\n| État de survol | #a78bcc     | #a78bcc      |\n\n`Catégorie 8`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #CECECE     | #A4A4A4      |\n| État de survol | #a7a7a7     | #7e7e7e      |\n\n### Graphiques séquentiels\n\nLorsque les formes du graphique doivent être différenciées par des couleurs et que ces couleurs matérialisent une gradation, une palette séquentielle doit être utilisée. Il en existe deux versions à utiliser en fonction du besoin :\n\n#### Palette séquentielle unicolore\n\nLorsque les formes du graphique doivent être différenciées par des couleurs et que ces couleurs matérialisent une gradation, une palette séquentielle doit être utilisée. Sélectionnez l’option `'sequentialAscending'` ou `'sequentialDescending'` en fonction du sens que vous souhaitez donner à cette gradation.\n\nEn fonction du nombre de catégories, on appliquera autant de valeurs de couleurs qu’il en existe dans un dégradé allant de la couleur de départ à la couleur d’arrivée.\n\n`Catégorie 1`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #DBDAFF     | #B8B9FF      |\n| État de survol | #b3b2d6     | #9093d6      |\n\n`Catégorie 2`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #00005F     | #3647CA      |\n| État de survol | #00003d     | #0027a2      |\n\n### Palette séquentielle divergente\n\nCette palette convient pour matérialiser des échelles numériques mais qui intègrent des valeurs négatives, ou des plages comportant **deux extrêmes avec une ligne de base au milieu**.\n\nSélectionnez l’option `'divergentAscending'` ou `'divergentDescending'` en fonction du sens que vous souhaitez donner à cette gradation. Dans la mesure du possible, le nombre de catégories doit refléter cette divergence, à travers un nombre impair de catégories distinctes (3, 5, 7, etc.) qui permettra de **marquer la médiane**.\n\nDans le cas où le nombre de catégories devrait être supérieur à 5, on appliquera autant de valeurs de couleurs qu’il en existe dans un dégradé allant du vert vers le rouge en passant par le jaune.\n\n`Catégorie 1`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #298641     | #298641      |\n| État de survol | #00611f     | #00611f      |\n\n`Catégorie 2`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #EFB900     | #AF8800      |\n| État de survol | #c39300     | #856400      |\n\n`Catégorie 3`\n\n|                | Thème clair | Thème sombre |\n|----------------|-------------|--------------|\n| État initial   | #E91719     | #E16834      |\n| État de survol | #b90000     | #b4420f      |\n\n---"
+    },
+    {
+      "name": "accessibility",
+      "title": "Accessibilité : non-conformités et alternatives obligatoires",
+      "markdown": "## Accessibilité\n\n> Utilisés seuls, les graphiques du DSFR Charts sont inaccessibles aux personnes aveugles, déficientes visuelles et aux personnes handicapées motrices. Il conviendra donc d’apporter une alternative textuelle pertinente à chaque fois qu’un graphique est affiché.\n\n### Non-conformités\n\nLes principales problématiques posées par les graphiques sont les suivantes :\n\n- Accès aux données des graphiques et aux cartes impossibles (critères 1.1, 1.6, 4.8, 4.9 du RGAA)\n- Accès et contrôle au clavier impossible (critères 4.12, 10.13, 10.14 du RGAA)\n- Information donnée uniquement par la couleur (critère 3.1 du RGAA)\n- Contrastes de couleurs non textuels (critère 3.3 du RGAA)\n\n### Alternatives accessibles\n\nLa solution la plus simple et la plus efficace pour rendre les composants complexes tels que les graphiques ou les cartes est de proposer les mêmes contenus ou informations dans une alternative accessible plutôt que de chercher à travailler sur ces composants dynamiques directement.\n\nDans certains cas comme la carte où il faudrait naviguer sur tous les départements par exemple, cela serait même contre-productif et moins utilisable de chercher à la rendre accessible au clavier.\n\n**On systématisera donc plutôt une approche par alternative**, en privilégiant celle qui apportera le plus de confort de lecture.\n\n#### Alternative 1 : utiliser un tableau\n\nPrésenter les résultats sous forme de tableau est sans doute l’option la plus simple, surtout s’il y a beaucoup de données à présenter. On privilégiera dans le cas des contenus les plus complexes la création de plusieurs tableaux simples et non de tableaux avec des cellules fusionnées pour faciliter la lecture.\n\n> Le composant databox embarque par défaut une alternative sous forme de tableau.\n\n#### Alternative 2 : utiliser un liste simple ou liste titrée\n\nLorsqu’il n’y a que quelques données à présenter, une simple liste peut suffire. Par exemple :\n\nPourcentage de français ayant réalisé un achat sur Internet au cours des 12 derniers mois :\n\n- 15 à 29 ans : 75,4%\n- 30 à 44 ans : 80,5%\n- 45 à 59 ans : 66,8%\n- 60 à 74 ans : 43,5%\n- 75 ans ou plus : 12,1%\n\n#### Alternative 3 : utiliser du texte structuré\n\nDans d’autres cas, l’information pourrait déjà être présente dans le corps de texte adjacent ou l’alternative peut être un simple texte structuré.\n\nAinsi, sur la jauge ci-dessus, l’alternative pourrait être : \"En 2022, nous avons atteint les 100 000 utilisateurs. Cela correspond à 14 % de l’objectif 2026, fixé à 2 millions d’utilisateurs.\"\n\n### Affichage de l’alternative\n\nL’alternative ou un moyen d’accéder à l’alternative (lien/bouton) doit être adjacente au graphique. La #databox présente ainsi systématiquement l’alternative textuelle dans le contrôle segmenté en bas à droite du composant.\n\nLorsqu’un graphique est utilisé seul, sans la databox, l’alternative textuelle peut être affichée dans un [accordéon](https://www.systeme-de-design.gouv.fr/composants-et-modeles/composants/accordeon/) présenté sous le graphique.\n\n> **Important**\n>\n> Il conviendra de documenter cette approche dans la déclaration d’accessibilité pour que les personnes handicapées concernées sachent qu’une alternative accessible est systématiquement fournie.\n\n```html\n<table-chart\n  databox-id=\"abc\"\n  databox-type=\"table\"\n  databox-source=\"pole-emploi\"\n  x=\"[1926, 1928, 1930, 1932, 1934, 1936, 1938, 1940, 1942, 1944, 1946, 1948, 1950]\"\n  y=\"[[48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60], [61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73], [55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67]]\"\n  name='[\"Femmes\", \"Hommes\", \"Ensemble\"]'\n  table-name=\"Années\"\n></table-chart>\n```\n\n---"
+    }
+  ],
+  "palettes": [
+    {
+      "name": "default",
+      "description": "Couleur par défaut."
+    },
+    {
+      "name": "neutral",
+      "description": "Palette neutre."
+    },
+    {
+      "name": "categorical",
+      "description": "Palette catégorielle par défaut."
+    },
+    {
+      "name": "sequentialAscending",
+      "description": "Palette séquentielle ascendante."
+    },
+    {
+      "name": "sequentialDescending",
+      "description": "Palette séquentielle descendante."
+    },
+    {
+      "name": "divergentAscending",
+      "description": "Palette divergente ascendante."
+    },
+    {
+      "name": "divergentDescending",
+      "description": "Palette divergente descendante."
+    }
+  ],
+  "colorTokens": [
+    {
+      "token": "dsfr-chart-colors-01",
+      "light": "#5C68E5",
+      "dark": "#5C68E5"
+    },
+    {
+      "token": "dsfr-chart-colors-02",
+      "light": "#82B5F2",
+      "dark": "#699BD6"
+    },
+    {
+      "token": "dsfr-chart-colors-03",
+      "light": "#29598F",
+      "dark": "#4878B1"
+    },
+    {
+      "token": "dsfr-chart-colors-04",
+      "light": "#31A7AE",
+      "dark": "#00828A"
+    },
+    {
+      "token": "dsfr-chart-colors-05",
+      "light": "#81EEF5",
+      "dark": "#51C1C8"
+    },
+    {
+      "token": "dsfr-chart-colors-06",
+      "light": "#B478F1",
+      "dark": "#BC8AF2"
+    },
+    {
+      "token": "dsfr-chart-colors-07",
+      "light": "#CFB1F5",
+      "dark": "#CFB1F5"
+    },
+    {
+      "token": "dsfr-chart-colors-08",
+      "light": "#CECECE",
+      "dark": "#A4A4A4"
+    },
+    {
+      "token": "dsfr-chart-colors-09",
+      "light": "#DBDAFF",
+      "dark": "#B8B9FF"
+    },
+    {
+      "token": "dsfr-chart-colors-10",
+      "light": "#00005F",
+      "dark": "#3647CA"
+    },
+    {
+      "token": "dsfr-chart-colors-11",
+      "light": "#298641",
+      "dark": "#298641"
+    },
+    {
+      "token": "dsfr-chart-colors-12",
+      "light": "#79D289",
+      "dark": "#449D57"
+    },
+    {
+      "token": "dsfr-chart-colors-13",
+      "light": "#EFB900",
+      "dark": "#AF8800"
+    },
+    {
+      "token": "dsfr-chart-colors-14",
+      "light": "#FFA373",
+      "dark": "#FFA373"
+    },
+    {
+      "token": "dsfr-chart-colors-15",
+      "light": "#E91719",
+      "dark": "#E16834"
+    },
+    {
+      "token": "dsfr-chart-colors-default",
+      "light": "#5C68E5",
+      "dark": "#5C68E5"
+    },
+    {
+      "token": "dsfr-chart-colors-neutral",
+      "light": "#B1B1B1",
+      "dark": "#808080"
+    }
+  ]
+}

@@ -1,17 +1,34 @@
 import { execSync } from "node:child_process";
 import { existsSync, mkdirSync, cpSync, readdirSync, readFileSync, writeFileSync, rmSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
+import { fileURLToPath } from "node:url";
 import { parseAccessibility } from "./parse-accessibility.js";
+import { buildChartsIndex } from "./parse-chart-readme.js";
+import type { ChartsIndex, DocsCounts, DocsMeta } from "../src/types.js";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+// fileURLToPath, not .pathname: the latter stays percent-encoded, so a repo
+// checked out under a path containing a space would resolve to a bogus dir.
+const ROOT = fileURLToPath(new URL("..", import.meta.url));
 const REPO_DIR = join(ROOT, ".dsfr-repo");
 const DOCS_DIR = join(ROOT, "docs");
 const REPO_URL = "https://github.com/GouvernementFR/dsfr.git";
-const DSFR_TAG = process.env.DSFR_TAG ?? "v1.14.3";
+const DSFR_TAG = process.env.DSFR_TAG ?? "v1.15.3";
+
+const CHART_REPO_DIR = join(ROOT, ".dsfr-chart-repo");
+const CHART_REPO_URL = "https://github.com/GouvernementFR/dsfr-chart.git";
+const CHART_PACKAGE = "@gouvfr/dsfr-chart";
+const DSFR_CHART_TAG = process.env.DSFR_CHART_TAG ?? "v2.1.1";
+
+/** Version of the docs/ layout; bump when the on-disk structure changes. */
+const SCHEMA_VERSION = 2;
 
 function run(cmd: string, cwd?: string) {
   console.error(`> ${cmd}`);
   execSync(cmd, { cwd, stdio: "inherit" });
+}
+
+function capture(cmd: string, cwd?: string): string {
+  return execSync(cmd, { cwd, encoding: "utf-8" }).trim();
 }
 
 // Step 1: Clone or update the DSFR repo (sparse checkout at pinned tag)
@@ -28,6 +45,27 @@ if (existsSync(join(REPO_DIR, ".git"))) {
     "git sparse-checkout set src/dsfr/component src/dsfr/core src/dsfr/layout",
     REPO_DIR,
   );
+}
+
+// Step 1b: Clone or update DSFR Chart, BEFORE docs/ is wiped.
+//
+// The npm tarball ships no src/ — `"files": ["dist/*", "README.md", …]` — so the
+// Vue sources and src/assets/colors.json are only reachable from git. All the
+// network work happens here: a failure must not leave the committed docs/
+// half-rebuilt, which it would if this ran after the rmSync below.
+console.error(`Using DSFR Chart ${DSFR_CHART_TAG}`);
+if (existsSync(join(CHART_REPO_DIR, ".git"))) {
+  console.error("Updating existing DSFR Chart repo...");
+  run(`git fetch --depth=1 origin tag ${DSFR_CHART_TAG}`, CHART_REPO_DIR);
+  run("git checkout FETCH_HEAD", CHART_REPO_DIR);
+} else {
+  console.error("Cloning DSFR Chart repo (sparse)...");
+  if (existsSync(CHART_REPO_DIR)) rmSync(CHART_REPO_DIR, { recursive: true });
+  run(
+    `git clone --filter=blob:none --sparse --depth=1 --branch ${DSFR_CHART_TAG} ${CHART_REPO_URL} ${CHART_REPO_DIR}`,
+  );
+  // Cone mode always includes root files, so README.md comes along.
+  run("git sparse-checkout set src/assets src/charts src/components", CHART_REPO_DIR);
 }
 
 // Step 2: Extract docs into flat structure
@@ -105,7 +143,18 @@ if (existsSync(componentDir)) {
   }
 }
 
-// Process core
+// Process core.
+//
+// Since DSFR 1.15.0 a core topic can carry sub-pages: `color/usage` holds the
+// decision tokens that used to live in `color/index.md`. They are extracted as
+// extra sections of the parent entry (`color` -> overview + usage), mirroring
+// what processDocDir does for components. The `*/search` sub-pages are skipped:
+// they are 26-line stubs holding a client-side `::dsfr-doc-filter` widget and
+// no content, and upstream flags them itself with `sitemap: noindex`.
+const CORE_SKIPPED_SUBPAGES = new Set(["search"]);
+/** Section names already produced by processDocDir; a sub-page must not shadow one. */
+const RESERVED_SECTIONS = new Set(["overview", "code", "design", "accessibility", "demo"]);
+
 const coreDocDir = join(REPO_DIR, "src/dsfr/core/_part/doc");
 if (existsSync(coreDocDir)) {
   for (const entry of readdirSync(coreDocDir)) {
@@ -116,6 +165,24 @@ if (existsSync(coreDocDir)) {
       const outDir = join(DOCS_DIR, "core", entry);
       mkdirSync(outDir, { recursive: true });
       cpSync(join(entryPath, "index.md"), join(outDir, "overview.md"));
+      const sections = ["overview"];
+
+      // withFileTypes rather than statSync: stat follows symlinks and throws
+      // ENOENT on a dangling one, which would abort the whole extraction.
+      for (const sub of readdirSync(entryPath, { withFileTypes: true })) {
+        if (!sub.isDirectory() || CORE_SKIPPED_SUBPAGES.has(sub.name)) continue;
+        if (RESERVED_SECTIONS.has(sub.name)) {
+          console.error(
+            `Warning: sous-page "${entry}/${sub.name}" ignorée — "${sub.name}" est un nom de section réservé.`,
+          );
+          continue;
+        }
+        const subIndex = join(entryPath, sub.name, "index.md");
+        if (!existsSync(subIndex)) continue;
+        cpSync(subIndex, join(outDir, `${sub.name}.md`));
+        sections.push(sub.name);
+      }
+
       const content = readFileSync(join(outDir, "overview.md"), "utf-8");
       const { title, description } = extractFrontmatter(content);
       index.push({
@@ -123,7 +190,7 @@ if (existsSync(coreDocDir)) {
         title: title || entry,
         description,
         category: "core",
-        sections: ["overview"],
+        sections,
       });
     }
   }
@@ -157,8 +224,8 @@ index.sort((a, b) => a.name.localeCompare(b.name));
 // Write index
 writeFileSync(join(DOCS_DIR, "index.json"), JSON.stringify(index, null, 2));
 
-// Write meta
-writeFileSync(join(DOCS_DIR, "meta.json"), JSON.stringify({ dsfrVersion: DSFR_TAG }, null, 2));
+// meta.json is written last: it carries the counts of every extractor, which
+// double as the build-time sanity assertions below.
 
 // Extract icons index
 interface IconEntry {
@@ -168,11 +235,11 @@ interface IconEntry {
   classes: string[];
 }
 
-function extractIcons(repoDir: string, docsDir: string) {
+function extractIcons(repoDir: string, docsDir: string): { icons: number; classes: number } {
   const iconBaseDir = join(repoDir, "src/dsfr/core/icon");
   if (!existsSync(iconBaseDir)) {
     console.error("Warning: icon directory not found, skipping icon extraction");
-    return;
+    return { icons: 0, classes: 0 };
   }
 
   const groups = new Map<string, { category: string; variants: Set<string>; classes: Set<string> }>();
@@ -183,7 +250,13 @@ function extractIcons(repoDir: string, docsDir: string) {
 
     for (const file of readdirSync(catDir)) {
       if (!file.endsWith(".svg")) continue;
-      const raw = file.replace(/\.svg$/, "");
+      // 39 SVG files are named `fr--something.svg`: upstream marks DSFR-specific
+      // icons (as opposed to Remix Icons) that way, and its build strips the
+      // marker. The real class is `fr-icon-warning-fill`, never
+      // `fr-icon-fr--warning-fill`. Verified against the published
+      // dist/utility/icons/*.css: keeping the prefix yields 39 classes that
+      // exist in no DSFR stylesheet, including error, success, warning and info.
+      const raw = file.replace(/\.svg$/, "").replace(/^fr--/, "");
       const cssClass = `fr-icon-${raw}`;
 
       let baseName: string;
@@ -222,7 +295,9 @@ function extractIcons(repoDir: string, docsDir: string) {
   icons.sort((a, b) => a.category.localeCompare(b.category) || a.name.localeCompare(b.name));
 
   writeFileSync(join(docsDir, "icons.json"), JSON.stringify(icons, null, 2));
-  console.error(`Extracted ${icons.length} icons across ${new Set(icons.map((i) => i.category)).size} categories`);
+  const classes = new Set(icons.flatMap((i) => i.classes)).size;
+  console.error(`Extracted ${icons.length} icons (${classes} CSS classes) across ${new Set(icons.map((i) => i.category)).size} categories`);
+  return { icons: icons.length, classes };
 }
 
 // Extract colors index
@@ -246,12 +321,53 @@ interface ColorsIndex {
   illustrativeNames: string[];
 }
 
-function extractColors(docsDir: string) {
-  const colors: ColorsIndex = { decisionTokens: [], families: [], illustrativeNames: [] };
+/**
+ * Locate the two colour pages, which swapped files in DSFR 1.15.0:
+ *
+ *   <= 1.14.x : decisions in core/color/overview.md, palette in core/palette/overview.md
+ *   >= 1.15.0 : decisions in core/color/usage.md,    palette in core/color/overview.md
+ *
+ * Detection is by layout rather than by tag so `DSFR_TAG=v1.14.3` keeps working.
+ * Two signals are crossed rather than one: on a single signal, an upstream rename
+ * of `color/usage` would silently fall back to the legacy layout and hand the
+ * 1.15 *palette* page to the decision-token parser — 0 tokens, 0 families, no error.
+ * Each candidate is then confirmed by its own content before being accepted.
+ */
+function resolveColorDocs(docsDir: string): { decisions?: string; palette?: string } {
+  const usage = join(docsDir, "core/color/usage.md");
+  const color = join(docsDir, "core/color/overview.md");
+  const legacyPalette = join(docsDir, "core/palette/overview.md");
 
-  // Parse decision tokens from color/overview.md
-  const colorDoc = join(docsDir, "core/color/overview.md");
-  if (existsSync(colorDoc)) {
+  /** A decision page carries `$background-*` / `$text-*` rows. */
+  const holdsDecisions = (file: string) =>
+    existsSync(file) && /\|\s*`\$(?:background|text|artwork)-/.test(readFileSync(file, "utf-8"));
+  /** A palette page carries the per-family `::::fr-table[…]` blocks. */
+  const holdsPalette = (file: string) =>
+    existsSync(file) && /^::::fr-table\[/m.test(readFileSync(file, "utf-8"));
+
+  const modern = existsSync(usage) || !existsSync(legacyPalette);
+  const decisions = modern ? usage : color;
+  const palette = modern ? color : legacyPalette;
+
+  return {
+    decisions: holdsDecisions(decisions) ? decisions : undefined,
+    palette: holdsPalette(palette) ? palette : undefined,
+  };
+}
+
+function extractColors(docsDir: string): ColorsIndex {
+  const colors: ColorsIndex = { decisionTokens: [], families: [], illustrativeNames: [] };
+  const { decisions: colorDoc, palette: paletteDoc } = resolveColorDocs(docsDir);
+
+  if (!colorDoc) {
+    console.error("Warning: page des tokens de décision introuvable (core/color/usage.md ou core/color/overview.md)");
+  }
+  if (!paletteDoc) {
+    console.error("Warning: page de palette introuvable (core/color/overview.md ou core/palette/overview.md)");
+  }
+
+  // Parse decision tokens
+  if (colorDoc && existsSync(colorDoc)) {
     const content = readFileSync(colorDoc, "utf-8");
     let currentContext: "background" | "text" | "artwork" = "background";
 
@@ -281,14 +397,19 @@ function extractColors(docsDir: string) {
     }
   }
 
-  // Parse families from palette/overview.md
-  const paletteDoc = join(docsDir, "core/palette/overview.md");
-  if (existsSync(paletteDoc)) {
+  // Parse families from the palette page
+  if (paletteDoc && existsSync(paletteDoc)) {
     const content = readFileSync(paletteDoc, "utf-8");
     const lines = content.split("\n");
 
     let currentCategory: ColorFamily["category"] = "primaire";
     let currentFamilyName: string | null = null;
+    // Category of the family currently being filled. Captured when the table
+    // opens, NOT when it is flushed: the `### …` heading of the *next* category
+    // sits between a family's last row and the next table, so reading
+    // currentCategory at flush time shifted every family one category down
+    // (red-marianne landed in "neutre", grey in "systeme", info in "illustrative").
+    let currentFamilyCategory: ColorFamily["category"] = "primaire";
     let currentCorrespondences: Record<string, { light: string; dark: string }> = {};
 
     const familyNameMap: Record<string, string> = {
@@ -301,7 +422,7 @@ function extractColors(docsDir: string) {
       if (currentFamilyName && Object.keys(currentCorrespondences).length > 0) {
         colors.families.push({
           name: currentFamilyName,
-          category: currentCategory,
+          category: currentFamilyCategory,
           correspondences: { ...currentCorrespondences },
         });
       }
@@ -325,6 +446,7 @@ function extractColors(docsDir: string) {
         if (rawName.includes("Info")) currentFamilyName = "info";
         // Skip template tables for illustratives
         if (rawName.includes("Déclinaisons")) currentFamilyName = null;
+        currentFamilyCategory = currentCategory;
         continue;
       }
 
@@ -400,10 +522,11 @@ function extractColors(docsDir: string) {
 
   writeFileSync(join(docsDir, "colors.json"), JSON.stringify(colors, null, 2));
   console.error(`Extracted ${colors.decisionTokens.length} decision tokens, ${colors.families.length} color families`);
+  return colors;
 }
 
 // Extract structured accessibility (RGAA) data per component
-function extractAccessibility(docsDir: string) {
+function extractAccessibility(docsDir: string): number {
   const result: Record<string, ReturnType<typeof parseAccessibility>> = {};
   let count = 0;
 
@@ -422,13 +545,123 @@ function extractAccessibility(docsDir: string) {
 
   writeFileSync(join(docsDir, "accessibility.json"), JSON.stringify(result, null, 2));
   console.error(`Extracted accessibility for ${count} components`);
+  return count;
 }
 
-extractIcons(REPO_DIR, DOCS_DIR);
-extractColors(DOCS_DIR);
-extractAccessibility(DOCS_DIR);
+// Extract DSFR Chart documentation from the clone made in step 1b. The tag is
+// pinned, never `main`: `prepublishOnly` runs this script, and a broken upstream
+// release must not break a publication of this server.
+function extractCharts(): ChartsIndex {
+  const readme = readFileSync(join(CHART_REPO_DIR, "README.md"), "utf-8");
+
+  // The registry is read from the code rather than hard-coded: it is the only
+  // authoritative list of which custom elements actually exist.
+  const registrySource = readFileSync(join(CHART_REPO_DIR, "src/charts/main.js"), "utf-8");
+  const registry: Record<string, string> = {};
+  for (const m of registrySource.matchAll(
+    /customElements\.define\(\s*['"]([a-z][a-z0-9-]*)['"]\s*,\s*defineCustomElement\(\s*(\w+)/g,
+  )) {
+    registry[m[1]] = m[2];
+  }
+  if (Object.keys(registry).length === 0) {
+    throw new Error("aucun web-component trouvé dans src/charts/main.js");
+  }
+
+  const componentsDir = join(CHART_REPO_DIR, "src/components");
+  const components: Record<string, string> = {};
+  for (const file of readdirSync(componentsDir)) {
+    if (!file.endsWith(".vue")) continue;
+    components[file.replace(/\.vue$/, "")] = readFileSync(join(componentsDir, file), "utf-8");
+  }
+
+  const colors = JSON.parse(readFileSync(join(CHART_REPO_DIR, "src/assets/colors.json"), "utf-8"));
+
+  const charts = buildChartsIndex({
+    readme,
+    components,
+    registry,
+    colors,
+    version: DSFR_CHART_TAG,
+    packageName: CHART_PACKAGE,
+    repository: CHART_REPO_URL.replace(/\.git$/, ""),
+  });
+
+  writeFileSync(join(DOCS_DIR, "charts.json"), JSON.stringify(charts, null, 2));
+  const undocumented = charts.charts.filter((c) => !c.documented).map((c) => c.name);
+  console.error(
+    `Extracted ${charts.charts.length} charts, ${charts.guides.length} guides, ${charts.palettes.length} palettes, ${charts.colorTokens.length} color tokens`,
+  );
+  if (undocumented.length > 0) {
+    console.error(`  (sans section dédiée dans le README amont : ${undocumented.join(", ")})`);
+  }
+  return charts;
+}
+
+const iconCounts = extractIcons(REPO_DIR, DOCS_DIR);
+const colors = extractColors(DOCS_DIR);
+const accessibilityCount = extractAccessibility(DOCS_DIR);
+const charts = extractCharts();
+
+const counts: DocsCounts = {
+  entries: index.length,
+  icons: iconCounts.icons,
+  iconClasses: iconCounts.classes,
+  decisionTokens: colors.decisionTokens.length,
+  colorFamilies: colors.families.length,
+  illustrativeNames: colors.illustrativeNames.length,
+  accessibilityComponents: accessibilityCount,
+  charts: charts.charts.length,
+  documentedCharts: charts.charts.filter((c) => c.documented).length,
+  documentedChartParams: charts.charts
+    .flatMap((c) => c.params)
+    .filter((p) => p.documented && p.description.length > 0).length,
+};
+
+// Sanity floors. The colour refactor of DSFR 1.15.0 silently emptied
+// colors.json — the script exited 0, the docs shipped and every test stayed
+// green. These thresholds are deliberately floors, not exact counts: they
+// tolerate upstream evolution while catching a source that has moved.
+const FLOORS: Array<[keyof DocsCounts, number]> = [
+  ["entries", 70],
+  ["icons", 500],
+  ["iconClasses", 1000],
+  ["decisionTokens", 25],
+  ["colorFamilies", 20],
+  ["illustrativeNames", 15],
+  ["accessibilityComponents", 40],
+  ["charts", 10],
+  // Cardinality alone would not catch a parser regression: the chart list comes
+  // from the component registry, so it stays at 11 even if the README yields
+  // nothing. These two floors are what actually guard the extracted meaning.
+  ["documentedCharts", 8],
+  ["documentedChartParams", 80],
+];
+const breached = FLOORS.filter(([key, floor]) => counts[key] < floor);
+if (breached.length > 0) {
+  console.error("\nExtraction incomplète — la documentation amont a probablement changé de structure :");
+  for (const [key, floor] of breached) {
+    console.error(`  ${key} = ${counts[key]} (attendu >= ${floor})`);
+  }
+  process.exit(1);
+}
+
+const meta: DocsMeta = {
+  schemaVersion: SCHEMA_VERSION,
+  dsfrVersion: DSFR_TAG,
+  dsfrCommit: capture("git rev-parse HEAD", REPO_DIR),
+  dsfrRepository: REPO_URL.replace(/\.git$/, ""),
+  dsfrChartVersion: DSFR_CHART_TAG,
+  dsfrChartCommit: capture("git rev-parse HEAD", CHART_REPO_DIR),
+  dsfrChartRepository: CHART_REPO_URL.replace(/\.git$/, ""),
+  fetchedAt: new Date().toISOString(),
+  counts,
+};
+writeFileSync(join(DOCS_DIR, "meta.json"), JSON.stringify(meta, null, 2));
 
 console.error(`\nDone! Extracted ${index.length} entries:`);
 for (const entry of index) {
   console.error(`  [${entry.category}] ${entry.name} — ${entry.title} (${entry.sections.join(", ")})`);
+}
+for (const chart of charts.charts) {
+  console.error(`  [chart] ${chart.name} — ${chart.title} (${chart.params.length} attributs)`);
 }

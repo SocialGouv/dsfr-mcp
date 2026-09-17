@@ -1,7 +1,14 @@
 import { describe, it, expect, beforeEach } from "vitest";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { loadIndex, listComponents, getComponentDoc, searchComponents } from "../core.js";
+import {
+  loadIndex,
+  listComponents,
+  getComponentDoc,
+  searchComponents,
+  loadCharts,
+  loadMeta,
+} from "../core.js";
 import { LRUCache } from "../cache.js";
 import type { ComponentEntry } from "../types.js";
 
@@ -32,10 +39,49 @@ describe("listComponents", () => {
     expect(result.content).toHaveLength(1);
     expect(result.content[0].type).toBe("text");
     const parsed = JSON.parse(result.content[0].text);
-    expect(parsed).toHaveLength(3);
-    expect(parsed[0]).toHaveProperty("name", "button");
-    expect(parsed[0]).toHaveProperty("category", "component");
-    expect(parsed[0]).toHaveProperty("sections");
+    expect(parsed.entries).toHaveLength(3);
+    expect(parsed.entries[0]).toHaveProperty("name", "button");
+    expect(parsed.entries[0]).toHaveProperty("category", "component");
+    expect(parsed.entries[0]).toHaveProperty("sections");
+  });
+
+  it("reports the pinned versions, even when metadata is missing", () => {
+    const index = loadIndex(FIXTURES_DIR);
+    const parsed = JSON.parse(listComponents(index).content[0].text);
+    expect(parsed.dsfrVersion).toBe("inconnue");
+    expect(parsed.dsfrChartVersion).toBe("inconnue");
+  });
+
+  it("reports an unknown version rather than an empty string", () => {
+    // EMPTY_CHARTS (server.ts) declares version: "", which `??` would let pass.
+    const index = loadIndex(FIXTURES_DIR);
+    const empty = {
+      version: "",
+      package: "@gouvfr/dsfr-chart",
+      repository: "",
+      charts: [],
+      guides: [],
+      palettes: [],
+      colorTokens: [],
+    };
+    const parsed = JSON.parse(listComponents(index, empty).content[0].text);
+    expect(parsed.dsfrChartVersion).toBe("inconnue");
+  });
+
+  it("appends charts with a pointer to their own tool", () => {
+    const index = loadIndex(FIXTURES_DIR);
+    const charts = loadCharts(FIXTURES_DIR);
+    const meta = loadMeta(FIXTURES_DIR);
+    const parsed = JSON.parse(listComponents(index, charts, meta).content[0].text);
+
+    expect(parsed.dsfrVersion).toBe(meta.dsfrVersion);
+    expect(parsed.dsfrChartVersion).toBe(meta.dsfrChartVersion);
+    expect(parsed.entries).toHaveLength(3 + charts.charts.length);
+
+    const chartRow = parsed.entries.find((e: { name: string }) => e.name === "bar-chart");
+    expect(chartRow).toMatchObject({ category: "chart", tool: "get_chart_doc", tag: "<bar-chart>" });
+    // Charts must not advertise doc sections: get_component_doc cannot serve them.
+    expect(chartRow).not.toHaveProperty("sections");
   });
 });
 

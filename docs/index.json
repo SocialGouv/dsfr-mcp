@@ -114,11 +114,12 @@
   },
   {
     "name": "color",
-    "title": "Couleurs - Utilisation dans le DSFR",
-    "description": "Principes et tokens de couleurs dans le DSFR",
+    "title": "Couleur",
+    "description": "Palette de couleurs officielle du DSFR",
     "category": "core",
     "sections": [
-      "overview"
+      "overview",
+      "usage"
     ]
   },
   {
@@ -143,8 +144,8 @@
   },
   {
     "name": "connect",
-    "title": "Bouton FranceConnect",
-    "description": "Authentification avec FranceConnect",
+    "title": "Boutons FranceConnect et ProConnect",
+    "description": "Authentification avec FranceConnect et/ou ProConnect",
     "category": "component",
     "sections": [
       "overview",
@@ -223,7 +224,7 @@
   },
   {
     "name": "elevation",
-    "title": "Système d'ombres et d'élévation",
+    "title": "Système d'ombre et d'élévation",
     "description": "Présentation des niveaux d’élévation et des ombres dans le DSFR.",
     "category": "core",
     "sections": [
@@ -363,7 +364,7 @@
   },
   {
     "name": "media",
-    "title": "Médias",
+    "title": "Média",
     "description": "Intégration des images et vidéos dans le DSFR.",
     "category": "core",
     "sections": [
@@ -456,15 +457,6 @@
       "design",
       "accessibility",
       "demo"
-    ]
-  },
-  {
-    "name": "palette",
-    "title": "Couleurs - Palette",
-    "description": "Palette de couleurs officielle du DSFR",
-    "category": "core",
-    "sections": [
-      "overview"
     ]
   },
   {

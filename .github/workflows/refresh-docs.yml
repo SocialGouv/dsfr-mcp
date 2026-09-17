@@ -28,12 +28,15 @@ jobs:
 
       - name: Commit if docs changed
         run: |
-          if [ -n "$(git status --porcelain docs/)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add docs/
-            git commit -m "chore: refresh DSFR docs"
-            git push
-          else
+          # meta.json carries a fetch timestamp, so it differs on every run.
+          # Committing on that alone would push an empty refresh every night.
+          if [ -z "$(git status --porcelain docs/ | grep -v ' docs/meta.json$')" ]; then
             echo "No documentation changes."
+            git checkout -- docs/meta.json 2>/dev/null || true
+            exit 0
           fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          git commit -m "chore: refresh DSFR docs"
+          git push

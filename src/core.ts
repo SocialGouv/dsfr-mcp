@@ -1,6 +1,18 @@
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import type { ComponentEntry, SearchResult, ToolTextResult, IconEntry, ColorsIndex, AccessibilityIndex } from "./types.js";
+import type {
+  ComponentEntry,
+  SearchResult,
+  ToolTextResult,
+  IconEntry,
+  ColorsIndex,
+  AccessibilityIndex,
+  ChartsIndex,
+  ChartEntry,
+  ChartGuide,
+  ChartParam,
+  DocsMeta,
+} from "./types.js";
 import type { LRUCache } from "./cache.js";
 
 function readFileWithCache(
@@ -47,16 +59,52 @@ export function loadIndex(docsDir: string): ComponentEntry[] {
   return JSON.parse(readFileSync(indexPath, "utf-8"));
 }
 
-export function listComponents(index: ComponentEntry[]): ToolTextResult {
-  const list = index.map((e) => ({
+/**
+ * Charts are listed alongside components so an assistant looking for "graphique
+ * en barres" finds them at all, but they carry no `sections` and point at their
+ * own tool: mixing Vue web components into `get_component_doc` would make two
+ * of the seven tools answer wrongly rather than not at all.
+ */
+export function listComponents(
+  index: ComponentEntry[],
+  charts?: ChartsIndex,
+  meta?: DocsMeta,
+): ToolTextResult {
+  const entries: Array<Record<string, unknown>> = index.map((e) => ({
     name: e.name,
     title: e.title,
     description: e.description,
     category: e.category,
     sections: e.sections,
   }));
+  if (charts) {
+    for (const chart of charts.charts) {
+      entries.push({
+        name: chart.name,
+        title: chart.title,
+        description: chart.description,
+        category: "chart",
+        tag: chart.tag,
+        package: charts.package,
+        tool: "get_chart_doc",
+      });
+    }
+  }
+  // The pinned versions travel with the catalogue: without them the caller has
+  // no way to tell whether the documentation it is reading matches the DSFR
+  // release its project depends on.
+  // `??` alone would let an empty string through: EMPTY_CHARTS declares
+  // `version: ""`, so a docs/ dir without charts.json would report a blank
+  // version rather than an honest "inconnue".
+  const firstSet = (...values: Array<string | undefined>) =>
+    values.find((v) => v && v.length > 0) ?? "inconnue";
+  const payload = {
+    dsfrVersion: firstSet(meta?.dsfrVersion),
+    dsfrChartVersion: firstSet(meta?.dsfrChartVersion, charts?.version),
+    entries,
+  };
   return {
-    content: [{ type: "text" as const, text: JSON.stringify(list, null, 2) }],
+    content: [{ type: "text" as const, text: JSON.stringify(payload, null, 2) }],
   };
 }
 
@@ -123,6 +171,20 @@ export function getComponentDoc(
   };
 }
 
+/**
+ * Section names get_component_doc can serve. Single source of truth for the
+ * zod enum in server.ts: a new core sub-page extracted by fetch-docs must be
+ * added here, or it is indexed and searchable but unreadable through the tool.
+ */
+export const DOC_SECTIONS = [
+  "overview",
+  "code",
+  "design",
+  "accessibility",
+  "demo",
+  "usage",
+] as const;
+
 const SEARCH_LIMIT = 15;
 
 export function searchComponents(
@@ -130,6 +192,7 @@ export function searchComponents(
   docsDir: string,
   query: string,
   cache: LRUCache<string, string>,
+  charts?: ChartsIndex,
 ): ToolTextResult {
   const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
   if (terms.length === 0) {
@@ -204,7 +267,36 @@ export function searchComponents(
     });
   }
 
-  if (scored.length === 0) {
+  // Charts are scored on metadata only — there are no markdown files to scan —
+  // and rendered as a separate block so a hit never reads like a CSS component.
+  // They get the same ranking and the same cap as components: matching on a bare
+  // substring of any of 175 attribute descriptions would otherwise let a common
+  // term like "couleur" return the whole catalogue, unsorted.
+  const chartScored: Array<{ chart: ChartEntry; score: number }> = [];
+  for (const chart of charts?.charts ?? []) {
+    const name = chart.name.toLowerCase();
+    const title = chart.title.toLowerCase();
+    const description = chart.description.toLowerCase();
+    const aliases = chart.aliases.map((a) => a.toLowerCase());
+    const params = chart.params.map((p) => `${p.name} ${p.description}`.toLowerCase());
+
+    let score = 0;
+    for (const term of terms) {
+      if (name === term) score += 10;
+      else if (name.includes(term)) score += 5;
+      if (aliases.some((a) => a === term)) score += 10;
+      if (title.includes(term)) score += 4;
+      if (description.includes(term)) score += 2;
+      if (params.some((p) => p.includes(term))) score += 1;
+    }
+    if (score > 0) chartScored.push({ chart, score });
+  }
+  chartScored.sort((a, b) => b.score - a.score || a.chart.name.localeCompare(b.chart.name));
+  const CHART_LIMIT = 5;
+  const chartHits = chartScored.slice(0, CHART_LIMIT).map((h) => h.chart);
+  const chartTruncated = chartScored.length - chartHits.length;
+
+  if (scored.length === 0 && chartHits.length === 0) {
     return {
       content: [
         {
@@ -223,13 +315,22 @@ export function searchComponents(
     (r) => `- **${r.name}** (${r.title}) [${r.category}] — ${r.matchType}\n  ${r.excerpt}`,
   );
 
+  const blocks: string[] = [];
+  const total = scored.length + chartScored.length;
+  const shown = limited.length + chartHits.length;
+  blocks.push(
+    `${total} résultat(s) pour "${query}"${total > shown ? ` (${shown} affichés)` : ""} :`,
+  );
+  if (lines.length > 0) blocks.push(lines.join("\n\n"));
+  if (chartHits.length > 0 && charts) {
+    const more = chartTruncated > 0 ? `\n  … et ${chartTruncated} autre(s).` : "";
+    blocks.push(
+      `Visualisations de données (${charts.package}) :\n${chartHits.map((c) => chartSummary(c, charts)).join("\n")}${more}`,
+    );
+  }
+
   return {
-    content: [
-      {
-        type: "text" as const,
-        text: `${scored.length} résultat(s) pour "${query}"${truncated > 0 ? ` (${limited.length} affichés)` : ""} :\n\n${lines.join("\n\n")}`,
-      },
-    ],
+    content: [{ type: "text" as const, text: blocks.join("\n\n") }],
   };
 }
 
@@ -263,7 +364,7 @@ export function loadAccessibility(docsDir: string): AccessibilityIndex {
   return JSON.parse(readFileSync(accessibilityPath, "utf-8"));
 }
 
-const ICON_CATEGORIES = [
+export const ICON_CATEGORIES = [
   "arrows", "buildings", "business", "communication", "design",
   "development", "device", "document", "editor", "finance",
   "health", "logo", "map", "media", "others", "system", "user", "weather",
@@ -632,4 +733,180 @@ export function getComponentCode(
   return {
     content: [{ type: "text" as const, text: sections.join("\n\n") }],
   };
+}
+
+// --- DSFR Chart ------------------------------------------------------------
+
+export function loadCharts(docsDir: string): ChartsIndex {
+  const chartsPath = join(docsDir, "charts.json");
+  if (!existsSync(chartsPath)) {
+    throw new Error(
+      `Charts index not found at ${chartsPath}. Run "pnpm run fetch-docs" first.`,
+    );
+  }
+  return JSON.parse(readFileSync(chartsPath, "utf-8"));
+}
+
+export function loadMeta(docsDir: string): DocsMeta {
+  const metaPath = join(docsDir, "meta.json");
+  if (!existsSync(metaPath)) {
+    throw new Error(
+      `Metadata not found at ${metaPath}. Run "pnpm run fetch-docs" first.`,
+    );
+  }
+  return JSON.parse(readFileSync(metaPath, "utf-8"));
+}
+
+/**
+ * Used alone, dsfr-chart visualizations are not RGAA-compliant: the data is
+ * unreachable for screen readers and keyboard users. Every chart answer repeats
+ * it, because it is the single most consequential thing to get wrong on a
+ * public-sector site and the easiest for an assistant to skip over.
+ */
+const CHART_A11Y_WARNING =
+  "⚠️ Accessibilité : utilisés seuls, les graphiques DSFR Chart sont non conformes au RGAA (critères 1.1, 1.6, 3.1, 3.3, 4.8, 4.9, 4.12, 10.13, 10.14). Une alternative textuelle adjacente (tableau, liste ou texte structuré) est obligatoire — voir get_chart_doc(name=\"accessibility\").";
+
+function chartHeader(charts: ChartsIndex): string {
+  return `${charts.package} ${charts.version} — web-components Vue.js, paquet npm distinct du DSFR : ces graphiques s'utilisent via des balises personnalisées et des attributs HTML, sans classes \`fr-*\`.`;
+}
+
+function formatParam(p: ChartParam): string {
+  const bits = [p.type || "type non déclaré"];
+  if (!p.required && p.default !== undefined) bits.push(`défaut ${p.default}`);
+  const head = `- \`${p.name}\` (${bits.join(", ")})`;
+  const lines = [p.description ? `${head} — ${p.description}` : head];
+  if (p.allowedValues?.length) {
+    lines.push(`  Valeurs : ${p.allowedValues.map((v) => `\`${v}\``).join(", ")}`);
+  }
+  return lines.join("\n");
+}
+
+function formatChart(charts: ChartsIndex, chart: ChartEntry): string {
+  const sections: string[] = [
+    `# ${chart.title} — \`${chart.tag}\``,
+    chartHeader(charts),
+  ];
+  // The upstream description is often just "… accessibles à travers la balise :
+  // `<x>`", which the title line above already says.
+  if (chart.description && !/balise\s*:/.test(chart.description)) {
+    sections.push(chart.description);
+  }
+  if (!chart.documented) {
+    sections.push(
+      `> Ce web-component est bien enregistré par ${charts.package} mais n'a pas de section dédiée dans la documentation amont. Les attributs ci-dessous sont lus directement dans le composant \`${chart.component}\`.`,
+    );
+  }
+
+  const required = chart.params.filter((p) => p.required);
+  const optional = chart.params.filter((p) => !p.required && p.documented);
+  const undocumented = chart.params.filter((p) => !p.required && !p.documented);
+
+  if (required.length > 0) {
+    sections.push(`## Attributs obligatoires\n${required.map(formatParam).join("\n")}`);
+  }
+  if (optional.length > 0) {
+    sections.push(`## Attributs optionnels\n${optional.map(formatParam).join("\n")}`);
+  }
+  if (undocumented.length > 0) {
+    sections.push(
+      `## Attributs non documentés en amont\nPrésents dans le composant \`${chart.component}\` mais absents du README de ${charts.package} — utilisables, mais sans garantie de stabilité :\n${undocumented.map(formatParam).join("\n")}`,
+    );
+  }
+
+  if (chart.examples.length > 0) {
+    const blocks = chart.examples.map(
+      (e) => `${e.label ? `### ${e.label}\n` : ""}\`\`\`html\n${e.code}\n\`\`\``,
+    );
+    sections.push(`## Exemples\n${blocks.join("\n\n")}`);
+  }
+  if (chart.notes.length > 0) {
+    sections.push(`## Notes et conseils\n${chart.notes.map((n) => `- ${n}`).join("\n")}`);
+  }
+
+  sections.push(CHART_A11Y_WARNING);
+  sections.push(
+    `Sujets transverses : get_chart_doc(name="install"), "colors", "accessibility", "databox".`,
+  );
+  return sections.join("\n\n");
+}
+
+function formatGuide(charts: ChartsIndex, guide: ChartGuide): string {
+  const sections = [`# ${guide.title}`, chartHeader(charts), guide.markdown];
+  if (guide.name !== "accessibility") sections.push(CHART_A11Y_WARNING);
+  if (guide.name === "colors" && charts.colorTokens.length > 0) {
+    const rows = charts.colorTokens.map(
+      (t) => `- \`${t.token}\` : ${t.light} (clair) / ${t.dark} (sombre)`,
+    );
+    sections.push(`## Jetons de couleur (src/assets/colors.json)\n${rows.join("\n")}`);
+  }
+  return sections.join("\n\n");
+}
+
+/** Tolerant lookup: exact tag, `<tag>`, PascalCase component, or dashless form. */
+function resolveChart(charts: ChartsIndex, name: string): ChartEntry | undefined {
+  const q = name.trim().replace(/^<|>$/g, "").toLowerCase();
+  return (
+    charts.charts.find((c) => c.name.toLowerCase() === q) ??
+    charts.charts.find((c) => c.component.toLowerCase() === q) ??
+    charts.charts.find((c) => c.aliases.some((a) => a.toLowerCase() === q)) ??
+    charts.charts.find((c) => c.name.replace(/-/g, "") === q.replace(/-/g, ""))
+  );
+}
+
+export function getChartDoc(charts: ChartsIndex, name: string): ToolTextResult {
+  const text = (t: string): ToolTextResult => ({ content: [{ type: "text" as const, text: t }] });
+
+  if (charts.charts.length === 0) {
+    return text(
+      `Documentation DSFR Chart indisponible (docs/charts.json absent ou vide). Lancez "pnpm run fetch-docs".`,
+    );
+  }
+
+  const q = name.trim().toLowerCase();
+  const guide = charts.guides.find((g) => g.name.toLowerCase() === q);
+  if (guide) {
+    // "databox" names both a cross-cutting topic and an alias of <data-box>.
+    // The topic wins, as the tool description advertises — but the caller is
+    // told where the component's own attributes live, otherwise the alias is
+    // a dead end they cannot discover.
+    const shadowed = resolveChart(charts, name);
+    const pointer = shadowed
+      ? `\n\nPour les attributs du web-component lui-même : get_chart_doc(name="${shadowed.name}").`
+      : "";
+    return text(formatGuide(charts, guide) + pointer);
+  }
+
+  const chart = resolveChart(charts, name);
+  if (chart) return text(formatChart(charts, chart));
+
+  const catalogue = charts.charts.map((c) => `${c.name} (${c.title})`).join(", ");
+  const guides = charts.guides.map((g) => g.name).join(", ");
+  const footer = `Graphiques disponibles : ${catalogue}\nSujets transverses : ${guides}\n\nSi vous cherchiez un composant CSS du DSFR (bouton, carte, tableau…) et non une visualisation de données, utilisez list_components ou get_component_doc.`;
+
+  if (!q) {
+    return text(`Indiquez une balise, un nom de composant ou un sujet transverse.\n\n${footer}`);
+  }
+
+  // Near-misses first, then the full catalogue: a wrong guess should still
+  // leave the caller with everything it needs to pick the right name. The query
+  // is tokenized so a natural phrasing ("graphique en barres") still suggests.
+  const tokens = q.split(/[\s_]+/).filter(Boolean);
+  const suggestions = charts.charts
+    .filter((c) =>
+      tokens.some(
+        (t) =>
+          c.name.includes(t) ||
+          c.title.toLowerCase().includes(t) ||
+          c.aliases.some((a) => a.toLowerCase().includes(t)),
+      ),
+    )
+    .map((c) => c.name);
+  return text(
+    `Graphique "${name}" non trouvé.${suggestions.length > 0 ? ` Suggestions : ${suggestions.join(", ")}` : ""}\n\n${footer}`,
+  );
+}
+
+/** Compact chart lines for list_components / search_components. */
+function chartSummary(chart: ChartEntry, charts: ChartsIndex): string {
+  return `- **${chart.name}** (${chart.title}) [chart] — web-component ${charts.package}\n  → get_chart_doc(name="${chart.name}")`;
 }

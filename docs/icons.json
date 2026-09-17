@@ -120,6 +120,24 @@
     ]
   },
   {
+    "name": "arrow-left-s-first",
+    "category": "arrows",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-left-s-first-line"
+    ]
+  },
+  {
+    "name": "arrow-left-s-line-double",
+    "category": "arrows",
+    "variants": [],
+    "classes": [
+      "fr-icon-arrow-left-s-line-double"
+    ]
+  },
+  {
     "name": "arrow-left-up",
     "category": "arrows",
     "variants": [
@@ -168,6 +186,16 @@
     ]
   },
   {
+    "name": "arrow-right-down-circle",
+    "category": "arrows",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-arrow-right-down-circle-fill"
+    ]
+  },
+  {
     "name": "arrow-right-s",
     "category": "arrows",
     "variants": [
@@ -180,6 +208,24 @@
     ]
   },
   {
+    "name": "arrow-right-s-last",
+    "category": "arrows",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-arrow-right-s-last-line"
+    ]
+  },
+  {
+    "name": "arrow-right-s-line-double",
+    "category": "arrows",
+    "variants": [],
+    "classes": [
+      "fr-icon-arrow-right-s-line-double"
+    ]
+  },
+  {
     "name": "arrow-right-up",
     "category": "arrows",
     "variants": [
@@ -189,6 +235,16 @@
     "classes": [
       "fr-icon-arrow-right-up-fill",
       "fr-icon-arrow-right-up-line"
+    ]
+  },
+  {
+    "name": "arrow-right-up-circle",
+    "category": "arrows",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-arrow-right-up-circle-fill"
     ]
   },
   {
@@ -453,42 +509,6 @@
     "classes": [
       "fr-icon-expand-up-down-fill",
       "fr-icon-expand-up-down-line"
-    ]
-  },
-  {
-    "name": "fr--arrow-left-s-first",
-    "category": "arrows",
-    "variants": [
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--arrow-left-s-first-line"
-    ]
-  },
-  {
-    "name": "fr--arrow-left-s-line-double",
-    "category": "arrows",
-    "variants": [],
-    "classes": [
-      "fr-icon-fr--arrow-left-s-line-double"
-    ]
-  },
-  {
-    "name": "fr--arrow-right-s-last",
-    "category": "arrows",
-    "variants": [
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--arrow-right-s-last-line"
-    ]
-  },
-  {
-    "name": "fr--arrow-right-s-line-double",
-    "category": "arrows",
-    "variants": [],
-    "classes": [
-      "fr-icon-fr--arrow-right-s-line-double"
     ]
   },
   {
@@ -3816,6 +3836,14 @@
     ]
   },
   {
+    "name": "bold",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-bold"
+    ]
+  },
+  {
     "name": "code-block",
     "category": "editor",
     "variants": [],
@@ -3853,34 +3881,6 @@
     "variants": [],
     "classes": [
       "fr-icon-format-clear"
-    ]
-  },
-  {
-    "name": "fr--bold",
-    "category": "editor",
-    "variants": [],
-    "classes": [
-      "fr-icon-fr--bold"
-    ]
-  },
-  {
-    "name": "fr--highlight",
-    "category": "editor",
-    "variants": [],
-    "classes": [
-      "fr-icon-fr--highlight"
-    ]
-  },
-  {
-    "name": "fr--quote",
-    "category": "editor",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--quote-fill",
-      "fr-icon-fr--quote-line"
     ]
   },
   {
@@ -3937,6 +3937,14 @@
     "variants": [],
     "classes": [
       "fr-icon-hashtag"
+    ]
+  },
+  {
+    "name": "highlight",
+    "category": "editor",
+    "variants": [],
+    "classes": [
+      "fr-icon-highlight"
     ]
   },
   {
@@ -4009,6 +4017,18 @@
     "variants": [],
     "classes": [
       "fr-icon-question-mark"
+    ]
+  },
+  {
+    "name": "quote",
+    "category": "editor",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-quote-fill",
+      "fr-icon-quote-line"
     ]
   },
   {
@@ -4468,6 +4488,18 @@
     ]
   },
   {
+    "name": "dailymotion",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-dailymotion-fill",
+      "fr-icon-dailymotion-line"
+    ]
+  },
+  {
     "name": "edge",
     "category": "logo",
     "variants": [
@@ -4501,30 +4533,6 @@
     "classes": [
       "fr-icon-firefox-fill",
       "fr-icon-firefox-line"
-    ]
-  },
-  {
-    "name": "fr--dailymotion",
-    "category": "logo",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--dailymotion-fill",
-      "fr-icon-fr--dailymotion-line"
-    ]
-  },
-  {
-    "name": "fr--tiktok",
-    "category": "logo",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--tiktok-fill",
-      "fr-icon-fr--tiktok-line"
     ]
   },
   {
@@ -4681,6 +4689,18 @@
     "classes": [
       "fr-icon-threads-fill",
       "fr-icon-threads-line"
+    ]
+  },
+  {
+    "name": "tiktok",
+    "category": "logo",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-tiktok-fill",
+      "fr-icon-tiktok-line"
     ]
   },
   {
@@ -5294,51 +5314,27 @@
     ]
   },
   {
-    "name": "fr--accessibility",
+    "name": "accessibility",
     "category": "others",
     "variants": [
       "fill",
       "line"
     ],
     "classes": [
-      "fr-icon-fr--accessibility-fill",
-      "fr-icon-fr--accessibility-line"
+      "fr-icon-accessibility-fill",
+      "fr-icon-accessibility-line"
     ]
   },
   {
-    "name": "fr--ear-off",
+    "name": "ear-off",
     "category": "others",
     "variants": [
       "fill",
       "line"
     ],
     "classes": [
-      "fr-icon-fr--ear-off-fill",
-      "fr-icon-fr--ear-off-line"
-    ]
-  },
-  {
-    "name": "fr--mental-disabilities",
-    "category": "others",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--mental-disabilities-fill",
-      "fr-icon-fr--mental-disabilities-line"
-    ]
-  },
-  {
-    "name": "fr--sign-language",
-    "category": "others",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--sign-language-fill",
-      "fr-icon-fr--sign-language-line"
+      "fr-icon-ear-off-fill",
+      "fr-icon-ear-off-line"
     ]
   },
   {
@@ -5363,6 +5359,18 @@
     "classes": [
       "fr-icon-lightbulb-fill",
       "fr-icon-lightbulb-line"
+    ]
+  },
+  {
+    "name": "mental-disabilities",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-mental-disabilities-fill",
+      "fr-icon-mental-disabilities-line"
     ]
   },
   {
@@ -5411,6 +5419,18 @@
     "classes": [
       "fr-icon-seedling-fill",
       "fr-icon-seedling-line"
+    ]
+  },
+  {
+    "name": "sign-language",
+    "category": "others",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-sign-language-fill",
+      "fr-icon-sign-language-line"
     ]
   },
   {
@@ -5481,6 +5501,36 @@
     "classes": [
       "fr-icon-alert-fill",
       "fr-icon-alert-line"
+    ]
+  },
+  {
+    "name": "alert-warning",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-alert-warning-fill"
+    ]
+  },
+  {
+    "name": "alert-warning-2",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-alert-warning-2-fill"
+    ]
+  },
+  {
+    "name": "capslock",
+    "category": "system",
+    "variants": [
+      "line"
+    ],
+    "classes": [
+      "fr-icon-capslock-line"
     ]
   },
   {
@@ -5564,6 +5614,28 @@
     ]
   },
   {
+    "name": "equal-circle",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-equal-circle-fill"
+    ]
+  },
+  {
+    "name": "error",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-error-fill",
+      "fr-icon-error-line"
+    ]
+  },
+  {
     "name": "error-warning",
     "category": "system",
     "variants": [
@@ -5624,101 +5696,15 @@
     ]
   },
   {
-    "name": "fr--alert-warning",
-    "category": "system",
-    "variants": [
-      "fill"
-    ],
-    "classes": [
-      "fr-icon-fr--alert-warning-fill"
-    ]
-  },
-  {
-    "name": "fr--alert-warning-2",
-    "category": "system",
-    "variants": [
-      "fill"
-    ],
-    "classes": [
-      "fr-icon-fr--alert-warning-2-fill"
-    ]
-  },
-  {
-    "name": "fr--capslock",
-    "category": "system",
-    "variants": [
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--capslock-line"
-    ]
-  },
-  {
-    "name": "fr--equal-circle",
-    "category": "system",
-    "variants": [
-      "fill"
-    ],
-    "classes": [
-      "fr-icon-fr--equal-circle-fill"
-    ]
-  },
-  {
-    "name": "fr--error",
+    "name": "info",
     "category": "system",
     "variants": [
       "fill",
       "line"
     ],
     "classes": [
-      "fr-icon-fr--error-fill",
-      "fr-icon-fr--error-line"
-    ]
-  },
-  {
-    "name": "fr--info",
-    "category": "system",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--info-fill",
-      "fr-icon-fr--info-line"
-    ]
-  },
-  {
-    "name": "fr--success",
-    "category": "system",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--success-fill",
-      "fr-icon-fr--success-line"
-    ]
-  },
-  {
-    "name": "fr--theme",
-    "category": "system",
-    "variants": [
-      "fill"
-    ],
-    "classes": [
-      "fr-icon-fr--theme-fill"
-    ]
-  },
-  {
-    "name": "fr--warning",
-    "category": "system",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--warning-fill",
-      "fr-icon-fr--warning-line"
+      "fr-icon-info-fill",
+      "fr-icon-info-line"
     ]
   },
   {
@@ -5932,6 +5918,28 @@
     ]
   },
   {
+    "name": "success",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-success-fill",
+      "fr-icon-success-line"
+    ]
+  },
+  {
+    "name": "theme",
+    "category": "system",
+    "variants": [
+      "fill"
+    ],
+    "classes": [
+      "fr-icon-theme-fill"
+    ]
+  },
+  {
     "name": "thumb-down",
     "category": "system",
     "variants": [
@@ -6001,6 +6009,18 @@
     "classes": [
       "fr-icon-upload-2-fill",
       "fr-icon-upload-2-line"
+    ]
+  },
+  {
+    "name": "warning",
+    "category": "system",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-warning-fill",
+      "fr-icon-warning-line"
     ]
   },
   {
@@ -6172,6 +6192,18 @@
     ]
   },
   {
+    "name": "avalanches",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-avalanches-fill",
+      "fr-icon-avalanches-line"
+    ]
+  },
+  {
     "name": "cloudy-2",
     "category": "weather",
     "variants": [
@@ -6220,30 +6252,6 @@
     ]
   },
   {
-    "name": "fr--avalanches",
-    "category": "weather",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--avalanches-fill",
-      "fr-icon-fr--avalanches-line"
-    ]
-  },
-  {
-    "name": "fr--submersion",
-    "category": "weather",
-    "variants": [
-      "fill",
-      "line"
-    ],
-    "classes": [
-      "fr-icon-fr--submersion-fill",
-      "fr-icon-fr--submersion-line"
-    ]
-  },
-  {
     "name": "heavy-showers",
     "category": "weather",
     "variants": [
@@ -6289,6 +6297,18 @@
     "classes": [
       "fr-icon-sparkling-2-fill",
       "fr-icon-sparkling-2-line"
+    ]
+  },
+  {
+    "name": "submersion",
+    "category": "weather",
+    "variants": [
+      "fill",
+      "line"
+    ],
+    "classes": [
+      "fr-icon-submersion-fill",
+      "fr-icon-submersion-line"
     ]
   },
   {
